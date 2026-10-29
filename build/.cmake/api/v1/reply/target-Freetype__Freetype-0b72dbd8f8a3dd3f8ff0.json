@@ -1,0 +1,66 @@
+{
+	"abstract" : true,
+	"backtrace" : 5,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"find_package"
+		],
+		"files" : 
+		[
+			"/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/FindFreetype.cmake",
+			"/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/FindX11.cmake",
+			"thirdparty/glfw-3.3.2/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 2
+			},
+			{
+				"command" : 1,
+				"file" : 2,
+				"line" : 196,
+				"parent" : 0
+			},
+			{
+				"file" : 1,
+				"parent" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 373,
+				"parent" : 2
+			},
+			{
+				"file" : 0,
+				"parent" : 3
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 234,
+				"parent" : 4
+			}
+		]
+	},
+	"codemodelVersion" : 
+	{
+		"major" : 2,
+		"minor" : 11
+	},
+	"id" : "Freetype::Freetype::@438bdad978d0008df4cd",
+	"imported" : true,
+	"local" : true,
+	"name" : "Freetype::Freetype",
+	"paths" : 
+	{
+		"build" : "thirdparty/glfw-3.3.2",
+		"source" : "thirdparty/glfw-3.3.2"
+	},
+	"sources" : [],
+	"type" : "UNKNOWN_LIBRARY"
+}

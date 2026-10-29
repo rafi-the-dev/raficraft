@@ -1,0 +1,407 @@
+{
+	"globsDependent" : 
+	[
+		{
+			"expression" : "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/src/*.cpp",
+			"paths" : 
+			[
+				"/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/src/Block.cpp",
+				"/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/src/Face.cpp",
+				"/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/src/demoShaderLoader.cpp",
+				"/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/src/input.cpp",
+				"/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/src/main.cpp",
+				"/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/src/openglDebug.cpp"
+			],
+			"recurse" : true
+		}
+	],
+	"inputs" : 
+	[
+		{
+			"path" : "CMakeLists.txt"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/CMakeFiles/4.4.3/CMakeSystem.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeSystemSpecificInitialize.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Platform/Linux-Initialize.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/CMakeFiles/4.4.3/CMakeCCompiler.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/CMakeFiles/4.4.3/CMakeCXXCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeSystemSpecificInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeGenericSystem.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeInitializeConfigs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Platform/Linux.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Platform/UnixPaths.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeCInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeLanguageInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Compiler/GNU-C.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Compiler/GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Platform/Linux-GNU-C.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Platform/Linux-GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeCommonLanguageInclude.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CMakeCLinkerInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CMakeCommonLinkerInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Linker/GNU-C.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Linker/GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Platform/Linker/Linux-GNU-C.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Platform/Linker/Linux-GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Platform/Linker/GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeCXXInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeLanguageInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Compiler/GNU-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Compiler/GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Platform/Linux-GNU-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Platform/Linux-GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeCommonLanguageInclude.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CMakeCXXLinkerInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CMakeCommonLinkerInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Linker/GNU-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Linker/GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Platform/Linker/Linux-GNU-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Platform/Linker/Linux-GNU.cmake"
+		},
+		{
+			"path" : "thirdparty/glfw-3.3.2/CMakeLists.txt"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/GNUInstallDirs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeDependentOption.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/FindThreads.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/CheckLibraryExists.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CheckCommon.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/CheckIncludeFile.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CheckCommon.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/CheckCSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CheckSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CheckCommon.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/FindX11.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/FindFreetype.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/SelectLibraryConfigurations.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/FindFontconfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/FindPkgConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/CheckFunctionExists.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CheckCommon.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/CheckLibraryExists.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/CMakePackageConfigHelpers.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/WriteBasicConfigVersionFile.cmake"
+		},
+		{
+			"path" : "thirdparty/glfw-3.3.2/src/glfw3Config.cmake.in"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/BasicConfigVersion-SameMajorVersion.cmake.in"
+		},
+		{
+			"path" : "thirdparty/glfw-3.3.2/src/glfw_config.h.in"
+		},
+		{
+			"path" : "thirdparty/glfw-3.3.2/src/glfw3.pc.in"
+		},
+		{
+			"path" : "thirdparty/glfw-3.3.2/src/CMakeLists.txt"
+		},
+		{
+			"path" : "thirdparty/glad/CMakeLists.txt"
+		},
+		{
+			"path" : "thirdparty/stb_image/CMakeLists.txt"
+		},
+		{
+			"path" : "thirdparty/stb_truetype/CMakeLists.txt"
+		},
+		{
+			"path" : "thirdparty/glm/CMakeLists.txt"
+		},
+		{
+			"path" : "thirdparty/imgui-docking/CMakeLists.txt"
+		}
+	],
+	"kind" : "cmakeFiles",
+	"paths" : 
+	{
+		"build" : "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build",
+		"source" : "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone"
+	},
+	"version" : 
+	{
+		"major" : 1,
+		"minor" : 1
+	}
+}

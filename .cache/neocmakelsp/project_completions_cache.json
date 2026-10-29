@@ -1,0 +1,557 @@
+{
+  "date": "2026-10-24T13:44:48.146001953+02:00",
+  "data": {
+    "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/docs/CMakeLists.txt": [
+      {
+        "label": "GLFW_DOXYGEN_SOURCES",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/docs/CMakeLists.txt\n\n(i.e. Pages) list in the generated documentation"
+      },
+      {
+        "label": "GLFW_DOXYGEN_INPUT",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/docs/CMakeLists.txt"
+      }
+    ],
+    "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt": [
+      {
+        "label": "CMAKE_LEGACY_CYGWIN_WIN32",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt"
+      },
+      {
+        "label": "BUILD_SHARED_LIBS",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt"
+      },
+      {
+        "label": "GLFW_BUILD_EXAMPLES",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt"
+      },
+      {
+        "label": "GLFW_BUILD_TESTS",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt"
+      },
+      {
+        "label": "GLFW_BUILD_DOCS",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt"
+      },
+      {
+        "label": "GLFW_INSTALL",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt"
+      },
+      {
+        "label": "GLFW_VULKAN_STATIC",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt"
+      },
+      {
+        "label": "_GLFW_BUILD_DLL",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt"
+      },
+      {
+        "label": "GLFW_LIB_NAME",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt\n\nOn Unix-like systems, shared libraries can use the soname system."
+      },
+      {
+        "label": "GLFW_LIB_NAME",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt"
+      },
+      {
+        "label": "_GLFW_VULKAN_STATIC",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt"
+      },
+      {
+        "label": "Threads_LIBRARIES",
+        "kind": 6,
+        "detail": "Variable",
+        "documentation": "package: Threads"
+      },
+      {
+        "label": "Threads_INCLUDE_DIRS",
+        "kind": 6,
+        "detail": "Variable",
+        "documentation": "package: Threads"
+      },
+      {
+        "label": "DOXYGEN_SKIP_DOT",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt"
+      },
+      {
+        "label": "Doxygen_LIBRARIES",
+        "kind": 6,
+        "detail": "Variable",
+        "documentation": "package: Doxygen"
+      },
+      {
+        "label": "Doxygen_INCLUDE_DIRS",
+        "kind": 6,
+        "detail": "Variable",
+        "documentation": "package: Doxygen"
+      },
+      {
+        "label": "CMAKE_REQUIRED_FLAGS",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt\n\nCompatibility with data execution prevention (DEP)"
+      },
+      {
+        "label": "CMAKE_SHARED_LINKER_FLAGS",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt"
+      },
+      {
+        "label": "CMAKE_REQUIRED_FLAGS",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt\n\nCompatibility with address space layout randomization (ASLR)"
+      },
+      {
+        "label": "CMAKE_SHARED_LINKER_FLAGS",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt"
+      },
+      {
+        "label": "CMAKE_REQUIRED_FLAGS",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt\n\nCompatibility with 64-bit address space layout randomization (ASLR)"
+      },
+      {
+        "label": "CMAKE_SHARED_LINKER_FLAGS",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt"
+      },
+      {
+        "label": "_GLFW_WAYLAND",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt"
+      },
+      {
+        "label": "_GLFW_OSMESA",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt"
+      },
+      {
+        "label": "_GLFW_WIN32",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt"
+      },
+      {
+        "label": "_GLFW_COCOA",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt"
+      },
+      {
+        "label": "_GLFW_X11",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt"
+      },
+      {
+        "label": "RT_LIBRARY",
+        "kind": 6,
+        "detail": "Variable",
+        "documentation": "defined var\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt"
+      },
+      {
+        "label": "MATH_LIBRARY",
+        "kind": 6,
+        "detail": "Variable",
+        "documentation": "defined var\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt"
+      },
+      {
+        "label": "_GLFW_USE_HYBRID_HPG",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt"
+      },
+      {
+        "label": "X11_LIBRARIES",
+        "kind": 6,
+        "detail": "Variable",
+        "documentation": "package: X11"
+      },
+      {
+        "label": "X11_INCLUDE_DIRS",
+        "kind": 6,
+        "detail": "Variable",
+        "documentation": "package: X11"
+      },
+      {
+        "label": "ECM_LIBRARIES",
+        "kind": 6,
+        "detail": "Variable",
+        "documentation": "package: ECM"
+      },
+      {
+        "label": "ECM_INCLUDE_DIRS",
+        "kind": 6,
+        "detail": "Variable",
+        "documentation": "package: ECM"
+      },
+      {
+        "label": "Wayland_LIBRARIES",
+        "kind": 6,
+        "detail": "Variable",
+        "documentation": "package: Wayland"
+      },
+      {
+        "label": "Wayland_INCLUDE_DIRS",
+        "kind": 6,
+        "detail": "Variable",
+        "documentation": "package: Wayland"
+      },
+      {
+        "label": "WaylandScanner_LIBRARIES",
+        "kind": 6,
+        "detail": "Variable",
+        "documentation": "package: WaylandScanner"
+      },
+      {
+        "label": "WaylandScanner_INCLUDE_DIRS",
+        "kind": 6,
+        "detail": "Variable",
+        "documentation": "package: WaylandScanner"
+      },
+      {
+        "label": "WaylandProtocols_LIBRARIES",
+        "kind": 6,
+        "detail": "Variable",
+        "documentation": "package: WaylandProtocols"
+      },
+      {
+        "label": "WaylandProtocols_INCLUDE_DIRS",
+        "kind": 6,
+        "detail": "Variable",
+        "documentation": "package: WaylandProtocols"
+      },
+      {
+        "label": "XKBCommon_LIBRARIES",
+        "kind": 6,
+        "detail": "Variable",
+        "documentation": "package: XKBCommon"
+      },
+      {
+        "label": "XKBCommon_INCLUDE_DIRS",
+        "kind": 6,
+        "detail": "Variable",
+        "documentation": "package: XKBCommon"
+      },
+      {
+        "label": "EpollShim_LIBRARIES",
+        "kind": 6,
+        "detail": "Variable",
+        "documentation": "package: EpollShim"
+      },
+      {
+        "label": "EpollShim_INCLUDE_DIRS",
+        "kind": 6,
+        "detail": "Variable",
+        "documentation": "package: EpollShim"
+      },
+      {
+        "label": "OSMesa_LIBRARIES",
+        "kind": 6,
+        "detail": "Variable",
+        "documentation": "package: OSMesa"
+      },
+      {
+        "label": "OSMesa_INCLUDE_DIRS",
+        "kind": 6,
+        "detail": "Variable",
+        "documentation": "package: OSMesa"
+      },
+      {
+        "label": "glfw_PKG_DEPS",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt"
+      },
+      {
+        "label": "glfw_PKG_LIBS",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt"
+      },
+      {
+        "label": "GLFW_PKG_DEPS",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt"
+      },
+      {
+        "label": "GLFW_PKG_LIBS",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt"
+      },
+      {
+        "label": "GLFW_CONFIG_PATH",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt"
+      }
+    ],
+    "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt": [
+      {
+        "label": "common_HEADERS",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
+      },
+      {
+        "label": "common_SOURCES",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
+      },
+      {
+        "label": "glfw_HEADERS",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
+      },
+      {
+        "label": "glfw_SOURCES",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
+      },
+      {
+        "label": "glfw_HEADERS",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
+      },
+      {
+        "label": "glfw_SOURCES",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
+      },
+      {
+        "label": "glfw_HEADERS",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
+      },
+      {
+        "label": "glfw_SOURCES",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
+      },
+      {
+        "label": "glfw_HEADERS",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
+      },
+      {
+        "label": "glfw_SOURCES",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
+      },
+      {
+        "label": "glfw_HEADERS",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
+      },
+      {
+        "label": "glfw_SOURCES",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
+      },
+      {
+        "label": "glfw_HEADERS",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
+      },
+      {
+        "label": "glfw_SOURCES",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
+      },
+      {
+        "label": "glfw_HEADERS",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
+      },
+      {
+        "label": "glfw_SOURCES",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
+      }
+    ],
+    "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/CMakeLists.txt": [
+      {
+        "label": "CMAKE_MSVC_RUNTIME_LIBRARY",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/CMakeLists.txt"
+      },
+      {
+        "label": "CMAKE_MSVC_RUNTIME_LIBRARY",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/CMakeLists.txt\n\nwe want to use the static runtime"
+      },
+      {
+        "label": "GLFW_BUILD_DOCS",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/CMakeLists.txt"
+      },
+      {
+        "label": "GLFW_BUILD_TESTS",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/CMakeLists.txt"
+      },
+      {
+        "label": "GLFW_BUILD_EXAMPLES",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/CMakeLists.txt"
+      },
+      {
+        "label": "GLFW_INSTALL",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/CMakeLists.txt"
+      }
+    ],
+    "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/examples/CMakeLists.txt": [
+      {
+        "label": "ICON",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/examples/CMakeLists.txt"
+      },
+      {
+        "label": "ICON",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/examples/CMakeLists.txt"
+      },
+      {
+        "label": "CMAKE_C_STANDARD",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/examples/CMakeLists.txt"
+      },
+      {
+        "label": "GLAD_GL",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/examples/CMakeLists.txt"
+      },
+      {
+        "label": "GETOPT",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/examples/CMakeLists.txt"
+      },
+      {
+        "label": "TINYCTHREAD",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/examples/CMakeLists.txt"
+      },
+      {
+        "label": "GUI_ONLY_BINARIES",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/examples/CMakeLists.txt"
+      },
+      {
+        "label": "CONSOLE_BINARIES",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/examples/CMakeLists.txt"
+      }
+    ],
+    "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/tests/CMakeLists.txt": [
+      {
+        "label": "GLAD_GL",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/tests/CMakeLists.txt"
+      },
+      {
+        "label": "GLAD_VULKAN",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/tests/CMakeLists.txt"
+      },
+      {
+        "label": "GETOPT",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/tests/CMakeLists.txt"
+      },
+      {
+        "label": "TINYCTHREAD",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/tests/CMakeLists.txt"
+      },
+      {
+        "label": "CMAKE_C_STANDARD",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/tests/CMakeLists.txt"
+      },
+      {
+        "label": "GUI_ONLY_BINARIES",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/tests/CMakeLists.txt"
+      },
+      {
+        "label": "CONSOLE_BINARIES",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/tests/CMakeLists.txt"
+      }
+    ]
+  }
+}

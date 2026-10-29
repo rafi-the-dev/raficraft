@@ -1,0 +1,41 @@
+{
+	"abstract" : true,
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library"
+		],
+		"files" : 
+		[
+			"thirdparty/stb_image/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 5,
+				"parent" : 0
+			}
+		]
+	},
+	"codemodelVersion" : 
+	{
+		"major" : 2,
+		"minor" : 11
+	},
+	"id" : "stb_image::@203766a7419bd4cdeb21",
+	"name" : "stb_image",
+	"paths" : 
+	{
+		"build" : "thirdparty/stb_image",
+		"source" : "thirdparty/stb_image"
+	},
+	"sources" : [],
+	"type" : "INTERFACE_LIBRARY"
+}

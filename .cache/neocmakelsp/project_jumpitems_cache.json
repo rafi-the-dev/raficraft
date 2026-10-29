@@ -1,0 +1,668 @@
+{
+  "date": "2026-10-24T13:44:48.146243206+02:00",
+  "data": {
+    "BUILD_SHARED_LIBS": {
+      "location": {
+        "uri": "file:///home/rafi/Desktop/codeing_projects/c++/game%20dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+        "range": {
+          "start": {
+            "line": 16,
+            "character": 7
+          },
+          "end": {
+            "line": 16,
+            "character": 24
+          }
+        }
+      },
+      "document_info": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+      "is_function": false
+    },
+    "common_HEADERS": {
+      "location": {
+        "uri": "file:///home/rafi/Desktop/codeing_projects/c++/game%20dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt",
+        "range": {
+          "start": {
+            "line": 1,
+            "character": 4
+          },
+          "end": {
+            "line": 1,
+            "character": 18
+          }
+        }
+      },
+      "document_info": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt",
+      "is_function": false
+    },
+    "CMAKE_MSVC_RUNTIME_LIBRARY": {
+      "location": {
+        "uri": "file:///home/rafi/Desktop/codeing_projects/c++/game%20dev/minecraft-clone/CMakeLists.txt",
+        "range": {
+          "start": {
+            "line": 5,
+            "character": 4
+          },
+          "end": {
+            "line": 5,
+            "character": 30
+          }
+        }
+      },
+      "document_info": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/CMakeLists.txt\n\nwe want to use the static runtime",
+      "is_function": false
+    },
+    "glfw_PKG_LIBS": {
+      "location": {
+        "uri": "file:///home/rafi/Desktop/codeing_projects/c++/game%20dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+        "range": {
+          "start": {
+            "line": 287,
+            "character": 8
+          },
+          "end": {
+            "line": 287,
+            "character": 21
+          }
+        }
+      },
+      "document_info": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+      "is_function": false
+    },
+    "GLFW_BUILD_EXAMPLES": {
+      "location": {
+        "uri": "file:///home/rafi/Desktop/codeing_projects/c++/game%20dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+        "range": {
+          "start": {
+            "line": 17,
+            "character": 7
+          },
+          "end": {
+            "line": 17,
+            "character": 26
+          }
+        }
+      },
+      "document_info": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+      "is_function": false
+    },
+    "CMAKE_REQUIRED_FLAGS": {
+      "location": {
+        "uri": "file:///home/rafi/Desktop/codeing_projects/c++/game%20dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+        "range": {
+          "start": {
+            "line": 125,
+            "character": 8
+          },
+          "end": {
+            "line": 125,
+            "character": 28
+          }
+        }
+      },
+      "document_info": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt\n\nCompatibility with 64-bit address space layout randomization (ASLR)",
+      "is_function": false
+    },
+    "common_SOURCES": {
+      "location": {
+        "uri": "file:///home/rafi/Desktop/codeing_projects/c++/game%20dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt",
+        "range": {
+          "start": {
+            "line": 5,
+            "character": 4
+          },
+          "end": {
+            "line": 5,
+            "character": 18
+          }
+        }
+      },
+      "document_info": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt",
+      "is_function": false
+    },
+    "GLFW_VULKAN_STATIC": {
+      "location": {
+        "uri": "file:///home/rafi/Desktop/codeing_projects/c++/game%20dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+        "range": {
+          "start": {
+            "line": 21,
+            "character": 7
+          },
+          "end": {
+            "line": 21,
+            "character": 25
+          }
+        }
+      },
+      "document_info": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+      "is_function": false
+    },
+    "CONSOLE_BINARIES": {
+      "location": {
+        "uri": "file:///home/rafi/Desktop/codeing_projects/c++/game%20dev/minecraft-clone/thirdparty/glfw-3.3.2/tests/CMakeLists.txt",
+        "range": {
+          "start": {
+            "line": 64,
+            "character": 4
+          },
+          "end": {
+            "line": 64,
+            "character": 20
+          }
+        }
+      },
+      "document_info": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/tests/CMakeLists.txt",
+      "is_function": false
+    },
+    "GLAD_GL": {
+      "location": {
+        "uri": "file:///home/rafi/Desktop/codeing_projects/c++/game%20dev/minecraft-clone/thirdparty/glfw-3.3.2/tests/CMakeLists.txt",
+        "range": {
+          "start": {
+            "line": 13,
+            "character": 4
+          },
+          "end": {
+            "line": 13,
+            "character": 11
+          }
+        }
+      },
+      "document_info": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/tests/CMakeLists.txt",
+      "is_function": false
+    },
+    "GLFW_PKG_LIBS": {
+      "location": {
+        "uri": "file:///home/rafi/Desktop/codeing_projects/c++/game%20dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+        "range": {
+          "start": {
+            "line": 304,
+            "character": 8
+          },
+          "end": {
+            "line": 304,
+            "character": 21
+          }
+        }
+      },
+      "document_info": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+      "is_function": false
+    },
+    "GLFW_BUILD_TESTS": {
+      "location": {
+        "uri": "file:///home/rafi/Desktop/codeing_projects/c++/game%20dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+        "range": {
+          "start": {
+            "line": 18,
+            "character": 7
+          },
+          "end": {
+            "line": 18,
+            "character": 23
+          }
+        }
+      },
+      "document_info": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+      "is_function": false
+    },
+    "glfw_PKG_DEPS": {
+      "location": {
+        "uri": "file:///home/rafi/Desktop/codeing_projects/c++/game%20dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+        "range": {
+          "start": {
+            "line": 286,
+            "character": 8
+          },
+          "end": {
+            "line": 286,
+            "character": 21
+          }
+        }
+      },
+      "document_info": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+      "is_function": false
+    },
+    "_GLFW_VULKAN_STATIC": {
+      "location": {
+        "uri": "file:///home/rafi/Desktop/codeing_projects/c++/game%20dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+        "range": {
+          "start": {
+            "line": 52,
+            "character": 8
+          },
+          "end": {
+            "line": 52,
+            "character": 27
+          }
+        }
+      },
+      "document_info": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+      "is_function": false
+    },
+    "GLFW_INSTALL": {
+      "location": {
+        "uri": "file:///home/rafi/Desktop/codeing_projects/c++/game%20dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+        "range": {
+          "start": {
+            "line": 20,
+            "character": 7
+          },
+          "end": {
+            "line": 20,
+            "character": 19
+          }
+        }
+      },
+      "document_info": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+      "is_function": false
+    },
+    "_GLFW_COCOA": {
+      "location": {
+        "uri": "file:///home/rafi/Desktop/codeing_projects/c++/game%20dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+        "range": {
+          "start": {
+            "line": 145,
+            "character": 8
+          },
+          "end": {
+            "line": 145,
+            "character": 19
+          }
+        }
+      },
+      "document_info": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+      "is_function": false
+    },
+    "_GLFW_WIN32": {
+      "location": {
+        "uri": "file:///home/rafi/Desktop/codeing_projects/c++/game%20dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+        "range": {
+          "start": {
+            "line": 142,
+            "character": 8
+          },
+          "end": {
+            "line": 142,
+            "character": 19
+          }
+        }
+      },
+      "document_info": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+      "is_function": false
+    },
+    "_GLFW_BUILD_DLL": {
+      "location": {
+        "uri": "file:///home/rafi/Desktop/codeing_projects/c++/game%20dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+        "range": {
+          "start": {
+            "line": 36,
+            "character": 8
+          },
+          "end": {
+            "line": 36,
+            "character": 23
+          }
+        }
+      },
+      "document_info": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+      "is_function": false
+    },
+    "_GLFW_OSMESA": {
+      "location": {
+        "uri": "file:///home/rafi/Desktop/codeing_projects/c++/game%20dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+        "range": {
+          "start": {
+            "line": 139,
+            "character": 8
+          },
+          "end": {
+            "line": 139,
+            "character": 20
+          }
+        }
+      },
+      "document_info": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+      "is_function": false
+    },
+    "_GLFW_X11": {
+      "location": {
+        "uri": "file:///home/rafi/Desktop/codeing_projects/c++/game%20dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+        "range": {
+          "start": {
+            "line": 148,
+            "character": 8
+          },
+          "end": {
+            "line": 148,
+            "character": 17
+          }
+        }
+      },
+      "document_info": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+      "is_function": false
+    },
+    "CMAKE_C_STANDARD": {
+      "location": {
+        "uri": "file:///home/rafi/Desktop/codeing_projects/c++/game%20dev/minecraft-clone/thirdparty/glfw-3.3.2/tests/CMakeLists.txt",
+        "range": {
+          "start": {
+            "line": 24,
+            "character": 8
+          },
+          "end": {
+            "line": 24,
+            "character": 24
+          }
+        }
+      },
+      "document_info": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/tests/CMakeLists.txt",
+      "is_function": false
+    },
+    "ICON": {
+      "location": {
+        "uri": "file:///home/rafi/Desktop/codeing_projects/c++/game%20dev/minecraft-clone/thirdparty/glfw-3.3.2/examples/CMakeLists.txt",
+        "range": {
+          "start": {
+            "line": 16,
+            "character": 8
+          },
+          "end": {
+            "line": 16,
+            "character": 12
+          }
+        }
+      },
+      "document_info": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/examples/CMakeLists.txt",
+      "is_function": false
+    },
+    "glfw_SOURCES": {
+      "location": {
+        "uri": "file:///home/rafi/Desktop/codeing_projects/c++/game%20dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt",
+        "range": {
+          "start": {
+            "line": 70,
+            "character": 12
+          },
+          "end": {
+            "line": 70,
+            "character": 24
+          }
+        }
+      },
+      "document_info": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt",
+      "is_function": false
+    },
+    "_GLFW_USE_HYBRID_HPG": {
+      "location": {
+        "uri": "file:///home/rafi/Desktop/codeing_projects/c++/game%20dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+        "range": {
+          "start": {
+            "line": 186,
+            "character": 12
+          },
+          "end": {
+            "line": 186,
+            "character": 32
+          }
+        }
+      },
+      "document_info": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+      "is_function": false
+    },
+    "GLAD_VULKAN": {
+      "location": {
+        "uri": "file:///home/rafi/Desktop/codeing_projects/c++/game%20dev/minecraft-clone/thirdparty/glfw-3.3.2/tests/CMakeLists.txt",
+        "range": {
+          "start": {
+            "line": 15,
+            "character": 4
+          },
+          "end": {
+            "line": 15,
+            "character": 15
+          }
+        }
+      },
+      "document_info": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/tests/CMakeLists.txt",
+      "is_function": false
+    },
+    "GLFW_DOXYGEN_SOURCES": {
+      "location": {
+        "uri": "file:///home/rafi/Desktop/codeing_projects/c++/game%20dev/minecraft-clone/thirdparty/glfw-3.3.2/docs/CMakeLists.txt",
+        "range": {
+          "start": {
+            "line": 3,
+            "character": 4
+          },
+          "end": {
+            "line": 3,
+            "character": 24
+          }
+        }
+      },
+      "document_info": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/docs/CMakeLists.txt\n\n(i.e. Pages) list in the generated documentation",
+      "is_function": false
+    },
+    "GLFW_BUILD_DOCS": {
+      "location": {
+        "uri": "file:///home/rafi/Desktop/codeing_projects/c++/game%20dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+        "range": {
+          "start": {
+            "line": 19,
+            "character": 7
+          },
+          "end": {
+            "line": 19,
+            "character": 22
+          }
+        }
+      },
+      "document_info": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+      "is_function": false
+    },
+    "CMAKE_LEGACY_CYGWIN_WIN32": {
+      "location": {
+        "uri": "file:///home/rafi/Desktop/codeing_projects/c++/game%20dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+        "range": {
+          "start": {
+            "line": 4,
+            "character": 4
+          },
+          "end": {
+            "line": 4,
+            "character": 29
+          }
+        }
+      },
+      "document_info": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+      "is_function": false
+    },
+    "glfw_HEADERS": {
+      "location": {
+        "uri": "file:///home/rafi/Desktop/codeing_projects/c++/game%20dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt",
+        "range": {
+          "start": {
+            "line": 69,
+            "character": 12
+          },
+          "end": {
+            "line": 69,
+            "character": 24
+          }
+        }
+      },
+      "document_info": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt",
+      "is_function": false
+    },
+    "GETOPT": {
+      "location": {
+        "uri": "file:///home/rafi/Desktop/codeing_projects/c++/game%20dev/minecraft-clone/thirdparty/glfw-3.3.2/tests/CMakeLists.txt",
+        "range": {
+          "start": {
+            "line": 17,
+            "character": 4
+          },
+          "end": {
+            "line": 17,
+            "character": 10
+          }
+        }
+      },
+      "document_info": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/tests/CMakeLists.txt",
+      "is_function": false
+    },
+    "GLFW_LIB_NAME": {
+      "location": {
+        "uri": "file:///home/rafi/Desktop/codeing_projects/c++/game%20dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+        "range": {
+          "start": {
+            "line": 43,
+            "character": 8
+          },
+          "end": {
+            "line": 43,
+            "character": 21
+          }
+        }
+      },
+      "document_info": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+      "is_function": false
+    },
+    "_GLFW_WAYLAND": {
+      "location": {
+        "uri": "file:///home/rafi/Desktop/codeing_projects/c++/game%20dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+        "range": {
+          "start": {
+            "line": 136,
+            "character": 8
+          },
+          "end": {
+            "line": 136,
+            "character": 21
+          }
+        }
+      },
+      "document_info": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+      "is_function": false
+    },
+    "TINYCTHREAD": {
+      "location": {
+        "uri": "file:///home/rafi/Desktop/codeing_projects/c++/game%20dev/minecraft-clone/thirdparty/glfw-3.3.2/tests/CMakeLists.txt",
+        "range": {
+          "start": {
+            "line": 19,
+            "character": 4
+          },
+          "end": {
+            "line": 19,
+            "character": 15
+          }
+        }
+      },
+      "document_info": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/tests/CMakeLists.txt",
+      "is_function": false
+    },
+    "GLFW_DOXYGEN_INPUT": {
+      "location": {
+        "uri": "file:///home/rafi/Desktop/codeing_projects/c++/game%20dev/minecraft-clone/thirdparty/glfw-3.3.2/docs/CMakeLists.txt",
+        "range": {
+          "start": {
+            "line": 23,
+            "character": 8
+          },
+          "end": {
+            "line": 23,
+            "character": 26
+          }
+        }
+      },
+      "document_info": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/docs/CMakeLists.txt",
+      "is_function": false
+    },
+    "DOXYGEN_SKIP_DOT": {
+      "location": {
+        "uri": "file:///home/rafi/Desktop/codeing_projects/c++/game%20dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+        "range": {
+          "start": {
+            "line": 60,
+            "character": 8
+          },
+          "end": {
+            "line": 60,
+            "character": 24
+          }
+        }
+      },
+      "document_info": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+      "is_function": false
+    },
+    "GLFW_CONFIG_PATH": {
+      "location": {
+        "uri": "file:///home/rafi/Desktop/codeing_projects/c++/game%20dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+        "range": {
+          "start": {
+            "line": 312,
+            "character": 4
+          },
+          "end": {
+            "line": 312,
+            "character": 20
+          }
+        }
+      },
+      "document_info": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+      "is_function": false
+    },
+    "GUI_ONLY_BINARIES": {
+      "location": {
+        "uri": "file:///home/rafi/Desktop/codeing_projects/c++/game%20dev/minecraft-clone/thirdparty/glfw-3.3.2/tests/CMakeLists.txt",
+        "range": {
+          "start": {
+            "line": 62,
+            "character": 4
+          },
+          "end": {
+            "line": 62,
+            "character": 21
+          }
+        }
+      },
+      "document_info": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/tests/CMakeLists.txt",
+      "is_function": false
+    },
+    "GLFW_PKG_DEPS": {
+      "location": {
+        "uri": "file:///home/rafi/Desktop/codeing_projects/c++/game%20dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+        "range": {
+          "start": {
+            "line": 301,
+            "character": 8
+          },
+          "end": {
+            "line": 301,
+            "character": 21
+          }
+        }
+      },
+      "document_info": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+      "is_function": false
+    },
+    "CMAKE_SHARED_LINKER_FLAGS": {
+      "location": {
+        "uri": "file:///home/rafi/Desktop/codeing_projects/c++/game%20dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+        "range": {
+          "start": {
+            "line": 128,
+            "character": 12
+          },
+          "end": {
+            "line": 128,
+            "character": 37
+          }
+        }
+      },
+      "document_info": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+      "is_function": false
+    }
+  }
+}

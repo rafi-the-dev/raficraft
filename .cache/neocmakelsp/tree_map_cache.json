@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-24T13:44:48.145914140+02:00",
+  "data": {
+    "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/imgui-docking/CMakeLists.txt": "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/CMakeLists.txt",
+    "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/stb_truetype/CMakeLists.txt": "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/CMakeLists.txt",
+    "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/stb_image/CMakeLists.txt": "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/CMakeLists.txt",
+    "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/examples/CMakeLists.txt": "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+    "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/docs/CMakeLists.txt": "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+    "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/tests/CMakeLists.txt": "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+    "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glad/CMakeLists.txt": "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/CMakeLists.txt",
+    "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt": "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt",
+    "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt": "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/CMakeLists.txt",
+    "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glm/CMakeLists.txt": "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/CMakeLists.txt"
+  }
+}

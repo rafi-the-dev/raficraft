@@ -1,0 +1,14 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/cmake_install.cmake",
+		"/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/thirdparty/glfw-3.3.2/cmake_install.cmake",
+		"/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/thirdparty/glfw-3.3.2/src/cmake_install.cmake",
+		"/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/thirdparty/glad/cmake_install.cmake",
+		"/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/thirdparty/stb_image/cmake_install.cmake",
+		"/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/thirdparty/stb_truetype/cmake_install.cmake",
+		"/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/thirdparty/glm/cmake_install.cmake",
+		"/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/thirdparty/imgui-docking/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
