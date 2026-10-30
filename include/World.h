@@ -3,6 +3,8 @@
 #include "glm/glm.hpp"
 #include <unordered_map>
 
+
+
 struct Chunk;
 
 struct ChunkHash {
@@ -17,4 +19,7 @@ struct ChunkHash {
 struct world {
     std::unordered_map<glm::vec2, Chunk, ChunkHash> chunks;
     Block getBlock(int x, int y, int z);
+    void setBlock(int x, int y, int z, Block type);
+    void markChunkDirty(int x, int z);
+    void markNeighborsDirty(int x, int z);
 };

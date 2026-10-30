@@ -1,6 +1,6 @@
 # Minecraft Clone
 
-A Minecraft-inspired project made from scratch in C++ and OpenGL. Explore a procedurally generated 2 by 2 chunk world with grass, dirt, and stone terrain. Each chunk is 16 by 256 by 16 blocks, and only exposed block faces are rendered, including at chunk boundaries. Terrain uses seeded Simplex fractal noise from FastNoiseSIMD.
+A Minecraft-inspired project made from scratch in C++ and OpenGL. Explore procedurally generated grass, dirt, and stone terrain on foot, jump over obstacles, and break blocks with a centered crosshair. Chunks stream in as you move through the world. Each chunk is 16 by 256 by 16 blocks, and only exposed block faces are rendered, including at chunk boundaries. Terrain uses seeded Simplex fractal noise from FastNoiseSIMD.
 
 ![Minecraft Clone screenshot](img/readme.png?v=70a539f)
 
@@ -18,9 +18,17 @@ A graphics driver supporting OpenGL 4.6 and `GL_ARB_bindless_texture` is require
 ## Controls
 
 - Mouse: look around.
-- W/A/S/D: fly forward, left, backward, and right.
-- Q/E: fly down and up.
+- W/A/S/D: walk forward, left, backward, and right.
+- Space: jump while on the ground.
+- Left Shift: sprint.
+- Left mouse button: break the targeted block within five blocks (one block per click).
 - Escape: quit.
+
+## World and gameplay
+
+Player movement includes gravity and collision with solid blocks. Terrain renders within three chunks of the player in each horizontal direction, with chunk data retained within five chunks. Distant chunks unload and regenerate from the fixed seed when revisited.
+
+Block edits stay in memory while their chunk remains loaded. There is no world saving, so edits are lost when a chunk unloads or the game exits. Block placement is not implemented yet.
 
 ## Build and run
 

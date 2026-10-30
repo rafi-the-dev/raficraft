@@ -2,10 +2,10 @@
 #include "Block.h"
 #include "Face.h"
 #include "World.h"
-#include <glad/glad.h>
 #include "glm/glm.hpp"
 #include "vector"
 #include <cstdint>
+#include <glad/glad.h>
 #include <iostream>
 
 constexpr int CHUNK_SIZE_X = 16;
@@ -29,4 +29,6 @@ struct Chunk {
     void BuildFaces(world& w, int chunkX, int chunkZ);
 
     Block getBlock(int x, int y, int z);
+    void UploadGPU();
+    void UnloadGPU();
 };

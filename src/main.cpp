@@ -15,6 +15,7 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include <stb_image/stb_image.h>
 
+#include "Player.h"
 #include "World.h"
 #include <Worldgen.h>
 #include <array>
@@ -23,8 +24,10 @@
 #include <cstdint>
 #include <iostream>
 #include <vector>
+#include "Chunk.h"
 
 world w;
+Player player;
 
 // Texture paths
 constexpr const char* DIRT_TEXTURE = RESOURCES_PATH "assets/blocks/dirt.png";
@@ -33,24 +36,28 @@ constexpr const char* GRASS_TOP_TEXTURE = RESOURCES_PATH "assets/blocks/grass_to
 constexpr const char* GRASS_SIDE_TEXTURE = RESOURCES_PATH "assets/blocks/grass_side.png";
 
 constexpr const char* TEXTURE_PATHS[] = {
-    DIRT_TEXTURE,        // 0
-    STONE_TEXTURE,       // 1
-    GRASS_TOP_TEXTURE,   // 2
-    GRASS_SIDE_TEXTURE   // 3
+    DIRT_TEXTURE,      // 0
+    STONE_TEXTURE,     // 1
+    GRASS_TOP_TEXTURE, // 2
+    GRASS_SIDE_TEXTURE // 3
 };
 
 // Camera
 double lastX = 0.0;
 double lastY = 0.0;
 
-float yaw = -90.0f;
-float pitch = 0.0f;
-
 bool firstMouse = true;
 
-glm::vec3 cameraPos(0.0f, 66.0f, 4.0f);
 glm::vec3 cameraFront(0.0f, 0.0f, -1.0f);
 glm::vec3 cameraUp(0.0f, 1.0f, 0.0f);
+
+float crosshairVertices[] = {-10.0f, -1.0f,  10.0f, -1.0f,  10.0f,  1.0f,
+
+                             -10.0f, -1.0f,  10.0f, 1.0f,   -10.0f, 1.0f,
+
+                             -1.0f,  -10.0f, 1.0f,  -10.0f, 1.0f,   10.0f,
+
+                             -1.0f,  -10.0f, 1.0f,  10.0f,  -1.0f,  10.0f};
 
 void mouse_callback(GLFWwindow* window, double xpos, double ypos) {
     if(firstMouse) {
@@ -68,10 +75,10 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos) {
 
     constexpr float sensitivity = 0.1f;
 
-    yaw += static_cast<float>(deltaX) * sensitivity;
-    pitch += static_cast<float>(deltaY) * sensitivity;
+    player.yaw += static_cast<float>(deltaX) * sensitivity;
+    player.pitch += static_cast<float>(deltaY) * sensitivity;
 
-    pitch = glm::clamp(pitch, -89.0f, 89.0f);
+    player.pitch = glm::clamp(player.pitch, -89.0f, 89.0f);
 }
 
 // Load a file and create an OpenGL texture
@@ -138,6 +145,11 @@ int main() {
         return -1;
     }
 
+    int previousChunkX = static_cast<int>(std::floor(player.pos.x / CHUNK_SIZE_X));
+    int previousChunkZ = static_cast<int>(std::floor(player.pos.z / CHUNK_SIZE_Z));
+
+    UpdateChunks(w, previousChunkX, previousChunkZ);
+
     glfwSetKeyCallback(window, key_callback);
     glfwSetCursorPosCallback(window, mouse_callback);
     glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
@@ -147,6 +159,21 @@ int main() {
     }
 
     enableReportGlErrors();
+
+    GLuint crosshairVAO, crosshairVBO;
+
+    glGenVertexArrays(1, &crosshairVAO);
+    glGenBuffers(1, &crosshairVBO);
+
+    glBindVertexArray(crosshairVAO);
+    glBindBuffer(GL_ARRAY_BUFFER, crosshairVBO);
+
+    glBufferData(GL_ARRAY_BUFFER, sizeof(crosshairVertices), crosshairVertices, GL_STATIC_DRAW);
+
+    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void*)0);
+
+    glEnableVertexAttribArray(0);
+    glBindVertexArray(0);
 
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_CULL_FACE);
@@ -198,8 +225,6 @@ int main() {
 
     glBindBufferBase(GL_SHADER_STORAGE_BUFFER, 0, handleSSBO);
 
-    GenWorld(w, 2, 2);
-
     for(auto& [pos, chunk] : w.chunks) {
         chunk.BuildFaces(w, pos.x, pos.y);
         glGenVertexArrays(1, &chunk.vao);
@@ -233,6 +258,12 @@ int main() {
     glm::mat4 proj(1.0f);
 
     float lastFrame = static_cast<float>(glfwGetTime());
+    Shader crosshairShader;
+
+    crosshairShader.loadShaderProgramFromFile(RESOURCES_PATH "crosshair.vert",
+                                              RESOURCES_PATH "crosshair.frag");
+
+    GLint uScreenSize = glGetUniformLocation(crosshairShader.id, "screenSize");
 
     while(!glfwWindowShouldClose(window)) {
         glfwPollEvents();
@@ -248,49 +279,33 @@ int main() {
             continue;
         }
 
-        // Mouse direction
-        glm::vec3 direction;
+        player.Update(deltaTime, window, w, cameraFront);
 
-        direction.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
-        direction.y = sin(glm::radians(pitch));
-        direction.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
+        int playerChunkX = static_cast<int>(std::floor(player.pos.x / CHUNK_SIZE_X));
+        int playerChunkZ = static_cast<int>(std::floor(player.pos.z / CHUNK_SIZE_Z));
 
-        cameraFront = glm::normalize(direction);
+        if(playerChunkX != previousChunkX || playerChunkZ != previousChunkZ) {
+            UpdateChunks(w, playerChunkX, playerChunkZ);
+
+            previousChunkX = playerChunkX;
+            previousChunkZ = playerChunkZ;
+        }
+
+        cameraFront = {cos(glm::radians(player.yaw)) * cos(glm::radians(player.pitch)),
+                       sin(glm::radians(player.pitch)),
+                       sin(glm::radians(player.yaw)) * cos(glm::radians(player.pitch))};
 
         // Camera movement
         float cameraSpeed = 15.0f * deltaTime;
 
         glm::vec3 cameraRight = glm::normalize(glm::cross(cameraFront, cameraUp));
 
-        if(glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) {
-            cameraPos += cameraSpeed * cameraFront;
-        }
+        glm::vec3 eyePos = player.pos + glm::vec3(0.0f, 1.62f, 0.0f);
 
-        if(glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) {
-            cameraPos -= cameraSpeed * cameraFront;
-        }
-
-        if(glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) {
-            cameraPos -= cameraSpeed * cameraRight;
-        }
-
-        if(glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS) {
-            cameraPos += cameraSpeed * cameraRight;
-        }
-
-        if(glfwGetKey(window, GLFW_KEY_E) == GLFW_PRESS) {
-            cameraPos += cameraSpeed * cameraUp;
-        }
-
-        if(glfwGetKey(window, GLFW_KEY_Q) == GLFW_PRESS) {
-            cameraPos -= cameraSpeed * cameraUp;
-        }
-
-        // Matrices
-        view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
+        view = glm::lookAt(eyePos, eyePos + cameraFront, cameraUp);
 
         proj =
-            glm::perspective(glm::radians(45.0f), static_cast<float>(width) / height, 0.1f, 100.0f);
+            glm::perspective(glm::radians(90.0f), static_cast<float>(width) / height, 0.1f, 100.0f);
 
         glViewport(0, 0, width, height);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -304,18 +319,52 @@ int main() {
         glUniformMatrix4fv(uModel, 1, GL_FALSE, glm::value_ptr(model));
 
         for(auto& [pos, chunk] : w.chunks) {
+            int dx = std::abs(pos.x - playerChunkX);
+            int dz = std::abs(pos.y - playerChunkZ);
+
+            if(std::max(dx, dz) > RENDER_DISTANCE) {
+                continue;
+            }
+
+            if(chunk.dirty || chunk.vao == 0) {
+                chunk.BuildFaces(w, pos.x, pos.y);
+
+                if(chunk.vao == 0) {
+                    chunk.UploadGPU();
+                } else {
+                    glBindBuffer(GL_ARRAY_BUFFER, chunk.vbo);
+
+                    glBufferData(GL_ARRAY_BUFFER, chunk.faces.size() * sizeof(Face),
+                                 chunk.faces.data(), GL_DYNAMIC_DRAW);
+                }
+            }
+
             glm::mat4 chunkModel = glm::translate(
                 glm::mat4(1.0f), glm::vec3(pos.x * CHUNK_SIZE_X, 0.0f, pos.y * CHUNK_SIZE_Z));
+
             glUniformMatrix4fv(uModel, 1, GL_FALSE, glm::value_ptr(chunkModel));
             glBindVertexArray(chunk.vao);
 
-            // ARB bindless samplers must be dynamically uniform within each draw.
             for(const FaceBatch& batch : chunk.faceBatches) {
                 glUniform1ui(uTextureIndex, batch.textureIndex);
+
                 glDrawArraysInstancedBaseInstance(GL_TRIANGLES, 0, 6,
-                    static_cast<GLsizei>(batch.faceCount), static_cast<GLuint>(batch.firstFace));
+                                                  static_cast<GLsizei>(batch.faceCount),
+                                                  static_cast<GLuint>(batch.firstFace));
             }
         }
+
+        glDisable(GL_DEPTH_TEST);
+
+        crosshairShader.bind();
+
+        glUniform2f(uScreenSize, static_cast<float>(width), static_cast<float>(height));
+
+        glBindVertexArray(crosshairVAO);
+        glDrawArrays(GL_TRIANGLES, 0, 12);
+
+        glBindVertexArray(0);
+        glEnable(GL_DEPTH_TEST);
 
         glfwSwapBuffers(window);
     }
