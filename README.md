@@ -2,7 +2,7 @@
 
 A Minecraft-inspired project made from scratch in C++ and OpenGL. Explore a procedurally generated 2 by 2 chunk world with grass, dirt, and stone terrain. Each chunk is 16 by 256 by 16 blocks, and only exposed block faces are rendered, including at chunk boundaries. Terrain uses seeded Simplex fractal noise from FastNoiseSIMD.
 
-![Minecraft Clone screenshot](img/readme.png)
+![Minecraft Clone screenshot](img/readme.png?v=70a539f)
 
 ## Download and play
 
