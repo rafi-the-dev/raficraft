@@ -7,7 +7,16 @@ set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>") #we want
 project(mygame)
 
 option(RAFICRAFT_PORTABLE "Use bundled resources for distribution" OFF)
-option(RAFICRAFT_BUILD_TESTS "Build face batching regression tests" OFF)
+option(RAFICRAFT_BUILD_TESTS "Build regression tests" OFF)
+
+if(RAFICRAFT_PORTABLE)
+    include(CheckIPOSupported)
+    check_ipo_supported(RESULT ipoSupported OUTPUT ipoError)
+    if(NOT ipoSupported)
+        message(FATAL_ERROR "Release link-time optimization unavailable: ${ipoError}")
+    endif()
+    set(CMAKE_INTERPROCEDURAL_OPTIMIZATION_RELEASE ON)
+endif()
 
 if(RAFICRAFT_BUILD_TESTS)
     enable_testing()
@@ -15,6 +24,11 @@ if(RAFICRAFT_BUILD_TESTS)
     target_include_directories(face_batch_tests PRIVATE include)
     target_compile_features(face_batch_tests PRIVATE cxx_std_17)
     add_test(NAME face_batches COMMAND face_batch_tests)
+    add_executable(input_tests tests/Input.cpp src/input.cpp)
+    target_include_directories(input_tests PRIVATE include thirdparty/glfw-3.3.2/include)
+    target_compile_definitions(input_tests PRIVATE GLFW_INCLUDE_NONE)
+    target_compile_features(input_tests PRIVATE cxx_std_17)
+    add_test(NAME seed_input COMMAND input_tests)
 endif()
 
 set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
@@ -26,8 +40,12 @@ add_subdirectory(thirdparty/glad)				#opengl loader
 add_subdirectory(thirdparty/stb_image)			#loading immaged
 add_subdirectory(thirdparty/stb_truetype)		#loading ttf files
 add_subdirectory(thirdparty/glm)				#math
+add_subdirectory(thirdparty/gl2d)
+add_subdirectory(thirdparty/glui)
 add_subdirectory(thirdparty/imgui-docking)		#ui
 add_subdirectory(thirdparty/FastNoiseSIMD)
+# The SIMD backends define different vector types with the same internal names.
+set_property(TARGET FastNoiseSIMD PROPERTY INTERPROCEDURAL_OPTIMIZATION_RELEASE OFF)
 
 
 # Define MY_SOURCES to be a list of all the source files for my game 
@@ -40,6 +58,12 @@ set_property(TARGET "${CMAKE_PROJECT_NAME}" PROPERTY CXX_STANDARD 17)
 
 if(RAFICRAFT_PORTABLE)
     target_compile_definitions("${CMAKE_PROJECT_NAME}" PRIVATE RESOURCES_PATH="./resources/")
+    if(WIN32)
+        set_property(TARGET "${CMAKE_PROJECT_NAME}" PROPERTY WIN32_EXECUTABLE ON)
+        if(MSVC)
+            target_link_options("${CMAKE_PROJECT_NAME}" PRIVATE /ENTRY:mainCRTStartup)
+        endif()
+    endif()
 else()
     target_compile_definitions("${CMAKE_PROJECT_NAME}" PRIVATE RESOURCES_PATH="${CMAKE_CURRENT_SOURCE_DIR}/resources/")
 endif()
@@ -63,7 +87,7 @@ target_include_directories("${CMAKE_PROJECT_NAME}" PUBLIC "${CMAKE_CURRENT_SOURC
 
 
 target_link_libraries("${CMAKE_PROJECT_NAME}" PRIVATE glm glfw 
-	glad stb_image stb_truetype imgui FastNoiseSIMD)
+	glad stb_image stb_truetype imgui FastNoiseSIMD glui)
 
 
 if(MINGW)
@@ -80,5 +104,6 @@ if(RAFICRAFT_PORTABLE)
         install(FILES packaging/Play.bat DESTINATION .)
     else()
         install(PROGRAMS packaging/play.sh DESTINATION .)
+        install(PROGRAMS packaging/Play.desktop DESTINATION .)
     endif()
 endif()

@@ -8,12 +8,18 @@ A Minecraft-inspired project made from scratch in C++ and OpenGL. Explore proced
 
 Download a Linux or Windows x86_64 archive from [Releases](https://github.com/rafi-the-dev/raficraft/releases), then extract the entire archive.
 
-- Linux: run `./play.sh` from the extracted folder.
-- Windows: run `Play.bat` from the extracted folder.
+- Linux: open `Play.desktop` from the extracted folder. Your file manager may ask you to allow launching it. You can also run `./play.sh`.
+- Windows: open `mygame.exe` from the extracted folder. The game starts without a console window. `Play.bat` remains available as a command-line launcher.
 
-Keep the executable and `resources/` together. The launchers select the correct working directory. These are optimized Release builds. Windows builds include the compiler runtime through static linking; Linux builds require compatible system libraries.
+Keep the executable and `resources/` together. The launchers select the correct working directory. These are stripped Release builds with compiler optimization and link-time optimization enabled. The Linux desktop launcher starts without a terminal window. Windows builds include the compiler runtime through static linking; Linux builds require compatible system libraries.
 
 A graphics driver supporting OpenGL 4.6 and `GL_ARB_bindless_texture` is required. No NVIDIA-specific extensions are required. Faces are grouped by texture so each draw uses a dynamically uniform bindless sampler. Non-NVIDIA GPUs still need driver support for `GL_ARB_bindless_texture`. The published Linux x86_64 build requires glibc 2.38 or newer, libstdc++ providing `GLIBCXX_3.4.32`, and X11 libraries. GPU extension support is required on both platforms.
+
+## Start a world
+
+The game opens to a menu with a visible mouse cursor. Click **Play**, click the seed field, then enter a signed 32-bit integer. The default seed is `1337`. Backspace deletes characters. Click **Create World** to generate terrain and capture the mouse. Invalid or out-of-range seeds show an error. Click **Quit** to exit from the main menu.
+
+The crosshair, camera controls, player movement, and terrain generation activate after creating a world. The menu uses GLUI and GL2D; its font is bundled in `resources/font/`.
 
 ## Controls
 
@@ -26,7 +32,7 @@ A graphics driver supporting OpenGL 4.6 and `GL_ARB_bindless_texture` is require
 
 ## World and gameplay
 
-Player movement includes gravity and collision with solid blocks. Terrain renders within three chunks of the player in each horizontal direction, with chunk data retained within five chunks. Distant chunks unload and regenerate from the fixed seed when revisited.
+Player movement includes gravity and collision with solid blocks. Terrain renders within three chunks of the player in each horizontal direction, with chunk data retained within five chunks. Distant chunks unload and regenerate from the selected seed when revisited.
 
 Block edits stay in memory while their chunk remains loaded. There is no world saving, so edits are lost when a chunk unloads or the game exits. Block placement is not implemented yet.
 
@@ -40,7 +46,15 @@ cmake --build build-dev
 ./build-dev/mygame
 ```
 
-Development builds load resources from the source tree.
+Development builds load resources from the source tree. Keep `resources/font/ANDYB.TTF` available for menu text.
+
+Run the regression tests with:
+
+```sh
+cmake -S . -B build-dev -DRAFICRAFT_BUILD_TESTS=ON
+cmake --build build-dev
+ctest --test-dir build-dev --output-on-failure
+```
 
 ## Build a release
 
@@ -49,7 +63,7 @@ For Linux with a single-configuration generator:
 ```sh
 cmake -S . -B build-release -DCMAKE_BUILD_TYPE=Release -DRAFICRAFT_PORTABLE=ON
 cmake --build build-release --config Release --parallel
-cmake --install build-release --config Release --prefix dist/raficraft-linux-x86_64
+cmake --install build-release --config Release --strip --prefix dist/raficraft-linux-x86_64
 ```
 
 For native Windows using Visual Studio:
@@ -57,7 +71,7 @@ For native Windows using Visual Studio:
 ```sh
 cmake -S . -B build-release -DRAFICRAFT_PORTABLE=ON
 cmake --build build-release --config Release --parallel
-cmake --install build-release --config Release --prefix dist/raficraft-windows-x86_64
+cmake --install build-release --config Release --strip --prefix dist/raficraft-windows-x86_64
 ```
 
 To cross-compile Windows x86_64 on Linux with MinGW-w64:
@@ -65,7 +79,9 @@ To cross-compile Windows x86_64 on Linux with MinGW-w64:
 ```sh
 cmake -S . -B build-windows-release -DCMAKE_TOOLCHAIN_FILE=cmake/mingw-w64.cmake -DCMAKE_BUILD_TYPE=Release -DRAFICRAFT_PORTABLE=ON
 cmake --build build-windows-release --config Release --parallel
-cmake --install build-windows-release --config Release --prefix dist/raficraft-windows-x86_64
+cmake --install build-windows-release --config Release --strip --prefix dist/raficraft-windows-x86_64
 ```
 
 Package the entire installed folder and use its launcher to run the game. `RAFICRAFT_PORTABLE=ON` uses the bundled `resources/` directory instead of an absolute source path.
+
+Portable Release builds require a compiler with link-time optimization support. They use the compiler's standard Release optimization settings without fast-math or a machine-specific CPU target. FastNoiseSIMD's CPU backends are kept outside link-time optimization to preserve their separate vector types. Install with `cmake --install ... --strip` to remove debug symbols from packaged executables. Release builds disable the OpenGL debug context and synchronous debug callbacks. Windows portable builds use the GUI subsystem; Linux packages include a `Terminal=false` desktop launcher.

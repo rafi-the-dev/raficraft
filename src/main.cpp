@@ -14,16 +14,21 @@
 
 #define STB_IMAGE_IMPLEMENTATION
 #include <stb_image/stb_image.h>
+#undef STB_IMAGE_IMPLEMENTATION
 
 #include "Chunk.h"
 #include "Player.h"
 #include "World.h"
 #include <Worldgen.h>
 #include <array>
+#include <charconv>
 #include <cmath>
 #include <cstddef>
 #include <cstdint>
+#include <cstring>
+#include <glui/glui.h>
 #include <iostream>
+#include <string.h>
 #include <vector>
 
 world w;
@@ -41,6 +46,13 @@ constexpr const char* TEXTURE_PATHS[] = {
     GRASS_TOP_TEXTURE, // 2
     GRASS_SIDE_TEXTURE // 3
 };
+
+enum states {
+    menu,
+    playing,
+};
+
+states state = states::menu;
 
 // Camera
 double lastX = 0.0;
@@ -60,6 +72,10 @@ float crosshairVertices[] = {-10.0f, -1.0f,  10.0f, -1.0f,  10.0f,  1.0f,
                              -1.0f,  -10.0f, 1.0f,  10.0f,  -1.0f,  10.0f};
 
 void mouse_callback(GLFWwindow* window, double xpos, double ypos) {
+
+    if(state != states::playing) {
+        return;
+    }
     if(firstMouse) {
         lastX = xpos;
         lastY = ypos;
@@ -72,6 +88,7 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos) {
 
     lastX = xpos;
     lastY = ypos;
+
 
     constexpr float sensitivity = 0.1f;
 
@@ -120,7 +137,9 @@ int main() {
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+#ifndef NDEBUG
     glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, GLFW_TRUE);
+#endif
 
     GLFWwindow* window = glfwCreateWindow(640, 480, "Minecraft Renderer", nullptr, nullptr);
 
@@ -145,6 +164,17 @@ int main() {
         return -1;
     }
 
+    gl2d::init();
+
+    gl2d::Renderer2D uiRenderer;
+    uiRenderer.create();
+
+    gl2d::Font uiFont;
+    uiFont.createFromFile(RESOURCES_PATH "font/ANDYB.TTF");
+
+    glui::RendererUi ui;
+    bool previousMouseHeld = false;
+
     FastNoiseSIMD* noise = FastNoiseSIMD::NewFastNoiseSIMD(1337);
 
     noise->SetNoiseType(FastNoiseSIMD::SimplexFractal);
@@ -154,17 +184,19 @@ int main() {
     int previousChunkX = static_cast<int>(std::floor(player.pos.x / CHUNK_SIZE_X));
     int previousChunkZ = static_cast<int>(std::floor(player.pos.z / CHUNK_SIZE_Z));
 
-
-
     glfwSetKeyCallback(window, key_callback);
+    glfwSetCharCallback(window, characterCallback);
     glfwSetCursorPosCallback(window, mouse_callback);
-    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+
+    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
 
     if(glfwRawMouseMotionSupported()) {
         glfwSetInputMode(window, GLFW_RAW_MOUSE_MOTION, GLFW_TRUE);
     }
 
+#ifndef NDEBUG
     enableReportGlErrors();
+#endif
 
     GLuint crosshairVAO, crosshairVBO;
 
@@ -250,6 +282,7 @@ int main() {
     GLint uScreenSize = glGetUniformLocation(crosshairShader.id, "screenSize");
 
     while(!glfwWindowShouldClose(window)) {
+        typedInput.clear();
         glfwPollEvents();
 
         float currentFrame = static_cast<float>(glfwGetTime());
@@ -263,9 +296,10 @@ int main() {
             continue;
         }
 
-        UpdateChunks(w, player.pos, noise);
-
-        player.Update(deltaTime, window, w, cameraFront);
+        if(state == states::playing) {
+            UpdateChunks(w, player.pos, noise);
+            player.Update(deltaTime, window, w, cameraFront);
+        }
 
         int playerChunkX = static_cast<int>(std::floor(player.pos.x / CHUNK_SIZE_X));
         int playerChunkZ = static_cast<int>(std::floor(player.pos.z / CHUNK_SIZE_Z));
@@ -329,17 +363,88 @@ int main() {
             }
         }
 
-        glDisable(GL_DEPTH_TEST);
+        if(state == states::playing) {
+            glDisable(GL_DEPTH_TEST);
 
-        crosshairShader.bind();
+            crosshairShader.bind();
 
-        glUniform2f(uScreenSize, static_cast<float>(width), static_cast<float>(height));
+            glUniform2f(uScreenSize, static_cast<float>(width), static_cast<float>(height));
 
-        glBindVertexArray(crosshairVAO);
-        glDrawArrays(GL_TRIANGLES, 0, 12);
+            glBindVertexArray(crosshairVAO);
+            glDrawArrays(GL_TRIANGLES, 0, 12);
 
-        glBindVertexArray(0);
-        glEnable(GL_DEPTH_TEST);
+            glBindVertexArray(0);
+            glEnable(GL_DEPTH_TEST);
+        }
+
+        if(state == states::menu) {
+            static char seedText[12] = "1337";
+            static bool invalidSeed = false;
+
+            uiRenderer.updateWindowMetrics(width, height);
+
+            ui.Begin(1);
+
+            ui.Text("raficraft", {1, 1, 1, 1});
+
+            ui.BeginMenu("Play", {1, 1, 1, 1}, {});
+
+            ui.Text("World seed", {1, 1, 1, 1});
+            ui.InputText("Seed: ", seedText, sizeof(seedText), {1, 1, 1, 1});
+
+            if(invalidSeed) {
+                ui.Text("Enter a valid whole number", {1, 0.3f, 0.3f, 1});
+            }
+
+            if(ui.Button("Create World", {1, 1, 1, 1})) {
+                int seed = 0;
+                const char* end = seedText + std::strlen(seedText);
+                auto result = std::from_chars(seedText, end, seed);
+
+                invalidSeed = result.ec != std::errc{} || result.ptr != end;
+
+                if(!invalidSeed) {
+                    noise->SetSeed(seed);
+                    state = states::playing;
+                    firstMouse = true;
+                    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+                }
+            }
+
+            ui.EndMenu();
+
+            if(ui.Button("Quit", {1, 1, 1, 1})) {
+                glfwSetWindowShouldClose(window, GLFW_TRUE);
+            }
+
+            ui.End();
+
+            double mouseX, mouseY;
+            glfwGetCursorPos(window, &mouseX, &mouseY);
+
+            int windowWidth, windowHeight;
+            glfwGetWindowSize(window, &windowWidth, &windowHeight);
+
+            // Convert window coordinates to framebuffer coordinates for HiDPI.
+            glm::ivec2 mousePosition = {static_cast<int>(mouseX * width / windowWidth),
+                                        static_cast<int>(mouseY * height / windowHeight)};
+
+            bool mouseHeld = glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS;
+
+            ui.renderFrame(uiRenderer, uiFont, mousePosition, mouseHeld && !previousMouseHeld,
+                           mouseHeld, !mouseHeld && previousMouseHeld,
+                           false, // Escape released, unused here
+                           typedInput,
+                           deltaTime);
+
+            previousMouseHeld = mouseHeld;
+
+            glDisable(GL_CULL_FACE);
+            uiRenderer.flush();
+            glEnable(GL_CULL_FACE);
+            glEnable(GL_DEPTH_TEST);
+            glDisable(GL_BLEND);
+        }
 
         glfwSwapBuffers(window);
     }

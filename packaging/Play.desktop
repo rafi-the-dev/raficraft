@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=raficraft
+Comment=Start raficraft
+Exec=sh -c "cd \\"\\$(dirname \\"\\$1\\")\\" && exec ./play.sh" sh %k
+Terminal=false
+Categories=Game;

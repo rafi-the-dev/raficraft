@@ -1,7 +1,6 @@
 cmake_minimum_required(VERSION 3.15...3.30)
 project(stb_truetype)
 
-add_library(stb_truetype INTERFACE)
+add_library(stb_truetype STATIC src/stb_truetype.cpp)
 
-# Change PUBLIC/PRIVATE to INTERFACE for header-only libraries
-target_include_directories(stb_truetype INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/include")
+target_include_directories(stb_truetype PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")
