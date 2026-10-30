@@ -2,8 +2,10 @@
 #include <cstdint>
 
 struct Face {
-    int x, y, z;
-    uint32_t data;
+    int x = 0;
+    int y = 0;
+    int z = 0;
+    uint32_t data = 0;
 };
 
 enum FaceDirection {
@@ -15,8 +17,4 @@ enum FaceDirection {
     BOTTOM = 5
 };
 
-uint32_t packFace(uint32_t direction, uint32_t texture)
-{
-    return (direction & 7u)
-         | ((texture & 2047u) << 3);
-}
+uint32_t packFace(uint32_t direction, uint32_t texture);

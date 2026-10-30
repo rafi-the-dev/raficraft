@@ -51,6 +51,8 @@ struct Block {
     enum {
         air = 0,
         dirt,
+        stone,
+        grass,
     };
     int type = 0;
 };

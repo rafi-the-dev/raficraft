@@ -15,18 +15,28 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include <stb_image/stb_image.h>
 
+#include "World.h"
+#include <Worldgen.h>
 #include <array>
+#include <cmath>
 #include <cstddef>
 #include <cstdint>
-#include <cmath>
 #include <iostream>
 #include <vector>
 
+world w;
+
 // Texture paths
 constexpr const char* DIRT_TEXTURE = RESOURCES_PATH "assets/blocks/dirt.png";
+constexpr const char* STONE_TEXTURE = RESOURCES_PATH "assets/blocks/stone.png";
+constexpr const char* GRASS_TOP_TEXTURE = RESOURCES_PATH "assets/blocks/grass_top.png";
+constexpr const char* GRASS_SIDE_TEXTURE = RESOURCES_PATH "assets/blocks/grass_side.png";
 
-constexpr std::array<const char*, 1> TEXTURE_PATHS = {
-    DIRT_TEXTURE
+constexpr const char* TEXTURE_PATHS[] = {
+    DIRT_TEXTURE,        // 0
+    STONE_TEXTURE,       // 1
+    GRASS_TOP_TEXTURE,   // 2
+    GRASS_SIDE_TEXTURE   // 3
 };
 
 // Camera
@@ -38,7 +48,7 @@ float pitch = 0.0f;
 
 bool firstMouse = true;
 
-glm::vec3 cameraPos(0.0f, 0.0f, 3.0f);
+glm::vec3 cameraPos(0.0f, 66.0f, 4.0f);
 glm::vec3 cameraFront(0.0f, 0.0f, -1.0f);
 glm::vec3 cameraUp(0.0f, 1.0f, 0.0f);
 
@@ -71,13 +81,7 @@ GLuint loadTexture(const char* path) {
     // OpenGL UVs assume the bottom of the image is V=0
     stbi_set_flip_vertically_on_load(true);
 
-    unsigned char* pixels = stbi_load(
-        path,
-        &width,
-        &height,
-        &channels,
-        STBI_rgb_alpha
-    );
+    unsigned char* pixels = stbi_load(path, &width, &height, &channels, STBI_rgb_alpha);
 
     if(!pixels) {
         std::cerr << "Failed to load texture: " << path << '\n';
@@ -88,17 +92,7 @@ GLuint loadTexture(const char* path) {
     glGenTextures(1, &texture);
     glBindTexture(GL_TEXTURE_2D, texture);
 
-    glTexImage2D(
-        GL_TEXTURE_2D,
-        0,
-        GL_RGBA8,
-        width,
-        height,
-        0,
-        GL_RGBA,
-        GL_UNSIGNED_BYTE,
-        pixels
-    );
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, pixels);
 
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
@@ -121,9 +115,7 @@ int main() {
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
     glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, GLFW_TRUE);
 
-    GLFWwindow* window = glfwCreateWindow(
-        640, 480, "Minecraft Renderer", nullptr, nullptr
-    );
+    GLFWwindow* window = glfwCreateWindow(640, 480, "Minecraft Renderer", nullptr, nullptr);
 
     if(!window) {
         glfwTerminate();
@@ -164,15 +156,10 @@ int main() {
 
     glfwSwapInterval(1);
 
-    // Load shaders
     Shader s;
-    s.loadShaderProgramFromFile(
-        RESOURCES_PATH "vertex.vert",
-        RESOURCES_PATH "fragment.frag"
-    );
+    s.loadShaderProgramFromFile(RESOURCES_PATH "vertex.vert", RESOURCES_PATH "fragment.frag");
     s.bind();
 
-    // Load textures from constant paths
     std::vector<GLuint> textures;
 
     for(const char* path : TEXTURE_PATHS) {
@@ -190,7 +177,6 @@ int main() {
         textures.push_back(texture);
     }
 
-    // Create bindless texture handles
     std::vector<GLuint64> handles;
 
     for(GLuint texture : textures) {
@@ -200,69 +186,38 @@ int main() {
         handles.push_back(handle);
     }
 
-    // Upload bindless handles to SSBO binding 0
     GLuint handleSSBO;
     glGenBuffers(1, &handleSSBO);
 
     glBindBuffer(GL_SHADER_STORAGE_BUFFER, handleSSBO);
-    glBufferData(
-        GL_SHADER_STORAGE_BUFFER,
-        handles.size() * sizeof(GLuint64),
-        handles.data(),
-        GL_DYNAMIC_COPY
-    );
+    glBufferData(GL_SHADER_STORAGE_BUFFER, handles.size() * sizeof(GLuint64), handles.data(),
+                 GL_DYNAMIC_COPY);
 
     glBindBufferBase(GL_SHADER_STORAGE_BUFFER, 0, handleSSBO);
 
-    // Faces: all six sides of one block
-    // Texture ID 0 = dirt.png
-    std::vector<Face> faces = {
-        {0, 0, 0, packFace(0, 0)}, // Front
-        {0, 0, 0, packFace(1, 0)}, // Back
-        {0, 0, 0, packFace(2, 0)}, // Left
-        {0, 0, 0, packFace(3, 0)}, // Right
-        {0, 0, 0, packFace(4, 0)}, // Top
-        {0, 0, 0, packFace(5, 0)}  // Bottom
-    };
+    GenWorld(w, 2, 2);
 
-    // Face instance buffer
-    GLuint vao;
-    GLuint faceVbo;
+    for(auto& [pos, chunk] : w.chunks) {
+        chunk.BuildFaces(w, pos.x, pos.y);
+        glGenVertexArrays(1, &chunk.vao);
+        glGenBuffers(1, &chunk.vbo);
 
-    glGenVertexArrays(1, &vao);
-    glGenBuffers(1, &faceVbo);
+        glBindVertexArray(chunk.vao);
+        glBindBuffer(GL_ARRAY_BUFFER, chunk.vbo);
 
-    glBindVertexArray(vao);
-    glBindBuffer(GL_ARRAY_BUFFER, faceVbo);
+        glBufferData(GL_ARRAY_BUFFER, chunk.faces.size() * sizeof(Face), chunk.faces.data(),
+                     GL_STATIC_DRAW);
 
-    glBufferData(
-        GL_ARRAY_BUFFER,
-        faces.size() * sizeof(Face),
-        faces.data(),
-        GL_STATIC_DRAW
-    );
+        // Face position
+        glEnableVertexAttribArray(0);
+        glVertexAttribIPointer(0, 3, GL_INT, sizeof(Face), (void*)offsetof(Face, x));
+        glVertexAttribDivisor(0, 1);
 
-    // Face position
-    glEnableVertexAttribArray(0);
-    glVertexAttribIPointer(
-        0,
-        3,
-        GL_INT,
-        sizeof(Face),
-        (void*)offsetof(Face, x)
-    );
-    glVertexAttribDivisor(0, 1);
-
-    // Packed direction and texture ID
-    glEnableVertexAttribArray(1);
-    glVertexAttribIPointer(
-        1,
-        1,
-        GL_UNSIGNED_INT,
-        sizeof(Face),
-        (void*)offsetof(Face, data)
-    );
-    glVertexAttribDivisor(1, 1);
+        // Packed direction and texture ID
+        glEnableVertexAttribArray(1);
+        glVertexAttribIPointer(1, 1, GL_UNSIGNED_INT, sizeof(Face), (void*)offsetof(Face, data));
+        glVertexAttribDivisor(1, 1);
+    }
 
     // Uniform locations
     GLint uView = glGetUniformLocation(s.id, "u_view");
@@ -299,11 +254,9 @@ int main() {
         cameraFront = glm::normalize(direction);
 
         // Camera movement
-        float cameraSpeed = 5.0f * deltaTime;
+        float cameraSpeed = 15.0f * deltaTime;
 
-        glm::vec3 cameraRight = glm::normalize(
-            glm::cross(cameraFront, cameraUp)
-        );
+        glm::vec3 cameraRight = glm::normalize(glm::cross(cameraFront, cameraUp));
 
         if(glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) {
             cameraPos += cameraSpeed * cameraFront;
@@ -330,18 +283,10 @@ int main() {
         }
 
         // Matrices
-        view = glm::lookAt(
-            cameraPos,
-            cameraPos + cameraFront,
-            cameraUp
-        );
+        view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
 
-        proj = glm::perspective(
-            glm::radians(45.0f),
-            static_cast<float>(width) / height,
-            0.1f,
-            100.0f
-        );
+        proj =
+            glm::perspective(glm::radians(45.0f), static_cast<float>(width) / height, 0.1f, 100.0f);
 
         glViewport(0, 0, width, height);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -354,28 +299,17 @@ int main() {
         glUniformMatrix4fv(uView, 1, GL_FALSE, glm::value_ptr(view));
         glUniformMatrix4fv(uModel, 1, GL_FALSE, glm::value_ptr(model));
 
-        // 6 generated vertices per face instance
-        glBindVertexArray(vao);
+        for(auto& [pos, chunk] : w.chunks) {
+            glm::mat4 chunkModel = glm::translate(
+                glm::mat4(1.0f), glm::vec3(pos.x * CHUNK_SIZE_X, 0.0f, pos.y * CHUNK_SIZE_Z));
+            glUniformMatrix4fv(uModel, 1, GL_FALSE, glm::value_ptr(chunkModel));
+            glBindVertexArray(chunk.vao);
 
-        glDrawArraysInstanced(
-            GL_TRIANGLES,
-            0,
-            6,
-            static_cast<GLsizei>(faces.size())
-        );
+            glDrawArraysInstanced(GL_TRIANGLES, 0, 6, static_cast<GLsizei>(chunk.faces.size()));
+        }
 
         glfwSwapBuffers(window);
     }
-
-    // Cleanup
-    for(GLuint64 handle : handles) {
-        glMakeTextureHandleNonResidentARB(handle);
-    }
-
-    glDeleteBuffers(1, &handleSSBO);
-    glDeleteBuffers(1, &faceVbo);
-    glDeleteVertexArrays(1, &vao);
-    glDeleteTextures(static_cast<GLsizei>(textures.size()), textures.data());
 
     glfwDestroyWindow(window);
     glfwTerminate();
