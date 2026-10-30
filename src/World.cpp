@@ -22,20 +22,32 @@ Block world::getBlock(int x, int y, int z) {
         chunkZ--;
     }
 
-    auto it = chunks.find(glm::ivec2(chunkX, chunkZ));
+    Chunk* chunk = nullptr;
 
-    if(it == chunks.end()) {
-        return Block{Block::air};
+    for(const ChunkEntry& entry : chunks) {
+        if(entry.pos.x == chunkX && entry.pos.y == chunkZ) {
+            if(entry.chunk == nullptr) {
+                return Block{Block::air};
+            }
+
+            return entry.chunk->blocks[localX][y][localZ];
+        }
     }
 
-    return it->second.blocks[localX][y][localZ];
+    return Block{Block::air};
 }
 
 void world::markChunkDirty(int x, int z) {
-    auto it = chunks.find(glm::ivec2(x, z));
 
-    if(it != chunks.end()) {
-        it->second.dirty = true;
+    for(int i = 0; i < chunks.size(); i++) {
+
+        if(chunks[i].chunk == nullptr) {
+            continue;
+        }
+        if(chunks[i].pos.x == x && chunks[i].pos.y == z) {
+
+            chunks[i].chunk->dirty = true;
+        }
     }
 }
 
@@ -50,15 +62,21 @@ void world::setBlock(int x, int y, int z, Block type) {
     int localX = x - chunkX * CHUNK_SIZE_X;
     int localZ = z - chunkZ * CHUNK_SIZE_Z;
 
-    auto it = chunks.find(glm::ivec2(chunkX, chunkZ));
+    Chunk* chunk = nullptr;
 
-    if(it == chunks.end()) {
+    for(int i = 0; i < chunks.size(); i++) {
+        if(chunks[i].pos.x == chunkX && chunks[i].pos.y == chunkZ) {
+            chunk = chunks[i].chunk;
+        }
+    }
+
+    if(chunk == nullptr) {
         return;
     }
 
-    it->second.dirty = true;
+    chunk->dirty = true;
 
-    it->second.blocks[localX][y][localZ].type = type.type;
+    chunk->blocks[localX][y][localZ].type = type.type;
 
     markChunkDirty(chunkX, chunkZ);
 
@@ -84,4 +102,29 @@ void world::markNeighborsDirty(int x, int z) {
     markChunkDirty(x + 1, z);
     markChunkDirty(x, z - 1);
     markChunkDirty(x, z + 1);
+}
+
+ChunkEntry world::newChunk(int x, int z) {
+    Chunk* chunk = new Chunk{};
+    chunk->UploadGPU();
+    chunks.push_back(ChunkEntry{.chunk = chunk});
+    return chunks.back();
+}
+
+void world::sortChunks(const glm::vec3& playerPos) {
+    const auto distanceSquared = [&](const ChunkEntry& entry) {
+        glm::vec2 center(entry.pos.x * CHUNK_SIZE_X + CHUNK_SIZE_X * 0.5f,
+                         entry.pos.y * CHUNK_SIZE_Z + CHUNK_SIZE_Z * 0.5f);
+
+        glm::vec2 difference = center - glm::vec2(playerPos.x, playerPos.z);
+
+        return glm::dot(difference, difference);
+    };
+
+    std::sort(chunks.begin(), chunks.end(), [&](const ChunkEntry& a, const ChunkEntry& b) {
+        return distanceSquared(a) < distanceSquared(b);
+    });
+}
+void world::update(Player& p) {
+    sortChunks(p.pos);
 }

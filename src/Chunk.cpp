@@ -1,4 +1,5 @@
 #include "Chunk.h"
+#include "World.h"
 
 Block Chunk::getBlock(int x, int y, int z) {
     if(x < 0 || x >= CHUNK_SIZE_X || y < 0 || y >= CHUNK_SIZE_Y || z < 0 || z >= CHUNK_SIZE_Z) {
@@ -11,6 +12,14 @@ Block Chunk::getBlock(int x, int y, int z) {
 void Chunk::BuildFaces(world& w, int chunkX, int chunkZ) {
     faces.clear();
     faceBatches.clear();
+
+    const auto neighborBlock = [&](int x, int y, int z) {
+        if(x >= 0 && x < CHUNK_SIZE_X && z >= 0 && z < CHUNK_SIZE_Z) {
+            return getBlock(x, y, z);
+        }
+
+        return w.getBlock(chunkX * CHUNK_SIZE_X + x, y, chunkZ * CHUNK_SIZE_Z + z);
+    };
 
     for(int x = 0; x < CHUNK_SIZE_X; x++) {
         for(int y = 0; y < CHUNK_SIZE_Y; y++) {
@@ -30,23 +39,23 @@ void Chunk::BuildFaces(world& w, int chunkX, int chunkZ) {
                 int worldX = chunkX * CHUNK_SIZE_X + x;
                 int worldZ = chunkZ * CHUNK_SIZE_Z + z;
 
-                if(w.getBlock(worldX, y, worldZ + 1).type == Block::air) {
+                if(neighborBlock(x, y, z + 1).type == Block::air) {
                     faces.push_back({x, y, z, packFace(0, texture)});
                 }
 
-                if(w.getBlock(worldX, y, worldZ - 1).type == Block::air) {
+                if(neighborBlock(x, y, z - 1).type == Block::air) {
                     faces.push_back({x, y, z, packFace(1, texture)});
                 }
 
-                if(w.getBlock(worldX - 1, y, worldZ).type == Block::air) {
+                if(neighborBlock(x - 1, y, z).type == Block::air) {
                     faces.push_back({x, y, z, packFace(2, texture)});
                 }
 
-                if(w.getBlock(worldX + 1, y, worldZ).type == Block::air) {
+                if(neighborBlock(x + 1, y, z).type == Block::air) {
                     faces.push_back({x, y, z, packFace(3, texture)});
                 }
 
-                if(w.getBlock(worldX, y + 1, worldZ).type == Block::air) {
+                if(neighborBlock(x, y + 1, z).type == Block::air) {
                     uint32_t topTexture = texture;
 
                     if(block.type == Block::grass) {
@@ -56,12 +65,14 @@ void Chunk::BuildFaces(world& w, int chunkX, int chunkZ) {
                     faces.push_back({x, y, z, packFace(4, topTexture)});
                 }
 
-                if(w.getBlock(worldX, y - 1, worldZ).type == Block::air) {
+                if(neighborBlock(x, y - 1, z).type == Block::air) {
+                    uint32_t bottomTexture = texture;
+
                     if(block.type == Block::grass) {
-                        texture = Block::dirt - 1;
+                        bottomTexture = Block::dirt - 1;
                     }
 
-                    faces.push_back({x, y, z, packFace(5, texture)});
+                    faces.push_back({x, y, z, packFace(5, bottomTexture)});
                 }
             }
         }
@@ -82,12 +93,7 @@ void Chunk::UploadGPU() {
     glBindVertexArray(vao);
     glBindBuffer(GL_ARRAY_BUFFER, vbo);
 
-    glBufferData(
-        GL_ARRAY_BUFFER,
-        faces.size() * sizeof(Face),
-        faces.data(),
-        GL_DYNAMIC_DRAW
-    );
+    glBufferData(GL_ARRAY_BUFFER, faces.size() * sizeof(Face), faces.data(), GL_DYNAMIC_DRAW);
 
     glEnableVertexAttribArray(0);
     glVertexAttribIPointer(0, 3, GL_INT, sizeof(Face), (void*)offsetof(Face, x));

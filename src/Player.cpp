@@ -1,6 +1,7 @@
 #include "Player.h"
 #include "raycast.h"
 
+
 void Player::applyForces(float deltaTime) {
     velocity.y += GRAVITY * deltaTime;
 }

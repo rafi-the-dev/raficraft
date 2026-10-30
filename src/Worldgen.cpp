@@ -1,5 +1,8 @@
 #include "Worldgen.h"
 
+#include <algorithm>
+#include <cmath>
+
 void generateChunk(Chunk& chunk, int chunkX, int chunkZ, FastNoiseSIMD* noise) {
     float* heights = noise->GetNoiseSet(chunkX * CHUNK_SIZE_X, 0, chunkZ * CHUNK_SIZE_Z,
                                         CHUNK_SIZE_X, 1, CHUNK_SIZE_Z);
@@ -7,7 +10,6 @@ void generateChunk(Chunk& chunk, int chunkX, int chunkZ, FastNoiseSIMD* noise) {
     for(int x = 0; x < CHUNK_SIZE_X; x++) {
         for(int z = 0; z < CHUNK_SIZE_Z; z++) {
             float value = heights[x * CHUNK_SIZE_Z + z];
-
             int height = 64 + static_cast<int>(value * 50.0f);
 
             for(int y = 0; y < CHUNK_SIZE_Y; y++) {
@@ -27,65 +29,38 @@ void generateChunk(Chunk& chunk, int chunkX, int chunkZ, FastNoiseSIMD* noise) {
     FastNoiseSIMD::FreeNoiseSet(heights);
 }
 
-void GenWorld(world& w, int sizeX, int sizeZ) {
-    FastNoiseSIMD* noise = FastNoiseSIMD::NewFastNoiseSIMD(1337);
+void UpdateChunks(world& w, const glm::vec3& playerPos, FastNoiseSIMD* noise) {
+    constexpr int MAX_GENERATIONS = 2;
+    constexpr int MAX_MESH_UPDATES = 2;
 
-    noise->SetNoiseType(FastNoiseSIMD::SimplexFractal);
-    noise->SetFrequency(0.005f);
-    noise->SetFractalOctaves(4);
-
-    // Remove chunks outside boundaries
-    for(auto it = w.chunks.begin(); it != w.chunks.end();) {
-        const auto& pos = it->first;
-
-        if(pos.x < 0 || pos.x >= sizeX || pos.y < 0 || pos.y >= sizeZ) {
-            it = w.chunks.erase(it);
-        } else {
-            ++it;
-        }
-    }
-
-    // Generate missing chunks
-    for(int x = 0; x < sizeX; x++) {
-        for(int z = 0; z < sizeZ; z++) {
-            glm::ivec2 pos(x, z);
-
-            if(w.chunks.find(pos) == w.chunks.end()) {
-                Chunk chunk{};
-                generateChunk(chunk, x, z, noise);
-
-                w.chunks.emplace(pos, std::move(chunk));
-            }
-        }
-    }
-
-    delete noise;
-}
-
-
-void UpdateChunks(world& w, int centerX, int centerZ) {
-    FastNoiseSIMD* noise = FastNoiseSIMD::NewFastNoiseSIMD(1337);
-
-    noise->SetNoiseType(FastNoiseSIMD::SimplexFractal);
-    noise->SetFrequency(0.005f);
-    noise->SetFractalOctaves(4);
+    int centerX = static_cast<int>(std::floor(playerPos.x / CHUNK_SIZE_X));
+    int centerZ = static_cast<int>(std::floor(playerPos.z / CHUNK_SIZE_Z));
 
     for(auto it = w.chunks.begin(); it != w.chunks.end();) {
-        int dx = std::abs(it->first.x - centerX);
-        int dz = std::abs(it->first.y - centerZ);
+        int dx = std::abs(it->pos.x - centerX);
+        int dz = std::abs(it->pos.y - centerZ);
 
         int distance = std::max(dx, dz);
 
-        Chunk& chunk = it->second;
-
         if(distance > KEEP_DISTANCE) {
-            chunk.UnloadGPU();
+            int x = it->pos.x;
+            int z = it->pos.y;
+
+            if(it->chunk != nullptr) {
+                it->chunk->UnloadGPU();
+                delete it->chunk;
+                it->chunk = nullptr;
+            }
+
             it = w.chunks.erase(it);
+            w.markNeighborsDirty(x, z);
             continue;
         }
 
-        if(distance > RENDER_DISTANCE) {
-            chunk.UnloadGPU();
+        if(distance > RENDER_DISTANCE && it->chunk != nullptr) {
+            if(it->chunk->vao != 0) {
+                it->chunk->UnloadGPU();
+            }
         }
 
         ++it;
@@ -95,34 +70,74 @@ void UpdateChunks(world& w, int centerX, int centerZ) {
         for(int z = centerZ - KEEP_DISTANCE; z <= centerZ + KEEP_DISTANCE; z++) {
             glm::ivec2 pos(x, z);
 
-            if(w.chunks.find(pos) != w.chunks.end()) {
-                continue;
-            }
+            auto it = std::find_if(w.chunks.begin(), w.chunks.end(),
+                                   [&](const ChunkEntry& entry) { return entry.pos == pos; });
 
-            auto [it, inserted] = w.chunks.try_emplace(pos);
-
-            if(inserted) {
-                generateChunk(it->second, x, z, noise);
-                w.markNeighborsDirty(x, z);
+            if(it == w.chunks.end()) {
+                ChunkEntry entry{};
+                entry.pos = pos;
+                w.chunks.push_back(entry);
             }
         }
     }
 
-    delete noise;
+    w.sortChunks(playerPos);
 
-    for(int x = centerX - RENDER_DISTANCE; x <= centerX + RENDER_DISTANCE; x++) {
-        for(int z = centerZ - RENDER_DISTANCE; z <= centerZ + RENDER_DISTANCE; z++) {
-            auto it = w.chunks.find(glm::ivec2(x, z));
+    int generated = 0;
 
-            if(it == w.chunks.end()) {
-                continue;
-            }
-
-            Chunk& chunk = it->second;
-
-            if(chunk.vao == 0) {
-                chunk.dirty = true;
-            }
+    for(ChunkEntry& entry : w.chunks) {
+        if(generated >= MAX_GENERATIONS) {
+            break;
         }
+
+        if(entry.chunk != nullptr) {
+            continue;
+        }
+
+        entry.chunk = new Chunk{};
+
+        generateChunk(*entry.chunk, entry.pos.x, entry.pos.y, noise);
+
+        w.markNeighborsDirty(entry.pos.x, entry.pos.y);
+
+        generated++;
+    }
+
+    int meshed = 0;
+
+    for(ChunkEntry& entry : w.chunks) {
+        if(meshed >= MAX_MESH_UPDATES) {
+            break;
+        }
+
+        if(entry.chunk == nullptr) {
+            continue;
+        }
+
+        int dx = std::abs(entry.pos.x - centerX);
+        int dz = std::abs(entry.pos.y - centerZ);
+
+        if(std::max(dx, dz) > RENDER_DISTANCE) {
+            continue;
+        }
+
+        Chunk& chunk = *entry.chunk;
+
+        if(!chunk.dirty && chunk.vao != 0) {
+            continue;
+        }
+
+        chunk.BuildFaces(w, entry.pos.x, entry.pos.y);
+
+        if(chunk.vao == 0) {
+            chunk.UploadGPU();
+        } else {
+            glBindBuffer(GL_ARRAY_BUFFER, chunk.vbo);
+
+            glBufferData(GL_ARRAY_BUFFER, chunk.faces.size() * sizeof(Face), chunk.faces.data(),
+                         GL_DYNAMIC_DRAW);
+        }
+
+        meshed++;
     }
 }

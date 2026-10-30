@@ -1,9 +1,12 @@
 #pragma once
 #include "Chunk.h"
 #include "input.h"
+#define GLFW_INCLUDE_NONE
 #include <GLFW/glfw3.h>
+#include "World.h"
 
 const float GRAVITY = -9.81f;
+struct world;
 
 struct Player {
     glm::vec3 pos = {4.0f, 100.f, 4.f};

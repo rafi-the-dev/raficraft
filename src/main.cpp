@@ -15,6 +15,7 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include <stb_image/stb_image.h>
 
+#include "Chunk.h"
 #include "Player.h"
 #include "World.h"
 #include <Worldgen.h>
@@ -24,7 +25,6 @@
 #include <cstdint>
 #include <iostream>
 #include <vector>
-#include "Chunk.h"
 
 world w;
 Player player;
@@ -145,10 +145,16 @@ int main() {
         return -1;
     }
 
+    FastNoiseSIMD* noise = FastNoiseSIMD::NewFastNoiseSIMD(1337);
+
+    noise->SetNoiseType(FastNoiseSIMD::SimplexFractal);
+    noise->SetFrequency(0.005f);
+    noise->SetFractalOctaves(4);
+
     int previousChunkX = static_cast<int>(std::floor(player.pos.x / CHUNK_SIZE_X));
     int previousChunkZ = static_cast<int>(std::floor(player.pos.z / CHUNK_SIZE_Z));
 
-    UpdateChunks(w, previousChunkX, previousChunkZ);
+
 
     glfwSetKeyCallback(window, key_callback);
     glfwSetCursorPosCallback(window, mouse_callback);
@@ -225,28 +231,6 @@ int main() {
 
     glBindBufferBase(GL_SHADER_STORAGE_BUFFER, 0, handleSSBO);
 
-    for(auto& [pos, chunk] : w.chunks) {
-        chunk.BuildFaces(w, pos.x, pos.y);
-        glGenVertexArrays(1, &chunk.vao);
-        glGenBuffers(1, &chunk.vbo);
-
-        glBindVertexArray(chunk.vao);
-        glBindBuffer(GL_ARRAY_BUFFER, chunk.vbo);
-
-        glBufferData(GL_ARRAY_BUFFER, chunk.faces.size() * sizeof(Face), chunk.faces.data(),
-                     GL_STATIC_DRAW);
-
-        // Face position
-        glEnableVertexAttribArray(0);
-        glVertexAttribIPointer(0, 3, GL_INT, sizeof(Face), (void*)offsetof(Face, x));
-        glVertexAttribDivisor(0, 1);
-
-        // Packed direction and texture ID
-        glEnableVertexAttribArray(1);
-        glVertexAttribIPointer(1, 1, GL_UNSIGNED_INT, sizeof(Face), (void*)offsetof(Face, data));
-        glVertexAttribDivisor(1, 1);
-    }
-
     // Uniform locations
     GLint uView = glGetUniformLocation(s.id, "u_view");
     GLint uModel = glGetUniformLocation(s.id, "u_model");
@@ -279,17 +263,12 @@ int main() {
             continue;
         }
 
+        UpdateChunks(w, player.pos, noise);
+
         player.Update(deltaTime, window, w, cameraFront);
 
         int playerChunkX = static_cast<int>(std::floor(player.pos.x / CHUNK_SIZE_X));
         int playerChunkZ = static_cast<int>(std::floor(player.pos.z / CHUNK_SIZE_Z));
-
-        if(playerChunkX != previousChunkX || playerChunkZ != previousChunkZ) {
-            UpdateChunks(w, playerChunkX, playerChunkZ);
-
-            previousChunkX = playerChunkX;
-            previousChunkZ = playerChunkZ;
-        }
 
         cameraFront = {cos(glm::radians(player.yaw)) * cos(glm::radians(player.pitch)),
                        sin(glm::radians(player.pitch)),
@@ -318,7 +297,12 @@ int main() {
         glUniformMatrix4fv(uView, 1, GL_FALSE, glm::value_ptr(view));
         glUniformMatrix4fv(uModel, 1, GL_FALSE, glm::value_ptr(model));
 
-        for(auto& [pos, chunk] : w.chunks) {
+        for(int i = 0; i < w.chunks.size(); i++) {
+            glm::vec2 pos = w.chunks[i].pos;
+            if(w.chunks[i].chunk == nullptr) {
+                continue;
+            }
+            Chunk* chunk = w.chunks[i].chunk;
             int dx = std::abs(pos.x - playerChunkX);
             int dz = std::abs(pos.y - playerChunkZ);
 
@@ -326,26 +310,17 @@ int main() {
                 continue;
             }
 
-            if(chunk.dirty || chunk.vao == 0) {
-                chunk.BuildFaces(w, pos.x, pos.y);
-
-                if(chunk.vao == 0) {
-                    chunk.UploadGPU();
-                } else {
-                    glBindBuffer(GL_ARRAY_BUFFER, chunk.vbo);
-
-                    glBufferData(GL_ARRAY_BUFFER, chunk.faces.size() * sizeof(Face),
-                                 chunk.faces.data(), GL_DYNAMIC_DRAW);
-                }
+            if(chunk->vao == 0) {
+                continue;
             }
 
             glm::mat4 chunkModel = glm::translate(
                 glm::mat4(1.0f), glm::vec3(pos.x * CHUNK_SIZE_X, 0.0f, pos.y * CHUNK_SIZE_Z));
 
             glUniformMatrix4fv(uModel, 1, GL_FALSE, glm::value_ptr(chunkModel));
-            glBindVertexArray(chunk.vao);
+            glBindVertexArray(chunk->vao);
 
-            for(const FaceBatch& batch : chunk.faceBatches) {
+            for(const FaceBatch& batch : chunk->faceBatches) {
                 glUniform1ui(uTextureIndex, batch.textureIndex);
 
                 glDrawArraysInstancedBaseInstance(GL_TRIANGLES, 0, 6,
