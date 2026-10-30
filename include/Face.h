@@ -1,5 +1,7 @@
 #pragma once
 #include <cstdint>
+#include <cstddef>
+#include <vector>
 
 struct Face {
     int x = 0;
@@ -18,3 +20,12 @@ enum FaceDirection {
 };
 
 uint32_t packFace(uint32_t direction, uint32_t texture);
+
+struct FaceBatch
+{
+    uint32_t textureIndex = 0;
+    std::size_t firstFace = 0;
+    std::size_t faceCount = 0;
+};
+
+std::vector<FaceBatch> buildFaceBatches(std::vector<Face>& faces);

@@ -8,7 +8,6 @@ uniform mat4 u_view;
 uniform mat4 u_projection;
 
 out vec2 texCoord;
-flat out uint textureID;
 flat out float faceBrightness;
 
 const vec2 corners[6] = vec2[6](
@@ -22,7 +21,6 @@ const vec2 corners[6] = vec2[6](
 
 void main() {
     uint faceDirection = aData & 7u;
-    textureID = (aData >> 3u) & 2047u;
 
     vec2 uv = corners[gl_VertexID];
     texCoord = uv;

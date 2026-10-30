@@ -131,9 +131,8 @@ int main() {
         return -1;
     }
 
-    if(!glfwExtensionSupported("GL_ARB_bindless_texture") ||
-       !glfwExtensionSupported("GL_NV_gpu_shader5")) {
-        std::cerr << "Required bindless shader extensions are unavailable\n";
+    if(!glfwExtensionSupported("GL_ARB_bindless_texture")) {
+        std::cerr << "Required GL_ARB_bindless_texture extension is unavailable\n";
         glfwDestroyWindow(window);
         glfwTerminate();
         return -1;
@@ -157,7 +156,11 @@ int main() {
     glfwSwapInterval(1);
 
     Shader s;
-    s.loadShaderProgramFromFile(RESOURCES_PATH "vertex.vert", RESOURCES_PATH "fragment.frag");
+    if(!s.loadShaderProgramFromFile(RESOURCES_PATH "vertex.vert", RESOURCES_PATH "fragment.frag")) {
+        glfwDestroyWindow(window);
+        glfwTerminate();
+        return -1;
+    }
     s.bind();
 
     std::vector<GLuint> textures;
@@ -223,6 +226,7 @@ int main() {
     GLint uView = glGetUniformLocation(s.id, "u_view");
     GLint uModel = glGetUniformLocation(s.id, "u_model");
     GLint uProjection = glGetUniformLocation(s.id, "u_projection");
+    GLint uTextureIndex = glGetUniformLocation(s.id, "textureIndex");
 
     glm::mat4 model(1.0f);
     glm::mat4 view(1.0f);
@@ -305,7 +309,12 @@ int main() {
             glUniformMatrix4fv(uModel, 1, GL_FALSE, glm::value_ptr(chunkModel));
             glBindVertexArray(chunk.vao);
 
-            glDrawArraysInstanced(GL_TRIANGLES, 0, 6, static_cast<GLsizei>(chunk.faces.size()));
+            // ARB bindless samplers must be dynamically uniform within each draw.
+            for(const FaceBatch& batch : chunk.faceBatches) {
+                glUniform1ui(uTextureIndex, batch.textureIndex);
+                glDrawArraysInstancedBaseInstance(GL_TRIANGLES, 0, 6,
+                    static_cast<GLsizei>(batch.faceCount), static_cast<GLuint>(batch.firstFace));
+            }
         }
 
         glfwSwapBuffers(window);

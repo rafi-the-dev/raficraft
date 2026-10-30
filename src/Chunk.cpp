@@ -61,4 +61,6 @@ void Chunk::BuildFaces(world& w, int chunkX, int chunkZ) {
             }
         }
     }
+
+    faceBatches = buildFaceBatches(faces);
 }

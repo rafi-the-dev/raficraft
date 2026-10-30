@@ -7,6 +7,15 @@ set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>") #we want
 project(mygame)
 
 option(RAFICRAFT_PORTABLE "Use bundled resources for distribution" OFF)
+option(RAFICRAFT_BUILD_TESTS "Build face batching regression tests" OFF)
+
+if(RAFICRAFT_BUILD_TESTS)
+    enable_testing()
+    add_executable(face_batch_tests tests/FaceBatches.cpp src/Face.cpp)
+    target_include_directories(face_batch_tests PRIVATE include)
+    target_compile_features(face_batch_tests PRIVATE cxx_std_17)
+    add_test(NAME face_batches COMMAND face_batch_tests)
+endif()
 
 set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)

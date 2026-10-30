@@ -13,7 +13,7 @@ Download a Linux or Windows x86_64 archive from [Releases](https://github.com/ra
 
 Keep the executable and `resources/` together. The launchers select the correct working directory. These are optimized Release builds. Windows builds include the compiler runtime through static linking; Linux builds require compatible system libraries.
 
-A graphics driver supporting OpenGL 4.6, `GL_ARB_bindless_texture`, and `GL_NV_gpu_shader5` is required. The published Linux x86_64 build requires glibc 2.38 or newer, libstdc++ providing `GLIBCXX_3.4.32`, and X11 libraries. GPU extension support is required on both platforms.
+A graphics driver supporting OpenGL 4.6 and `GL_ARB_bindless_texture` is required. No NVIDIA-specific extensions are required. Faces are grouped by texture so each draw uses a dynamically uniform bindless sampler. Non-NVIDIA GPUs still need driver support for `GL_ARB_bindless_texture`. The published Linux x86_64 build requires glibc 2.38 or newer, libstdc++ providing `GLIBCXX_3.4.32`, and X11 libraries. GPU extension support is required on both platforms.
 
 ## Controls
 

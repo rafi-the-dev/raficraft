@@ -24,6 +24,7 @@ struct Chunk {
     bool dirty = true;
 
     std::vector<Face> faces;
+    std::vector<FaceBatch> faceBatches;
 
     void BuildFaces(world& w, int chunkX, int chunkZ);
 
