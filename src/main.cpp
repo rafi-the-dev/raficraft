@@ -18,6 +18,7 @@
 
 #include "BlockOutline.h"
 #include "Chunk.h"
+#include "Frustum.h"
 #include "Player.h"
 #include "World.h"
 #include "raycast.h"
@@ -74,6 +75,7 @@ float crosshairVertices[] = {-10.0f, -1.0f,  10.0f, -1.0f,  10.0f,  1.0f,
                              -1.0f,  -10.0f, 1.0f,  10.0f,  -1.0f,  10.0f};
 
 BlockOutline blockoutline;
+Frustum frustum;
 
 void mouse_callback(GLFWwindow* window, double xpos, double ypos) {
 
@@ -322,8 +324,12 @@ int main() {
 
         view = glm::lookAt(eyePos, eyePos + cameraFront, cameraUp);
 
-        proj =
-            glm::perspective(glm::radians(90.0f), static_cast<float>(width) / height, 0.1f, 100.0f);
+        float farPlane = RENDER_DISTANCE * CHUNK_SIZE_X * 1.5f;
+
+        proj = glm::perspective(glm::radians(90.0f), static_cast<float>(width) / height, 0.1f,
+                                farPlane);
+
+        frustum.Update(proj * view);
 
         glViewport(0, 0, width, height);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -335,8 +341,6 @@ int main() {
         glUniformMatrix4fv(uProjection, 1, GL_FALSE, glm::value_ptr(proj));
         glUniformMatrix4fv(uView, 1, GL_FALSE, glm::value_ptr(view));
         glUniformMatrix4fv(uModel, 1, GL_FALSE, glm::value_ptr(model));
-
-
 
         for(int i = 0; i < w.chunks.size(); i++) {
             glm::vec2 pos = w.chunks[i].pos;
@@ -351,6 +355,14 @@ int main() {
                 continue;
             }
 
+            glm::vec3 chunkMin(pos.x * CHUNK_SIZE_X, 0.0f, pos.y * CHUNK_SIZE_Z);
+
+            glm::vec3 chunkMax = chunkMin + glm::vec3(CHUNK_SIZE_X, CHUNK_SIZE_Y, CHUNK_SIZE_Z);
+
+            if(!frustum.IsVisible(chunkMin, chunkMax)) {
+                continue;
+            }
+
             if(chunk->vao == 0) {
                 continue;
             }
@@ -361,13 +373,7 @@ int main() {
             glUniformMatrix4fv(uModel, 1, GL_FALSE, glm::value_ptr(chunkModel));
             glBindVertexArray(chunk->vao);
 
-            for(const FaceBatch& batch : chunk->faceBatches) {
-                glUniform1ui(uTextureIndex, batch.textureIndex);
-
-                glDrawArraysInstancedBaseInstance(GL_TRIANGLES, 0, 6,
-                                                  static_cast<GLsizei>(batch.faceCount),
-                                                  static_cast<GLuint>(batch.firstFace));
-            }
+            glDrawArraysInstanced(GL_TRIANGLES, 0, 6, static_cast<GLsizei>(chunk->faces.size()));
         }
 
         if(state == states::playing) {

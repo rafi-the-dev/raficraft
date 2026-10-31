@@ -6,13 +6,13 @@ layout(std430, binding = 0) readonly buffer Textures {
 };
 
 in vec2 texCoord;
-uniform uint textureIndex;
+flat in uint vTextureIndex;
 flat in float faceBrightness;
 
 out vec4 FragColor;
 
 void main() {
-    vec4 color = texture(blockTextures[textureIndex], texCoord);
+    vec4 color = texture(blockTextures[vTextureIndex], texCoord);
 
     FragColor = vec4(
         color.rgb * faceBrightness,

@@ -24,7 +24,6 @@ struct Chunk {
     bool dirty = true;
 
     std::vector<Face> faces;
-    std::vector<FaceBatch> faceBatches;
 
     float distanceSquared = 0.0f;
 

@@ -34,6 +34,13 @@ add_subdirectory(thirdparty/FastNoiseSIMD)
 # The SIMD backends define different vector types with the same internal names.
 set_property(TARGET FastNoiseSIMD PROPERTY INTERPROCEDURAL_OPTIMIZATION_RELEASE OFF)
 
+set(ZSTD_BUILD_PROGRAMS OFF CACHE BOOL "" FORCE)
+set(ZSTD_BUILD_TESTS OFF CACHE BOOL "" FORCE)
+set(ZSTD_BUILD_SHARED OFF CACHE BOOL "" FORCE)
+set(ZSTD_BUILD_STATIC ON CACHE BOOL "" FORCE)
+set(ZSTD_USE_STATIC_RUNTIME ON CACHE BOOL "" FORCE)
+add_subdirectory(thirdparty/zstd/build/cmake EXCLUDE_FROM_ALL)
+
 
 # Define MY_SOURCES to be a list of all the source files for my game 
 file(GLOB_RECURSE MY_SOURCES CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp")
@@ -74,7 +81,7 @@ target_include_directories("${CMAKE_PROJECT_NAME}" PUBLIC "${CMAKE_CURRENT_SOURC
 
 
 target_link_libraries("${CMAKE_PROJECT_NAME}" PRIVATE glm glfw 
-	glad stb_image stb_truetype imgui FastNoiseSIMD glui)
+	glad stb_image stb_truetype imgui FastNoiseSIMD glui libzstd_static)
 
 
 if(MINGW)
@@ -87,6 +94,7 @@ if(RAFICRAFT_PORTABLE)
     install(FILES README.md DESTINATION .)
     install(FILES thirdparty/FastNoiseSIMD/LICENSE DESTINATION licenses RENAME FastNoiseSIMD.txt)
     install(FILES thirdparty/glfw-3.3.2/LICENSE.md DESTINATION licenses RENAME GLFW.txt)
+    install(FILES thirdparty/zstd/LICENSE DESTINATION licenses RENAME zstd.txt)
     if(WIN32)
         install(FILES packaging/Play.bat DESTINATION .)
     else()

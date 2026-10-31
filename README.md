@@ -1,6 +1,6 @@
-# Minecraft Clone
+# raficraft
 
-A Minecraft-inspired project made from scratch in C++ and OpenGL. Explore procedurally generated grass, dirt, and stone terrain on foot, jump over obstacles, and break blocks with a centered crosshair. Chunks stream in as you move through the world. Each chunk is 16 by 256 by 16 blocks, and only exposed block faces are rendered, including at chunk boundaries. Terrain uses seeded Simplex fractal noise from FastNoiseSIMD.
+A Minecraft-inspired project made from scratch in C++ and OpenGL. Explore procedurally generated grass, dirt, and stone terrain on foot, jump over obstacles, and break or place blocks with a centered crosshair and a targeted-block outline. Chunks stream in as you move through the world. Each chunk is 16 by 256 by 16 blocks, and only exposed block faces are rendered, including at chunk boundaries. Terrain uses seeded Simplex fractal noise from FastNoiseSIMD.
 
 ![Minecraft Clone screenshot](img/readme.png?v=70a539f)
 
@@ -13,7 +13,9 @@ Download a Linux or Windows x86_64 archive from [Releases](https://github.com/ra
 
 Keep the executable and `resources/` together. The launchers select the correct working directory. These are stripped Release builds with compiler optimization and link-time optimization enabled. The Linux desktop launcher starts without a terminal window. Windows builds include the compiler runtime through static linking; Linux builds require compatible system libraries.
 
-A graphics driver supporting OpenGL 4.6 and `GL_ARB_bindless_texture` is required. No NVIDIA-specific extensions are required. Faces are grouped by texture so each draw uses a dynamically uniform bindless sampler. Non-NVIDIA GPUs still need driver support for `GL_ARB_bindless_texture`. The published Linux x86_64 build requires glibc 2.38 or newer, libstdc++ providing `GLIBCXX_3.4.32`, and X11 libraries. GPU extension support is required on both platforms.
+A graphics driver supporting OpenGL 4.6 and `GL_ARB_bindless_texture` is required on both platforms. The current renderer draws each chunk in one instanced call with a texture index per face. This uses non-uniform bindless sampler selection, which requires driver support such as `GL_NV_gpu_shader5`. `GL_ARB_bindless_texture` alone does not guarantee correct rendering: see the [Khronos extension specification](https://registry.khronos.org/OpenGL/extensions/ARB/ARB_bindless_texture.txt). Startup checks only for `GL_ARB_bindless_texture`; other GPU compatibility remains unverified.
+
+The Linux x86_64 package requires glibc 2.38 or newer, libstdc++ providing `GLIBCXX_3.4.32`, and X11 libraries. Windows packages use MinGW-w64 with static GCC/C++ runtimes and require the Windows Universal C Runtime.
 
 ## Start a world
 
@@ -28,13 +30,15 @@ The crosshair, camera controls, player movement, and terrain generation activate
 - Space: jump while on the ground.
 - Left Shift: sprint.
 - Left mouse button: break the targeted block within five blocks (one block per click).
+- Right mouse button: place a dirt block against the targeted face within five blocks (one block per click). Placement requires an empty cell that does not overlap the player.
+- A wireframe outline shows the targeted block.
 - Escape: quit.
 
 ## World and gameplay
 
-Player movement includes gravity and collision with solid blocks. Terrain renders within three chunks of the player in each horizontal direction, with chunk data retained within five chunks. Distant chunks unload and regenerate from the selected seed when revisited.
+Player movement includes gravity and collision with solid blocks. Terrain renders within 32 chunks of the player in each horizontal direction, with chunk data retained within 34 chunks. Chunks outside the camera frustum are skipped during drawing. The projection far plane scales with render distance. Chunk generation and mesh updates are limited to two each per frame, so distant terrain fills in gradually. Distant chunks unload and regenerate from the selected seed when revisited.
 
-Block edits stay in memory while their chunk remains loaded. There is no world saving, so edits are lost when a chunk unloads or the game exits. Block placement is not implemented yet.
+Block edits stay in memory while their chunk remains loaded. There is no world saving, so edits are lost when a chunk unloads or the game exits. zstd is vendored and linked for future saving work, but the saving header is only a placeholder.
 
 ## Build and run
 
