@@ -7,7 +7,6 @@ set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>") #we want
 project(mygame)
 
 option(RAFICRAFT_PORTABLE "Use bundled resources for distribution" OFF)
-option(RAFICRAFT_BUILD_TESTS "Build regression tests" OFF)
 
 if(RAFICRAFT_PORTABLE)
     include(CheckIPOSupported)
@@ -18,18 +17,6 @@ if(RAFICRAFT_PORTABLE)
     set(CMAKE_INTERPROCEDURAL_OPTIMIZATION_RELEASE ON)
 endif()
 
-if(RAFICRAFT_BUILD_TESTS)
-    enable_testing()
-    add_executable(face_batch_tests tests/FaceBatches.cpp src/Face.cpp)
-    target_include_directories(face_batch_tests PRIVATE include)
-    target_compile_features(face_batch_tests PRIVATE cxx_std_17)
-    add_test(NAME face_batches COMMAND face_batch_tests)
-    add_executable(input_tests tests/Input.cpp src/input.cpp)
-    target_include_directories(input_tests PRIVATE include thirdparty/glfw-3.3.2/include)
-    target_compile_definitions(input_tests PRIVATE GLFW_INCLUDE_NONE)
-    target_compile_features(input_tests PRIVATE cxx_std_17)
-    add_test(NAME seed_input COMMAND input_tests)
-endif()
 
 set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)

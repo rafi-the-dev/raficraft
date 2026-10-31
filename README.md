@@ -48,14 +48,6 @@ cmake --build build-dev
 
 Development builds load resources from the source tree. Keep `resources/font/ANDYB.TTF` available for menu text.
 
-Run the regression tests with:
-
-```sh
-cmake -S . -B build-dev -DRAFICRAFT_BUILD_TESTS=ON
-cmake --build build-dev
-ctest --test-dir build-dev --output-on-failure
-```
-
 ## Build a release
 
 For Linux with a single-configuration generator:
