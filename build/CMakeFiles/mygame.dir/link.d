@@ -2,20 +2,30 @@ mygame: \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/Scrt1.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crti.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o \
-  CMakeFiles/mygame.dir/src/Block.cpp.o \
+  CMakeFiles/mygame.dir/src/BlockOutline.cpp.o \
+  CMakeFiles/mygame.dir/src/Chunk.cpp.o \
   CMakeFiles/mygame.dir/src/Face.cpp.o \
+  CMakeFiles/mygame.dir/src/Player.cpp.o \
+  CMakeFiles/mygame.dir/src/World.cpp.o \
+  CMakeFiles/mygame.dir/src/Worldgen.cpp.o \
   CMakeFiles/mygame.dir/src/demoShaderLoader.cpp.o \
   CMakeFiles/mygame.dir/src/input.cpp.o \
   CMakeFiles/mygame.dir/src/main.cpp.o \
   CMakeFiles/mygame.dir/src/openglDebug.cpp.o \
+  CMakeFiles/mygame.dir/src/raycast.cpp.o \
   thirdparty/glfw-3.3.2/src/libglfw3.a \
   thirdparty/glad/libglad.a \
+  thirdparty/stb_truetype/libstb_truetype.a \
   thirdparty/imgui-docking/libimgui.a \
+  thirdparty/FastNoiseSIMD/libFastNoiseSIMD.a \
+  thirdparty/glui/libglui.a \
   thirdparty/glfw-3.3.2/src/libglfw3.a \
   /usr/lib/librt.a \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/libdl.a \
   /usr/lib/libX11.so \
+  thirdparty/gl2d/libgl2d.a \
   thirdparty/glad/libglad.a \
+  thirdparty/stb_truetype/libstb_truetype.a \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16/libstdc++.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/libm.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/libm.so \
@@ -60,9 +70,17 @@ mygame: \
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o:
 
-CMakeFiles/mygame.dir/src/Block.cpp.o:
+CMakeFiles/mygame.dir/src/BlockOutline.cpp.o:
+
+CMakeFiles/mygame.dir/src/Chunk.cpp.o:
 
 CMakeFiles/mygame.dir/src/Face.cpp.o:
+
+CMakeFiles/mygame.dir/src/Player.cpp.o:
+
+CMakeFiles/mygame.dir/src/World.cpp.o:
+
+CMakeFiles/mygame.dir/src/Worldgen.cpp.o:
 
 CMakeFiles/mygame.dir/src/demoShaderLoader.cpp.o:
 
@@ -72,11 +90,19 @@ CMakeFiles/mygame.dir/src/main.cpp.o:
 
 CMakeFiles/mygame.dir/src/openglDebug.cpp.o:
 
+CMakeFiles/mygame.dir/src/raycast.cpp.o:
+
 thirdparty/glfw-3.3.2/src/libglfw3.a:
 
 thirdparty/glad/libglad.a:
 
+thirdparty/stb_truetype/libstb_truetype.a:
+
 thirdparty/imgui-docking/libimgui.a:
+
+thirdparty/FastNoiseSIMD/libFastNoiseSIMD.a:
+
+thirdparty/glui/libglui.a:
 
 thirdparty/glfw-3.3.2/src/libglfw3.a:
 
@@ -86,7 +112,11 @@ thirdparty/glfw-3.3.2/src/libglfw3.a:
 
 /usr/lib/libX11.so:
 
+thirdparty/gl2d/libgl2d.a:
+
 thirdparty/glad/libglad.a:
+
+thirdparty/stb_truetype/libstb_truetype.a:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/16/libstdc++.so:
 

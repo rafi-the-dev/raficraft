@@ -16,9 +16,11 @@
 #include <stb_image/stb_image.h>
 #undef STB_IMAGE_IMPLEMENTATION
 
+#include "BlockOutline.h"
 #include "Chunk.h"
 #include "Player.h"
 #include "World.h"
+#include "raycast.h"
 #include <Worldgen.h>
 #include <array>
 #include <charconv>
@@ -71,6 +73,8 @@ float crosshairVertices[] = {-10.0f, -1.0f,  10.0f, -1.0f,  10.0f,  1.0f,
 
                              -1.0f,  -10.0f, 1.0f,  10.0f,  -1.0f,  10.0f};
 
+BlockOutline blockoutline;
+
 void mouse_callback(GLFWwindow* window, double xpos, double ypos) {
 
     if(state != states::playing) {
@@ -88,7 +92,6 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos) {
 
     lastX = xpos;
     lastY = ypos;
-
 
     constexpr float sensitivity = 0.1f;
 
@@ -163,6 +166,8 @@ int main() {
         glfwTerminate();
         return -1;
     }
+
+    blockoutline.Init();
 
     gl2d::init();
 
@@ -331,6 +336,8 @@ int main() {
         glUniformMatrix4fv(uView, 1, GL_FALSE, glm::value_ptr(view));
         glUniformMatrix4fv(uModel, 1, GL_FALSE, glm::value_ptr(model));
 
+
+
         for(int i = 0; i < w.chunks.size(); i++) {
             glm::vec2 pos = w.chunks[i].pos;
             if(w.chunks[i].chunk == nullptr) {
@@ -364,6 +371,15 @@ int main() {
         }
 
         if(state == states::playing) {
+
+            RaycastHit hit = raycast(w, eyePos, cameraFront, 5.0f);
+
+            if(hit.hit) {
+                blockoutline.Draw(hit.block, view, proj);
+            }
+
+            s.bind();
+
             glDisable(GL_DEPTH_TEST);
 
             crosshairShader.bind();
@@ -434,8 +450,7 @@ int main() {
             ui.renderFrame(uiRenderer, uiFont, mousePosition, mouseHeld && !previousMouseHeld,
                            mouseHeld, !mouseHeld && previousMouseHeld,
                            false, // Escape released, unused here
-                           typedInput,
-                           deltaTime);
+                           typedInput, deltaTime);
 
             previousMouseHeld = mouseHeld;
 

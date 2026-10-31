@@ -1,7 +1,6 @@
 #include "Player.h"
 #include "raycast.h"
 
-
 void Player::applyForces(float deltaTime) {
     velocity.y += GRAVITY * deltaTime;
 }
@@ -86,7 +85,7 @@ void Player::Update(float deltaTime, GLFWwindow* window, world& w, glm::vec3 cam
         RaycastHit hit = raycast(w, eyePosition, cameraFront, 5.0f);
 
         if(hit.hit) {
-            w.setBlock(hit.block.x, hit.block.y, hit.block.z, Block {.type = Block::air});
+            w.setBlock(hit.block.x, hit.block.y, hit.block.z, Block{.type = Block::air});
 
             int chunkX =
                 static_cast<int>(std::floor(static_cast<float>(hit.block.x) / CHUNK_SIZE_X));
@@ -96,7 +95,37 @@ void Player::Update(float deltaTime, GLFWwindow* window, world& w, glm::vec3 cam
         }
     }
 
+    static bool wasRightPressed = false;
+
+    bool rightPressed = glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_RIGHT) == GLFW_PRESS;
+
+    if(rightPressed && !wasRightPressed) {
+        glm::vec3 eyePos = pos + glm::vec3(0.0f, 1.62f, 0.0f);
+
+        RaycastHit hit = raycast(w, eyePos, cameraFront, 5.0f);
+
+        if(hit.hit) {
+
+            glm::ivec3 placePos = hit.block + hit.normal;
+
+            glm::vec3 playerMin = pos - glm::vec3(0.3, 0.0f, 0.3);
+            glm::vec3 playerMax = pos + glm::vec3(0.3, 1.62f, 0.3);
+
+            glm::vec3 blockMin = glm::vec3(placePos);
+            glm::vec3 blockMax = blockMin + glm::vec3(1.0f);
+
+            bool overlaps = playerMin.x < blockMax.x && playerMax.x > blockMin.x &&
+                            playerMin.y < blockMax.y && playerMax.y > blockMin.y &&
+                            playerMin.z < blockMax.z && playerMax.z > blockMin.z;
+
+            if(w.getBlock(placePos.x, placePos.y, placePos.z).type == Block::air && !overlaps) {
+                w.setBlock(placePos.x, placePos.y, placePos.z, Block{.type = Block::dirt});
+            }
+        }
+    }
+
     wasLeftPressed = leftPressed;
+    wasRightPressed = rightPressed;
 }
 
 void Player::Move(float deltaTime, GLFWwindow* window) {
@@ -127,7 +156,6 @@ void Player::Move(float deltaTime, GLFWwindow* window) {
     } else {
         moveSpeed = 5.f;
     }
-
 
     if(glm::length(movement) > 0.0f) {
         movement = glm::normalize(movement);

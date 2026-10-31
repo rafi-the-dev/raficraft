@@ -69,7 +69,10 @@ all: thirdparty/glad/all
 all: thirdparty/stb_image/all
 all: thirdparty/stb_truetype/all
 all: thirdparty/glm/all
+all: thirdparty/gl2d/all
+all: thirdparty/glui/all
 all: thirdparty/imgui-docking/all
+all: thirdparty/FastNoiseSIMD/all
 .PHONY : all
 
 # The main recursive "codegen" target.
@@ -79,7 +82,10 @@ codegen: thirdparty/glad/codegen
 codegen: thirdparty/stb_image/codegen
 codegen: thirdparty/stb_truetype/codegen
 codegen: thirdparty/glm/codegen
+codegen: thirdparty/gl2d/codegen
+codegen: thirdparty/glui/codegen
 codegen: thirdparty/imgui-docking/codegen
+codegen: thirdparty/FastNoiseSIMD/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -88,7 +94,10 @@ preinstall: thirdparty/glad/preinstall
 preinstall: thirdparty/stb_image/preinstall
 preinstall: thirdparty/stb_truetype/preinstall
 preinstall: thirdparty/glm/preinstall
+preinstall: thirdparty/gl2d/preinstall
+preinstall: thirdparty/glui/preinstall
 preinstall: thirdparty/imgui-docking/preinstall
+preinstall: thirdparty/FastNoiseSIMD/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
@@ -98,8 +107,49 @@ clean: thirdparty/glad/clean
 clean: thirdparty/stb_image/clean
 clean: thirdparty/stb_truetype/clean
 clean: thirdparty/glm/clean
+clean: thirdparty/gl2d/clean
+clean: thirdparty/glui/clean
 clean: thirdparty/imgui-docking/clean
+clean: thirdparty/FastNoiseSIMD/clean
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory thirdparty/FastNoiseSIMD
+
+# Recursive "all" directory target.
+thirdparty/FastNoiseSIMD/all: thirdparty/FastNoiseSIMD/CMakeFiles/FastNoiseSIMD.dir/all
+.PHONY : thirdparty/FastNoiseSIMD/all
+
+# Recursive "codegen" directory target.
+thirdparty/FastNoiseSIMD/codegen: thirdparty/FastNoiseSIMD/CMakeFiles/FastNoiseSIMD.dir/codegen
+.PHONY : thirdparty/FastNoiseSIMD/codegen
+
+# Recursive "preinstall" directory target.
+thirdparty/FastNoiseSIMD/preinstall:
+.PHONY : thirdparty/FastNoiseSIMD/preinstall
+
+# Recursive "clean" directory target.
+thirdparty/FastNoiseSIMD/clean: thirdparty/FastNoiseSIMD/CMakeFiles/FastNoiseSIMD.dir/clean
+.PHONY : thirdparty/FastNoiseSIMD/clean
+
+#=============================================================================
+# Directory level rules for directory thirdparty/gl2d
+
+# Recursive "all" directory target.
+thirdparty/gl2d/all: thirdparty/gl2d/CMakeFiles/gl2d.dir/all
+.PHONY : thirdparty/gl2d/all
+
+# Recursive "codegen" directory target.
+thirdparty/gl2d/codegen: thirdparty/gl2d/CMakeFiles/gl2d.dir/codegen
+.PHONY : thirdparty/gl2d/codegen
+
+# Recursive "preinstall" directory target.
+thirdparty/gl2d/preinstall:
+.PHONY : thirdparty/gl2d/preinstall
+
+# Recursive "clean" directory target.
+thirdparty/gl2d/clean: thirdparty/gl2d/CMakeFiles/gl2d.dir/clean
+.PHONY : thirdparty/gl2d/clean
 
 #=============================================================================
 # Directory level rules for directory thirdparty/glad
@@ -178,6 +228,25 @@ thirdparty/glm/clean:
 .PHONY : thirdparty/glm/clean
 
 #=============================================================================
+# Directory level rules for directory thirdparty/glui
+
+# Recursive "all" directory target.
+thirdparty/glui/all: thirdparty/glui/CMakeFiles/glui.dir/all
+.PHONY : thirdparty/glui/all
+
+# Recursive "codegen" directory target.
+thirdparty/glui/codegen: thirdparty/glui/CMakeFiles/glui.dir/codegen
+.PHONY : thirdparty/glui/codegen
+
+# Recursive "preinstall" directory target.
+thirdparty/glui/preinstall:
+.PHONY : thirdparty/glui/preinstall
+
+# Recursive "clean" directory target.
+thirdparty/glui/clean: thirdparty/glui/CMakeFiles/glui.dir/clean
+.PHONY : thirdparty/glui/clean
+
+#=============================================================================
 # Directory level rules for directory thirdparty/imgui-docking
 
 # Recursive "all" directory target.
@@ -219,11 +288,11 @@ thirdparty/stb_image/clean:
 # Directory level rules for directory thirdparty/stb_truetype
 
 # Recursive "all" directory target.
-thirdparty/stb_truetype/all:
+thirdparty/stb_truetype/all: thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/all
 .PHONY : thirdparty/stb_truetype/all
 
 # Recursive "codegen" directory target.
-thirdparty/stb_truetype/codegen:
+thirdparty/stb_truetype/codegen: thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/codegen
 .PHONY : thirdparty/stb_truetype/codegen
 
 # Recursive "preinstall" directory target.
@@ -231,7 +300,7 @@ thirdparty/stb_truetype/preinstall:
 .PHONY : thirdparty/stb_truetype/preinstall
 
 # Recursive "clean" directory target.
-thirdparty/stb_truetype/clean:
+thirdparty/stb_truetype/clean: thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/clean
 .PHONY : thirdparty/stb_truetype/clean
 
 #=============================================================================
@@ -240,15 +309,19 @@ thirdparty/stb_truetype/clean:
 # All Build rule for target.
 CMakeFiles/mygame.dir/all: thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/all
 CMakeFiles/mygame.dir/all: thirdparty/glad/CMakeFiles/glad.dir/all
+CMakeFiles/mygame.dir/all: thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/all
+CMakeFiles/mygame.dir/all: thirdparty/gl2d/CMakeFiles/gl2d.dir/all
+CMakeFiles/mygame.dir/all: thirdparty/glui/CMakeFiles/glui.dir/all
 CMakeFiles/mygame.dir/all: thirdparty/imgui-docking/CMakeFiles/imgui.dir/all
+CMakeFiles/mygame.dir/all: thirdparty/FastNoiseSIMD/CMakeFiles/FastNoiseSIMD.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mygame.dir/build.make CMakeFiles/mygame.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mygame.dir/build.make CMakeFiles/mygame.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" --progress-num=28,29,30,31,32,33,34 "Built target mygame"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" --progress-num=40,41,42,43,44,45,46,47,48,49,50,51 "Built target mygame"
 .PHONY : CMakeFiles/mygame.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/mygame.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" 34
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" 53
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/mygame.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" 0
 .PHONY : CMakeFiles/mygame.dir/rule
@@ -260,7 +333,7 @@ mygame: CMakeFiles/mygame.dir/rule
 # codegen rule for target.
 CMakeFiles/mygame.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mygame.dir/build.make CMakeFiles/mygame.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" --progress-num=28,29,30,31,32,33,34 "Finished codegen for target mygame"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" --progress-num=40,41,42,43,44,45,46,47,48,49,50,51 "Finished codegen for target mygame"
 .PHONY : CMakeFiles/mygame.dir/codegen
 
 # clean rule for target.
@@ -275,7 +348,7 @@ CMakeFiles/mygame.dir/clean:
 thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/all:
 	$(MAKE) $(MAKESILENT) -f thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/build.make thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/depend
 	$(MAKE) $(MAKESILENT) -f thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/build.make thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" --progress-num=3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19 "Built target glfw"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" --progress-num=13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29 "Built target glfw"
 .PHONY : thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/all
 
 # Build rule for subdir invocation for target.
@@ -292,7 +365,7 @@ glfw: thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/rule
 # codegen rule for target.
 thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/build.make thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" --progress-num=3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19 "Finished codegen for target glfw"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" --progress-num=13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29 "Finished codegen for target glfw"
 .PHONY : thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/codegen
 
 # clean rule for target.
@@ -307,7 +380,7 @@ thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/clean:
 thirdparty/glad/CMakeFiles/glad.dir/all:
 	$(MAKE) $(MAKESILENT) -f thirdparty/glad/CMakeFiles/glad.dir/build.make thirdparty/glad/CMakeFiles/glad.dir/depend
 	$(MAKE) $(MAKESILENT) -f thirdparty/glad/CMakeFiles/glad.dir/build.make thirdparty/glad/CMakeFiles/glad.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" --progress-num=1,2 "Built target glad"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" --progress-num=11,12 "Built target glad"
 .PHONY : thirdparty/glad/CMakeFiles/glad.dir/all
 
 # Build rule for subdir invocation for target.
@@ -324,13 +397,112 @@ glad: thirdparty/glad/CMakeFiles/glad.dir/rule
 # codegen rule for target.
 thirdparty/glad/CMakeFiles/glad.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f thirdparty/glad/CMakeFiles/glad.dir/build.make thirdparty/glad/CMakeFiles/glad.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" --progress-num=1,2 "Finished codegen for target glad"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" --progress-num=11,12 "Finished codegen for target glad"
 .PHONY : thirdparty/glad/CMakeFiles/glad.dir/codegen
 
 # clean rule for target.
 thirdparty/glad/CMakeFiles/glad.dir/clean:
 	$(MAKE) $(MAKESILENT) -f thirdparty/glad/CMakeFiles/glad.dir/build.make thirdparty/glad/CMakeFiles/glad.dir/clean
 .PHONY : thirdparty/glad/CMakeFiles/glad.dir/clean
+
+#=============================================================================
+# Target rules for target thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir
+
+# All Build rule for target.
+thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/all:
+	$(MAKE) $(MAKESILENT) -f thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/build.make thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/depend
+	$(MAKE) $(MAKESILENT) -f thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/build.make thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" --progress-num=52,53 "Built target stb_truetype"
+.PHONY : thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/all
+
+# Build rule for subdir invocation for target.
+thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" 0
+.PHONY : thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/rule
+
+# Convenience name for target.
+stb_truetype: thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/rule
+.PHONY : stb_truetype
+
+# codegen rule for target.
+thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/build.make thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" --progress-num=52,53 "Finished codegen for target stb_truetype"
+.PHONY : thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/codegen
+
+# clean rule for target.
+thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/clean:
+	$(MAKE) $(MAKESILENT) -f thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/build.make thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/clean
+.PHONY : thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/clean
+
+#=============================================================================
+# Target rules for target thirdparty/gl2d/CMakeFiles/gl2d.dir
+
+# All Build rule for target.
+thirdparty/gl2d/CMakeFiles/gl2d.dir/all: thirdparty/glad/CMakeFiles/glad.dir/all
+thirdparty/gl2d/CMakeFiles/gl2d.dir/all: thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/all
+	$(MAKE) $(MAKESILENT) -f thirdparty/gl2d/CMakeFiles/gl2d.dir/build.make thirdparty/gl2d/CMakeFiles/gl2d.dir/depend
+	$(MAKE) $(MAKESILENT) -f thirdparty/gl2d/CMakeFiles/gl2d.dir/build.make thirdparty/gl2d/CMakeFiles/gl2d.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" --progress-num=8,9,10 "Built target gl2d"
+.PHONY : thirdparty/gl2d/CMakeFiles/gl2d.dir/all
+
+# Build rule for subdir invocation for target.
+thirdparty/gl2d/CMakeFiles/gl2d.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" 7
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 thirdparty/gl2d/CMakeFiles/gl2d.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" 0
+.PHONY : thirdparty/gl2d/CMakeFiles/gl2d.dir/rule
+
+# Convenience name for target.
+gl2d: thirdparty/gl2d/CMakeFiles/gl2d.dir/rule
+.PHONY : gl2d
+
+# codegen rule for target.
+thirdparty/gl2d/CMakeFiles/gl2d.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f thirdparty/gl2d/CMakeFiles/gl2d.dir/build.make thirdparty/gl2d/CMakeFiles/gl2d.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" --progress-num=8,9,10 "Finished codegen for target gl2d"
+.PHONY : thirdparty/gl2d/CMakeFiles/gl2d.dir/codegen
+
+# clean rule for target.
+thirdparty/gl2d/CMakeFiles/gl2d.dir/clean:
+	$(MAKE) $(MAKESILENT) -f thirdparty/gl2d/CMakeFiles/gl2d.dir/build.make thirdparty/gl2d/CMakeFiles/gl2d.dir/clean
+.PHONY : thirdparty/gl2d/CMakeFiles/gl2d.dir/clean
+
+#=============================================================================
+# Target rules for target thirdparty/glui/CMakeFiles/glui.dir
+
+# All Build rule for target.
+thirdparty/glui/CMakeFiles/glui.dir/all: thirdparty/glad/CMakeFiles/glad.dir/all
+thirdparty/glui/CMakeFiles/glui.dir/all: thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/all
+thirdparty/glui/CMakeFiles/glui.dir/all: thirdparty/gl2d/CMakeFiles/gl2d.dir/all
+	$(MAKE) $(MAKESILENT) -f thirdparty/glui/CMakeFiles/glui.dir/build.make thirdparty/glui/CMakeFiles/glui.dir/depend
+	$(MAKE) $(MAKESILENT) -f thirdparty/glui/CMakeFiles/glui.dir/build.make thirdparty/glui/CMakeFiles/glui.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" --progress-num=30,31 "Built target glui"
+.PHONY : thirdparty/glui/CMakeFiles/glui.dir/all
+
+# Build rule for subdir invocation for target.
+thirdparty/glui/CMakeFiles/glui.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" 9
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 thirdparty/glui/CMakeFiles/glui.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" 0
+.PHONY : thirdparty/glui/CMakeFiles/glui.dir/rule
+
+# Convenience name for target.
+glui: thirdparty/glui/CMakeFiles/glui.dir/rule
+.PHONY : glui
+
+# codegen rule for target.
+thirdparty/glui/CMakeFiles/glui.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f thirdparty/glui/CMakeFiles/glui.dir/build.make thirdparty/glui/CMakeFiles/glui.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" --progress-num=30,31 "Finished codegen for target glui"
+.PHONY : thirdparty/glui/CMakeFiles/glui.dir/codegen
+
+# clean rule for target.
+thirdparty/glui/CMakeFiles/glui.dir/clean:
+	$(MAKE) $(MAKESILENT) -f thirdparty/glui/CMakeFiles/glui.dir/build.make thirdparty/glui/CMakeFiles/glui.dir/clean
+.PHONY : thirdparty/glui/CMakeFiles/glui.dir/clean
 
 #=============================================================================
 # Target rules for target thirdparty/imgui-docking/CMakeFiles/imgui.dir
@@ -340,7 +512,7 @@ thirdparty/imgui-docking/CMakeFiles/imgui.dir/all: thirdparty/glfw-3.3.2/src/CMa
 thirdparty/imgui-docking/CMakeFiles/imgui.dir/all: thirdparty/glad/CMakeFiles/glad.dir/all
 	$(MAKE) $(MAKESILENT) -f thirdparty/imgui-docking/CMakeFiles/imgui.dir/build.make thirdparty/imgui-docking/CMakeFiles/imgui.dir/depend
 	$(MAKE) $(MAKESILENT) -f thirdparty/imgui-docking/CMakeFiles/imgui.dir/build.make thirdparty/imgui-docking/CMakeFiles/imgui.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" --progress-num=20,21,22,23,24,25,26,27 "Built target imgui"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" --progress-num=32,33,34,35,36,37,38,39 "Built target imgui"
 .PHONY : thirdparty/imgui-docking/CMakeFiles/imgui.dir/all
 
 # Build rule for subdir invocation for target.
@@ -357,13 +529,45 @@ imgui: thirdparty/imgui-docking/CMakeFiles/imgui.dir/rule
 # codegen rule for target.
 thirdparty/imgui-docking/CMakeFiles/imgui.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f thirdparty/imgui-docking/CMakeFiles/imgui.dir/build.make thirdparty/imgui-docking/CMakeFiles/imgui.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" --progress-num=20,21,22,23,24,25,26,27 "Finished codegen for target imgui"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" --progress-num=32,33,34,35,36,37,38,39 "Finished codegen for target imgui"
 .PHONY : thirdparty/imgui-docking/CMakeFiles/imgui.dir/codegen
 
 # clean rule for target.
 thirdparty/imgui-docking/CMakeFiles/imgui.dir/clean:
 	$(MAKE) $(MAKESILENT) -f thirdparty/imgui-docking/CMakeFiles/imgui.dir/build.make thirdparty/imgui-docking/CMakeFiles/imgui.dir/clean
 .PHONY : thirdparty/imgui-docking/CMakeFiles/imgui.dir/clean
+
+#=============================================================================
+# Target rules for target thirdparty/FastNoiseSIMD/CMakeFiles/FastNoiseSIMD.dir
+
+# All Build rule for target.
+thirdparty/FastNoiseSIMD/CMakeFiles/FastNoiseSIMD.dir/all:
+	$(MAKE) $(MAKESILENT) -f thirdparty/FastNoiseSIMD/CMakeFiles/FastNoiseSIMD.dir/build.make thirdparty/FastNoiseSIMD/CMakeFiles/FastNoiseSIMD.dir/depend
+	$(MAKE) $(MAKESILENT) -f thirdparty/FastNoiseSIMD/CMakeFiles/FastNoiseSIMD.dir/build.make thirdparty/FastNoiseSIMD/CMakeFiles/FastNoiseSIMD.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" --progress-num=1,2,3,4,5,6,7 "Built target FastNoiseSIMD"
+.PHONY : thirdparty/FastNoiseSIMD/CMakeFiles/FastNoiseSIMD.dir/all
+
+# Build rule for subdir invocation for target.
+thirdparty/FastNoiseSIMD/CMakeFiles/FastNoiseSIMD.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" 7
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 thirdparty/FastNoiseSIMD/CMakeFiles/FastNoiseSIMD.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" 0
+.PHONY : thirdparty/FastNoiseSIMD/CMakeFiles/FastNoiseSIMD.dir/rule
+
+# Convenience name for target.
+FastNoiseSIMD: thirdparty/FastNoiseSIMD/CMakeFiles/FastNoiseSIMD.dir/rule
+.PHONY : FastNoiseSIMD
+
+# codegen rule for target.
+thirdparty/FastNoiseSIMD/CMakeFiles/FastNoiseSIMD.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f thirdparty/FastNoiseSIMD/CMakeFiles/FastNoiseSIMD.dir/build.make thirdparty/FastNoiseSIMD/CMakeFiles/FastNoiseSIMD.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" --progress-num=1,2,3,4,5,6,7 "Finished codegen for target FastNoiseSIMD"
+.PHONY : thirdparty/FastNoiseSIMD/CMakeFiles/FastNoiseSIMD.dir/codegen
+
+# clean rule for target.
+thirdparty/FastNoiseSIMD/CMakeFiles/FastNoiseSIMD.dir/clean:
+	$(MAKE) $(MAKESILENT) -f thirdparty/FastNoiseSIMD/CMakeFiles/FastNoiseSIMD.dir/build.make thirdparty/FastNoiseSIMD/CMakeFiles/FastNoiseSIMD.dir/clean
+.PHONY : thirdparty/FastNoiseSIMD/CMakeFiles/FastNoiseSIMD.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -60,6 +60,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/4.4.3/CMakeSystem.cmake"
   "CMakeFiles/VerifyGlobs.cmake"
   "CMakeFiles/cmake.verify_globs"
+  "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/FastNoiseSIMD/CMakeLists.txt"
+  "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/gl2d/CMakeLists.txt"
   "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glad/CMakeLists.txt"
   "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt"
   "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
@@ -67,6 +69,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/glfw3Config.cmake.in"
   "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/glfw_config.h.in"
   "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glm/CMakeLists.txt"
+  "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glui/CMakeLists.txt"
   "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/imgui-docking/CMakeLists.txt"
   "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/stb_image/CMakeLists.txt"
   "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/stb_truetype/CMakeLists.txt"
@@ -91,7 +94,10 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "thirdparty/stb_image/CMakeFiles/CMakeDirectoryInformation.cmake"
   "thirdparty/stb_truetype/CMakeFiles/CMakeDirectoryInformation.cmake"
   "thirdparty/glm/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "thirdparty/gl2d/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "thirdparty/glui/CMakeFiles/CMakeDirectoryInformation.cmake"
   "thirdparty/imgui-docking/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "thirdparty/FastNoiseSIMD/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -99,5 +105,9 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/mygame.dir/DependInfo.cmake"
   "thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/DependInfo.cmake"
   "thirdparty/glad/CMakeFiles/glad.dir/DependInfo.cmake"
+  "thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/DependInfo.cmake"
+  "thirdparty/gl2d/CMakeFiles/gl2d.dir/DependInfo.cmake"
+  "thirdparty/glui/CMakeFiles/glui.dir/DependInfo.cmake"
   "thirdparty/imgui-docking/CMakeFiles/imgui.dir/DependInfo.cmake"
+  "thirdparty/FastNoiseSIMD/CMakeFiles/FastNoiseSIMD.dir/DependInfo.cmake"
   )

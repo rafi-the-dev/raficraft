@@ -72,24 +72,38 @@ include CMakeFiles/mygame.dir/flags.make
 CMakeFiles/mygame.dir/codegen:
 .PHONY : CMakeFiles/mygame.dir/codegen
 
-CMakeFiles/mygame.dir/src/Block.cpp.o: CMakeFiles/mygame.dir/flags.make
-CMakeFiles/mygame.dir/src/Block.cpp.o: /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/src/Block.cpp
-CMakeFiles/mygame.dir/src/Block.cpp.o: CMakeFiles/mygame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/mygame.dir/src/Block.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mygame.dir/src/Block.cpp.o -MF CMakeFiles/mygame.dir/src/Block.cpp.o.d -o CMakeFiles/mygame.dir/src/Block.cpp.o -c "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/src/Block.cpp"
+CMakeFiles/mygame.dir/src/BlockOutline.cpp.o: CMakeFiles/mygame.dir/flags.make
+CMakeFiles/mygame.dir/src/BlockOutline.cpp.o: /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/src/BlockOutline.cpp
+CMakeFiles/mygame.dir/src/BlockOutline.cpp.o: CMakeFiles/mygame.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/mygame.dir/src/BlockOutline.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mygame.dir/src/BlockOutline.cpp.o -MF CMakeFiles/mygame.dir/src/BlockOutline.cpp.o.d -o CMakeFiles/mygame.dir/src/BlockOutline.cpp.o -c "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/src/BlockOutline.cpp"
 
-CMakeFiles/mygame.dir/src/Block.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/mygame.dir/src/Block.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/src/Block.cpp" > CMakeFiles/mygame.dir/src/Block.cpp.i
+CMakeFiles/mygame.dir/src/BlockOutline.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/mygame.dir/src/BlockOutline.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/src/BlockOutline.cpp" > CMakeFiles/mygame.dir/src/BlockOutline.cpp.i
 
-CMakeFiles/mygame.dir/src/Block.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/mygame.dir/src/Block.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/src/Block.cpp" -o CMakeFiles/mygame.dir/src/Block.cpp.s
+CMakeFiles/mygame.dir/src/BlockOutline.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/mygame.dir/src/BlockOutline.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/src/BlockOutline.cpp" -o CMakeFiles/mygame.dir/src/BlockOutline.cpp.s
+
+CMakeFiles/mygame.dir/src/Chunk.cpp.o: CMakeFiles/mygame.dir/flags.make
+CMakeFiles/mygame.dir/src/Chunk.cpp.o: /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/src/Chunk.cpp
+CMakeFiles/mygame.dir/src/Chunk.cpp.o: CMakeFiles/mygame.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/mygame.dir/src/Chunk.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mygame.dir/src/Chunk.cpp.o -MF CMakeFiles/mygame.dir/src/Chunk.cpp.o.d -o CMakeFiles/mygame.dir/src/Chunk.cpp.o -c "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/src/Chunk.cpp"
+
+CMakeFiles/mygame.dir/src/Chunk.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/mygame.dir/src/Chunk.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/src/Chunk.cpp" > CMakeFiles/mygame.dir/src/Chunk.cpp.i
+
+CMakeFiles/mygame.dir/src/Chunk.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/mygame.dir/src/Chunk.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/src/Chunk.cpp" -o CMakeFiles/mygame.dir/src/Chunk.cpp.s
 
 CMakeFiles/mygame.dir/src/Face.cpp.o: CMakeFiles/mygame.dir/flags.make
 CMakeFiles/mygame.dir/src/Face.cpp.o: /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/src/Face.cpp
 CMakeFiles/mygame.dir/src/Face.cpp.o: CMakeFiles/mygame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/mygame.dir/src/Face.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/mygame.dir/src/Face.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mygame.dir/src/Face.cpp.o -MF CMakeFiles/mygame.dir/src/Face.cpp.o.d -o CMakeFiles/mygame.dir/src/Face.cpp.o -c "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/src/Face.cpp"
 
 CMakeFiles/mygame.dir/src/Face.cpp.i: cmake_force
@@ -100,10 +114,52 @@ CMakeFiles/mygame.dir/src/Face.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/mygame.dir/src/Face.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/src/Face.cpp" -o CMakeFiles/mygame.dir/src/Face.cpp.s
 
+CMakeFiles/mygame.dir/src/Player.cpp.o: CMakeFiles/mygame.dir/flags.make
+CMakeFiles/mygame.dir/src/Player.cpp.o: /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/src/Player.cpp
+CMakeFiles/mygame.dir/src/Player.cpp.o: CMakeFiles/mygame.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/mygame.dir/src/Player.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mygame.dir/src/Player.cpp.o -MF CMakeFiles/mygame.dir/src/Player.cpp.o.d -o CMakeFiles/mygame.dir/src/Player.cpp.o -c "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/src/Player.cpp"
+
+CMakeFiles/mygame.dir/src/Player.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/mygame.dir/src/Player.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/src/Player.cpp" > CMakeFiles/mygame.dir/src/Player.cpp.i
+
+CMakeFiles/mygame.dir/src/Player.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/mygame.dir/src/Player.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/src/Player.cpp" -o CMakeFiles/mygame.dir/src/Player.cpp.s
+
+CMakeFiles/mygame.dir/src/World.cpp.o: CMakeFiles/mygame.dir/flags.make
+CMakeFiles/mygame.dir/src/World.cpp.o: /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/src/World.cpp
+CMakeFiles/mygame.dir/src/World.cpp.o: CMakeFiles/mygame.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/mygame.dir/src/World.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mygame.dir/src/World.cpp.o -MF CMakeFiles/mygame.dir/src/World.cpp.o.d -o CMakeFiles/mygame.dir/src/World.cpp.o -c "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/src/World.cpp"
+
+CMakeFiles/mygame.dir/src/World.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/mygame.dir/src/World.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/src/World.cpp" > CMakeFiles/mygame.dir/src/World.cpp.i
+
+CMakeFiles/mygame.dir/src/World.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/mygame.dir/src/World.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/src/World.cpp" -o CMakeFiles/mygame.dir/src/World.cpp.s
+
+CMakeFiles/mygame.dir/src/Worldgen.cpp.o: CMakeFiles/mygame.dir/flags.make
+CMakeFiles/mygame.dir/src/Worldgen.cpp.o: /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/src/Worldgen.cpp
+CMakeFiles/mygame.dir/src/Worldgen.cpp.o: CMakeFiles/mygame.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/mygame.dir/src/Worldgen.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mygame.dir/src/Worldgen.cpp.o -MF CMakeFiles/mygame.dir/src/Worldgen.cpp.o.d -o CMakeFiles/mygame.dir/src/Worldgen.cpp.o -c "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/src/Worldgen.cpp"
+
+CMakeFiles/mygame.dir/src/Worldgen.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/mygame.dir/src/Worldgen.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/src/Worldgen.cpp" > CMakeFiles/mygame.dir/src/Worldgen.cpp.i
+
+CMakeFiles/mygame.dir/src/Worldgen.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/mygame.dir/src/Worldgen.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/src/Worldgen.cpp" -o CMakeFiles/mygame.dir/src/Worldgen.cpp.s
+
 CMakeFiles/mygame.dir/src/demoShaderLoader.cpp.o: CMakeFiles/mygame.dir/flags.make
 CMakeFiles/mygame.dir/src/demoShaderLoader.cpp.o: /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/src/demoShaderLoader.cpp
 CMakeFiles/mygame.dir/src/demoShaderLoader.cpp.o: CMakeFiles/mygame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/mygame.dir/src/demoShaderLoader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/mygame.dir/src/demoShaderLoader.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mygame.dir/src/demoShaderLoader.cpp.o -MF CMakeFiles/mygame.dir/src/demoShaderLoader.cpp.o.d -o CMakeFiles/mygame.dir/src/demoShaderLoader.cpp.o -c "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/src/demoShaderLoader.cpp"
 
 CMakeFiles/mygame.dir/src/demoShaderLoader.cpp.i: cmake_force
@@ -117,7 +173,7 @@ CMakeFiles/mygame.dir/src/demoShaderLoader.cpp.s: cmake_force
 CMakeFiles/mygame.dir/src/input.cpp.o: CMakeFiles/mygame.dir/flags.make
 CMakeFiles/mygame.dir/src/input.cpp.o: /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/src/input.cpp
 CMakeFiles/mygame.dir/src/input.cpp.o: CMakeFiles/mygame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/mygame.dir/src/input.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/mygame.dir/src/input.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mygame.dir/src/input.cpp.o -MF CMakeFiles/mygame.dir/src/input.cpp.o.d -o CMakeFiles/mygame.dir/src/input.cpp.o -c "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/src/input.cpp"
 
 CMakeFiles/mygame.dir/src/input.cpp.i: cmake_force
@@ -131,7 +187,7 @@ CMakeFiles/mygame.dir/src/input.cpp.s: cmake_force
 CMakeFiles/mygame.dir/src/main.cpp.o: CMakeFiles/mygame.dir/flags.make
 CMakeFiles/mygame.dir/src/main.cpp.o: /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/src/main.cpp
 CMakeFiles/mygame.dir/src/main.cpp.o: CMakeFiles/mygame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/mygame.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/mygame.dir/src/main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mygame.dir/src/main.cpp.o -MF CMakeFiles/mygame.dir/src/main.cpp.o.d -o CMakeFiles/mygame.dir/src/main.cpp.o -c "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/src/main.cpp"
 
 CMakeFiles/mygame.dir/src/main.cpp.i: cmake_force
@@ -145,7 +201,7 @@ CMakeFiles/mygame.dir/src/main.cpp.s: cmake_force
 CMakeFiles/mygame.dir/src/openglDebug.cpp.o: CMakeFiles/mygame.dir/flags.make
 CMakeFiles/mygame.dir/src/openglDebug.cpp.o: /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/src/openglDebug.cpp
 CMakeFiles/mygame.dir/src/openglDebug.cpp.o: CMakeFiles/mygame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/mygame.dir/src/openglDebug.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/mygame.dir/src/openglDebug.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mygame.dir/src/openglDebug.cpp.o -MF CMakeFiles/mygame.dir/src/openglDebug.cpp.o.d -o CMakeFiles/mygame.dir/src/openglDebug.cpp.o -c "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/src/openglDebug.cpp"
 
 CMakeFiles/mygame.dir/src/openglDebug.cpp.i: cmake_force
@@ -156,36 +212,65 @@ CMakeFiles/mygame.dir/src/openglDebug.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/mygame.dir/src/openglDebug.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/src/openglDebug.cpp" -o CMakeFiles/mygame.dir/src/openglDebug.cpp.s
 
+CMakeFiles/mygame.dir/src/raycast.cpp.o: CMakeFiles/mygame.dir/flags.make
+CMakeFiles/mygame.dir/src/raycast.cpp.o: /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/src/raycast.cpp
+CMakeFiles/mygame.dir/src/raycast.cpp.o: CMakeFiles/mygame.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/mygame.dir/src/raycast.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mygame.dir/src/raycast.cpp.o -MF CMakeFiles/mygame.dir/src/raycast.cpp.o.d -o CMakeFiles/mygame.dir/src/raycast.cpp.o -c "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/src/raycast.cpp"
+
+CMakeFiles/mygame.dir/src/raycast.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/mygame.dir/src/raycast.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/src/raycast.cpp" > CMakeFiles/mygame.dir/src/raycast.cpp.i
+
+CMakeFiles/mygame.dir/src/raycast.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/mygame.dir/src/raycast.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/src/raycast.cpp" -o CMakeFiles/mygame.dir/src/raycast.cpp.s
+
 # Object files for target mygame
 mygame_OBJECTS = \
-"CMakeFiles/mygame.dir/src/Block.cpp.o" \
+"CMakeFiles/mygame.dir/src/BlockOutline.cpp.o" \
+"CMakeFiles/mygame.dir/src/Chunk.cpp.o" \
 "CMakeFiles/mygame.dir/src/Face.cpp.o" \
+"CMakeFiles/mygame.dir/src/Player.cpp.o" \
+"CMakeFiles/mygame.dir/src/World.cpp.o" \
+"CMakeFiles/mygame.dir/src/Worldgen.cpp.o" \
 "CMakeFiles/mygame.dir/src/demoShaderLoader.cpp.o" \
 "CMakeFiles/mygame.dir/src/input.cpp.o" \
 "CMakeFiles/mygame.dir/src/main.cpp.o" \
-"CMakeFiles/mygame.dir/src/openglDebug.cpp.o"
+"CMakeFiles/mygame.dir/src/openglDebug.cpp.o" \
+"CMakeFiles/mygame.dir/src/raycast.cpp.o"
 
 # External object files for target mygame
 mygame_EXTERNAL_OBJECTS =
 
-mygame: CMakeFiles/mygame.dir/src/Block.cpp.o
+mygame: CMakeFiles/mygame.dir/src/BlockOutline.cpp.o
+mygame: CMakeFiles/mygame.dir/src/Chunk.cpp.o
 mygame: CMakeFiles/mygame.dir/src/Face.cpp.o
+mygame: CMakeFiles/mygame.dir/src/Player.cpp.o
+mygame: CMakeFiles/mygame.dir/src/World.cpp.o
+mygame: CMakeFiles/mygame.dir/src/Worldgen.cpp.o
 mygame: CMakeFiles/mygame.dir/src/demoShaderLoader.cpp.o
 mygame: CMakeFiles/mygame.dir/src/input.cpp.o
 mygame: CMakeFiles/mygame.dir/src/main.cpp.o
 mygame: CMakeFiles/mygame.dir/src/openglDebug.cpp.o
+mygame: CMakeFiles/mygame.dir/src/raycast.cpp.o
 mygame: CMakeFiles/mygame.dir/build.make
 mygame: CMakeFiles/mygame.dir/compiler_depend.ts
 mygame: thirdparty/glfw-3.3.2/src/libglfw3.a
 mygame: thirdparty/glad/libglad.a
+mygame: thirdparty/stb_truetype/libstb_truetype.a
 mygame: thirdparty/imgui-docking/libimgui.a
+mygame: thirdparty/FastNoiseSIMD/libFastNoiseSIMD.a
+mygame: thirdparty/glui/libglui.a
 mygame: thirdparty/glfw-3.3.2/src/libglfw3.a
 mygame: /usr/lib/librt.a
 mygame: /usr/lib/libm.so
 mygame: /usr/lib/libX11.so
+mygame: thirdparty/gl2d/libgl2d.a
 mygame: thirdparty/glad/libglad.a
+mygame: thirdparty/stb_truetype/libstb_truetype.a
 mygame: CMakeFiles/mygame.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable mygame"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable mygame"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mygame.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

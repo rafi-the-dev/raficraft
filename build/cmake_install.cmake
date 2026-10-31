@@ -69,7 +69,22 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/thirdparty/gl2d/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/thirdparty/glui/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/thirdparty/imgui-docking/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/thirdparty/FastNoiseSIMD/cmake_install.cmake")
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT

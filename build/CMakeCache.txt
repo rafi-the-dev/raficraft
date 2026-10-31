@@ -346,6 +346,12 @@ PKG_CONFIG_ARGN:STRING=
 //pkg-config executable
 PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
 
+//Build face batching regression tests
+RAFICRAFT_BUILD_TESTS:BOOL=OFF
+
+//Use bundled resources for distribution
+RAFICRAFT_PORTABLE:BOOL=OFF
+
 //Path to a library.
 RT_LIBRARY:FILEPATH=/usr/lib/librt.a
 
@@ -761,6 +767,15 @@ X11_xkbfile_INCLUDE_PATH:PATH=/usr/include
 X11_xkbfile_LIB:FILEPATH=/usr/lib/libxkbfile.so
 
 //Value Computed by CMake
+gl2d_BINARY_DIR:STATIC=/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/thirdparty/gl2d
+
+//Value Computed by CMake
+gl2d_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+gl2d_SOURCE_DIR:STATIC=/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/gl2d
+
+//Value Computed by CMake
 glad_BINARY_DIR:STATIC=/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/thirdparty/glad
 
 //Value Computed by CMake
@@ -777,6 +792,15 @@ glm_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
 glm_SOURCE_DIR:STATIC=/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glm
+
+//Value Computed by CMake
+glui_BINARY_DIR:STATIC=/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/thirdparty/glui
+
+//Value Computed by CMake
+glui_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+glui_SOURCE_DIR:STATIC=/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glui
 
 //Value Computed by CMake
 imgui_BINARY_DIR:STATIC=/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/thirdparty/imgui-docking
@@ -971,7 +995,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=8
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=11
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

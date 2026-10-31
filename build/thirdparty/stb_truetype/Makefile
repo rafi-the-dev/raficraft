@@ -117,6 +117,44 @@ depend:
 	cd "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/rule:
+	cd "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/rule
+.PHONY : thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/rule
+
+# Convenience name for target.
+stb_truetype: thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/rule
+.PHONY : stb_truetype
+
+# fast build rule for target.
+stb_truetype/fast:
+	cd "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build" && $(MAKE) $(MAKESILENT) -f thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/build.make thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/build
+.PHONY : stb_truetype/fast
+
+src/stb_truetype.o: src/stb_truetype.cpp.o
+.PHONY : src/stb_truetype.o
+
+# target to build an object file
+src/stb_truetype.cpp.o:
+	cd "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build" && $(MAKE) $(MAKESILENT) -f thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/build.make thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/src/stb_truetype.cpp.o
+.PHONY : src/stb_truetype.cpp.o
+
+src/stb_truetype.i: src/stb_truetype.cpp.i
+.PHONY : src/stb_truetype.i
+
+# target to preprocess a source file
+src/stb_truetype.cpp.i:
+	cd "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build" && $(MAKE) $(MAKESILENT) -f thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/build.make thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/src/stb_truetype.cpp.i
+.PHONY : src/stb_truetype.cpp.i
+
+src/stb_truetype.s: src/stb_truetype.cpp.s
+.PHONY : src/stb_truetype.s
+
+# target to generate assembly for a file
+src/stb_truetype.cpp.s:
+	cd "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build" && $(MAKE) $(MAKESILENT) -f thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/build.make thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/src/stb_truetype.cpp.s
+.PHONY : src/stb_truetype.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -125,6 +163,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... stb_truetype"
+	@echo "... src/stb_truetype.o"
+	@echo "... src/stb_truetype.i"
+	@echo "... src/stb_truetype.s"
 .PHONY : help
 
 

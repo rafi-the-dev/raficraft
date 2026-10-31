@@ -157,6 +157,45 @@ glad/fast:
 .PHONY : glad/fast
 
 #=============================================================================
+# Target rules for targets named stb_truetype
+
+# Build rule for target.
+stb_truetype: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 stb_truetype
+.PHONY : stb_truetype
+
+# fast build rule for target.
+stb_truetype/fast:
+	$(MAKE) $(MAKESILENT) -f thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/build.make thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/build
+.PHONY : stb_truetype/fast
+
+#=============================================================================
+# Target rules for targets named gl2d
+
+# Build rule for target.
+gl2d: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gl2d
+.PHONY : gl2d
+
+# fast build rule for target.
+gl2d/fast:
+	$(MAKE) $(MAKESILENT) -f thirdparty/gl2d/CMakeFiles/gl2d.dir/build.make thirdparty/gl2d/CMakeFiles/gl2d.dir/build
+.PHONY : gl2d/fast
+
+#=============================================================================
+# Target rules for targets named glui
+
+# Build rule for target.
+glui: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glui
+.PHONY : glui
+
+# fast build rule for target.
+glui/fast:
+	$(MAKE) $(MAKESILENT) -f thirdparty/glui/CMakeFiles/glui.dir/build.make thirdparty/glui/CMakeFiles/glui.dir/build
+.PHONY : glui/fast
+
+#=============================================================================
 # Target rules for targets named imgui
 
 # Build rule for target.
@@ -169,29 +208,66 @@ imgui/fast:
 	$(MAKE) $(MAKESILENT) -f thirdparty/imgui-docking/CMakeFiles/imgui.dir/build.make thirdparty/imgui-docking/CMakeFiles/imgui.dir/build
 .PHONY : imgui/fast
 
-src/Block.o: src/Block.cpp.o
-.PHONY : src/Block.o
+#=============================================================================
+# Target rules for targets named FastNoiseSIMD
+
+# Build rule for target.
+FastNoiseSIMD: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 FastNoiseSIMD
+.PHONY : FastNoiseSIMD
+
+# fast build rule for target.
+FastNoiseSIMD/fast:
+	$(MAKE) $(MAKESILENT) -f thirdparty/FastNoiseSIMD/CMakeFiles/FastNoiseSIMD.dir/build.make thirdparty/FastNoiseSIMD/CMakeFiles/FastNoiseSIMD.dir/build
+.PHONY : FastNoiseSIMD/fast
+
+src/BlockOutline.o: src/BlockOutline.cpp.o
+.PHONY : src/BlockOutline.o
 
 # target to build an object file
-src/Block.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mygame.dir/build.make CMakeFiles/mygame.dir/src/Block.cpp.o
-.PHONY : src/Block.cpp.o
+src/BlockOutline.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mygame.dir/build.make CMakeFiles/mygame.dir/src/BlockOutline.cpp.o
+.PHONY : src/BlockOutline.cpp.o
 
-src/Block.i: src/Block.cpp.i
-.PHONY : src/Block.i
+src/BlockOutline.i: src/BlockOutline.cpp.i
+.PHONY : src/BlockOutline.i
 
 # target to preprocess a source file
-src/Block.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mygame.dir/build.make CMakeFiles/mygame.dir/src/Block.cpp.i
-.PHONY : src/Block.cpp.i
+src/BlockOutline.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mygame.dir/build.make CMakeFiles/mygame.dir/src/BlockOutline.cpp.i
+.PHONY : src/BlockOutline.cpp.i
 
-src/Block.s: src/Block.cpp.s
-.PHONY : src/Block.s
+src/BlockOutline.s: src/BlockOutline.cpp.s
+.PHONY : src/BlockOutline.s
 
 # target to generate assembly for a file
-src/Block.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mygame.dir/build.make CMakeFiles/mygame.dir/src/Block.cpp.s
-.PHONY : src/Block.cpp.s
+src/BlockOutline.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mygame.dir/build.make CMakeFiles/mygame.dir/src/BlockOutline.cpp.s
+.PHONY : src/BlockOutline.cpp.s
+
+src/Chunk.o: src/Chunk.cpp.o
+.PHONY : src/Chunk.o
+
+# target to build an object file
+src/Chunk.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mygame.dir/build.make CMakeFiles/mygame.dir/src/Chunk.cpp.o
+.PHONY : src/Chunk.cpp.o
+
+src/Chunk.i: src/Chunk.cpp.i
+.PHONY : src/Chunk.i
+
+# target to preprocess a source file
+src/Chunk.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mygame.dir/build.make CMakeFiles/mygame.dir/src/Chunk.cpp.i
+.PHONY : src/Chunk.cpp.i
+
+src/Chunk.s: src/Chunk.cpp.s
+.PHONY : src/Chunk.s
+
+# target to generate assembly for a file
+src/Chunk.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mygame.dir/build.make CMakeFiles/mygame.dir/src/Chunk.cpp.s
+.PHONY : src/Chunk.cpp.s
 
 src/Face.o: src/Face.cpp.o
 .PHONY : src/Face.o
@@ -216,6 +292,78 @@ src/Face.s: src/Face.cpp.s
 src/Face.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mygame.dir/build.make CMakeFiles/mygame.dir/src/Face.cpp.s
 .PHONY : src/Face.cpp.s
+
+src/Player.o: src/Player.cpp.o
+.PHONY : src/Player.o
+
+# target to build an object file
+src/Player.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mygame.dir/build.make CMakeFiles/mygame.dir/src/Player.cpp.o
+.PHONY : src/Player.cpp.o
+
+src/Player.i: src/Player.cpp.i
+.PHONY : src/Player.i
+
+# target to preprocess a source file
+src/Player.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mygame.dir/build.make CMakeFiles/mygame.dir/src/Player.cpp.i
+.PHONY : src/Player.cpp.i
+
+src/Player.s: src/Player.cpp.s
+.PHONY : src/Player.s
+
+# target to generate assembly for a file
+src/Player.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mygame.dir/build.make CMakeFiles/mygame.dir/src/Player.cpp.s
+.PHONY : src/Player.cpp.s
+
+src/World.o: src/World.cpp.o
+.PHONY : src/World.o
+
+# target to build an object file
+src/World.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mygame.dir/build.make CMakeFiles/mygame.dir/src/World.cpp.o
+.PHONY : src/World.cpp.o
+
+src/World.i: src/World.cpp.i
+.PHONY : src/World.i
+
+# target to preprocess a source file
+src/World.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mygame.dir/build.make CMakeFiles/mygame.dir/src/World.cpp.i
+.PHONY : src/World.cpp.i
+
+src/World.s: src/World.cpp.s
+.PHONY : src/World.s
+
+# target to generate assembly for a file
+src/World.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mygame.dir/build.make CMakeFiles/mygame.dir/src/World.cpp.s
+.PHONY : src/World.cpp.s
+
+src/Worldgen.o: src/Worldgen.cpp.o
+.PHONY : src/Worldgen.o
+
+# target to build an object file
+src/Worldgen.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mygame.dir/build.make CMakeFiles/mygame.dir/src/Worldgen.cpp.o
+.PHONY : src/Worldgen.cpp.o
+
+src/Worldgen.i: src/Worldgen.cpp.i
+.PHONY : src/Worldgen.i
+
+# target to preprocess a source file
+src/Worldgen.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mygame.dir/build.make CMakeFiles/mygame.dir/src/Worldgen.cpp.i
+.PHONY : src/Worldgen.cpp.i
+
+src/Worldgen.s: src/Worldgen.cpp.s
+.PHONY : src/Worldgen.s
+
+# target to generate assembly for a file
+src/Worldgen.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mygame.dir/build.make CMakeFiles/mygame.dir/src/Worldgen.cpp.s
+.PHONY : src/Worldgen.cpp.s
 
 src/demoShaderLoader.o: src/demoShaderLoader.cpp.o
 .PHONY : src/demoShaderLoader.o
@@ -313,6 +461,30 @@ src/openglDebug.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mygame.dir/build.make CMakeFiles/mygame.dir/src/openglDebug.cpp.s
 .PHONY : src/openglDebug.cpp.s
 
+src/raycast.o: src/raycast.cpp.o
+.PHONY : src/raycast.o
+
+# target to build an object file
+src/raycast.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mygame.dir/build.make CMakeFiles/mygame.dir/src/raycast.cpp.o
+.PHONY : src/raycast.cpp.o
+
+src/raycast.i: src/raycast.cpp.i
+.PHONY : src/raycast.i
+
+# target to preprocess a source file
+src/raycast.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mygame.dir/build.make CMakeFiles/mygame.dir/src/raycast.cpp.i
+.PHONY : src/raycast.cpp.i
+
+src/raycast.s: src/raycast.cpp.s
+.PHONY : src/raycast.s
+
+# target to generate assembly for a file
+src/raycast.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mygame.dir/build.make CMakeFiles/mygame.dir/src/raycast.cpp.s
+.PHONY : src/raycast.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -321,16 +493,32 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... FastNoiseSIMD"
+	@echo "... gl2d"
 	@echo "... glad"
 	@echo "... glfw"
+	@echo "... glui"
 	@echo "... imgui"
 	@echo "... mygame"
-	@echo "... src/Block.o"
-	@echo "... src/Block.i"
-	@echo "... src/Block.s"
+	@echo "... stb_truetype"
+	@echo "... src/BlockOutline.o"
+	@echo "... src/BlockOutline.i"
+	@echo "... src/BlockOutline.s"
+	@echo "... src/Chunk.o"
+	@echo "... src/Chunk.i"
+	@echo "... src/Chunk.s"
 	@echo "... src/Face.o"
 	@echo "... src/Face.i"
 	@echo "... src/Face.s"
+	@echo "... src/Player.o"
+	@echo "... src/Player.i"
+	@echo "... src/Player.s"
+	@echo "... src/World.o"
+	@echo "... src/World.i"
+	@echo "... src/World.s"
+	@echo "... src/Worldgen.o"
+	@echo "... src/Worldgen.i"
+	@echo "... src/Worldgen.s"
 	@echo "... src/demoShaderLoader.o"
 	@echo "... src/demoShaderLoader.i"
 	@echo "... src/demoShaderLoader.s"
@@ -343,6 +531,9 @@ help:
 	@echo "... src/openglDebug.o"
 	@echo "... src/openglDebug.i"
 	@echo "... src/openglDebug.s"
+	@echo "... src/raycast.o"
+	@echo "... src/raycast.i"
+	@echo "... src/raycast.s"
 .PHONY : help
 
 
