@@ -42,12 +42,14 @@ constexpr const char* DIRT_TEXTURE = RESOURCES_PATH "assets/blocks/dirt.png";
 constexpr const char* STONE_TEXTURE = RESOURCES_PATH "assets/blocks/stone.png";
 constexpr const char* GRASS_TOP_TEXTURE = RESOURCES_PATH "assets/blocks/grass_top.png";
 constexpr const char* GRASS_SIDE_TEXTURE = RESOURCES_PATH "assets/blocks/grass_side.png";
+constexpr const char* TORCH_TEXTURE = RESOURCES_PATH "assets/blocks/torch.png";
 
 constexpr const char* TEXTURE_PATHS[] = {
     DIRT_TEXTURE,      // 0
     STONE_TEXTURE,     // 1
     GRASS_TOP_TEXTURE, // 2
-    GRASS_SIDE_TEXTURE // 3
+    GRASS_SIDE_TEXTURE, // 3
+    TORCH_TEXTURE, // 4
 };
 
 enum states {

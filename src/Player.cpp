@@ -38,7 +38,7 @@ bool Player::Collide(world& w) {
     for(int x = minX; x <= maxX; x++) {
         for(int y = minY; y <= maxY; y++) {
             for(int z = minZ; z <= maxZ; z++) {
-                if(w.getBlock(x, y, z).type != Block::air) {
+                if(w.getBlock(x, y, z).type != Block::air && w.getBlock(x, y, z).type != Block::torch) {
                     return true;
                 }
             }

@@ -14,3 +14,7 @@ enum FaceDirection { FRONT = 0, BACK = 1, LEFT = 2, RIGHT = 3, TOP = 4, BOTTOM =
 
 uint32_t packFace(uint32_t direction, uint32_t texture);
 
+constexpr uint32_t FACE_TORCH_FLAG = 1u << 31;
+
+uint32_t packTorchFace(uint32_t direction);
+

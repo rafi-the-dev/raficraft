@@ -21,61 +21,83 @@ void Chunk::BuildFaces(world& w, int chunkX, int chunkZ) {
                     continue;
                 }
 
-                uint32_t texture = static_cast<uint32_t>(block.type) - 1;
+                // Torches use special geometry in the vertex shader.
+                if(block.type == Block::torch) {
+                    for(uint32_t direction = 0; direction < 6; direction++) {
+                        faces.push_back({x, y, z, packTorchFace(direction)});
+                    }
 
-                if(block.type == Block::grass) {
-                    texture = 3;
+                    continue;
                 }
 
                 int worldX = chunkX * CHUNK_SIZE_X + x;
                 int worldZ = chunkZ * CHUNK_SIZE_Z + z;
 
+                // +Z (Direction 0)
+                Block neighborZPositive;
+
                 if(z + 1 < CHUNK_SIZE_Z) {
-                    if(blocks[x][y][z + 1].type == Block::air) {
-                        faces.push_back({x, y, z, packFace(0, getBlockTexture(block, 0))});
-                    }
+                    neighborZPositive = blocks[x][y][z + 1];
                 } else {
-                    if(w.getBlock(worldX, y, worldZ + 1).type == Block::air) {
-                        faces.push_back({x, y, z, packFace(0, getBlockTexture(block, 0))});
-                    }
+                    neighborZPositive = w.getBlock(worldX, y, worldZ + 1);
                 }
+
+                if(neighborZPositive.type == Block::air || neighborZPositive.type == Block::torch) {
+                    faces.push_back({x, y, z, packFace(0, getBlockTexture(block, 0))});
+                }
+
+                // -Z (Direction 1)
+                Block neighborZNegative;
 
                 if(z > 0) {
-                    if(blocks[x][y][z - 1].type == Block::air) {
-                        faces.push_back({x, y, z, packFace(1, getBlockTexture(block, 1))});
-                    }
+                    neighborZNegative = blocks[x][y][z - 1];
                 } else {
-                    if(w.getBlock(worldX, y, worldZ - 1).type == Block::air) {
-                        faces.push_back({x, y, z, packFace(1, getBlockTexture(block, 1))});
-                    }
+                    neighborZNegative = w.getBlock(worldX, y, worldZ - 1);
                 }
+
+                if(neighborZNegative.type == Block::air || neighborZNegative.type == Block::torch) {
+                    faces.push_back({x, y, z, packFace(1, getBlockTexture(block, 1))});
+                }
+
+                // -X (Direction 2)
+                Block neighborXNegative;
 
                 if(x > 0) {
-                    if(blocks[x - 1][y][z].type == Block::air) {
-                        faces.push_back({x, y, z, packFace(2, getBlockTexture(block, 2))});
-                    }
+                    neighborXNegative = blocks[x - 1][y][z];
                 } else {
-                    if(w.getBlock(worldX - 1, y, worldZ).type == Block::air) {
-                        faces.push_back({x, y, z, packFace(2, getBlockTexture(block, 2))});
-                    }
+                    neighborXNegative = w.getBlock(worldX - 1, y, worldZ);
                 }
+
+                if(neighborXNegative.type == Block::air || neighborXNegative.type == Block::torch) {
+                    faces.push_back({x, y, z, packFace(2, getBlockTexture(block, 2))});
+                }
+
+                // +X (Direction 3)
+                Block neighborXPositive;
 
                 if(x + 1 < CHUNK_SIZE_X) {
-                    if(blocks[x + 1][y][z].type == Block::air) {
-                        faces.push_back({x, y, z, packFace(3, getBlockTexture(block, 3))});
-                    }
+                    neighborXPositive = blocks[x + 1][y][z];
                 } else {
-                    if(w.getBlock(worldX + 1, y, worldZ).type == Block::air) {
-                        faces.push_back({x, y, z, packFace(3, getBlockTexture(block, 3))});
-                    }
+                    neighborXPositive = w.getBlock(worldX + 1, y, worldZ);
                 }
-                if(y + 1 >= CHUNK_SIZE_Y || blocks[x][y + 1][z].type == Block::air) {
 
+                if(neighborXPositive.type == Block::air || neighborXPositive.type == Block::torch) {
+                    faces.push_back({x, y, z, packFace(3, getBlockTexture(block, 3))});
+                }
+
+                // +Y (Direction 4, top)
+                bool topVisible = y + 1 >= CHUNK_SIZE_Y || blocks[x][y + 1][z].type == Block::air ||
+                                  blocks[x][y + 1][z].type == Block::torch;
+
+                if(topVisible) {
                     faces.push_back({x, y, z, packFace(4, getBlockTexture(block, 4))});
                 }
 
-                if(y == 0 || blocks[x][y - 1][z].type == Block::air) {
+                // -Y (Direction 5, bottom)
+                bool bottomVisible = y == 0 || blocks[x][y - 1][z].type == Block::air ||
+                                     blocks[x][y - 1][z].type == Block::torch;
 
+                if(bottomVisible) {
                     faces.push_back({x, y, z, packFace(5, getBlockTexture(block, 5))});
                 }
             }

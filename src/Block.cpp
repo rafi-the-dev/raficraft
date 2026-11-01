@@ -22,5 +22,9 @@ uint32_t getBlockTexture(Block block, int faceDirection) {
         return 1;
     }
 
+    if(block.type == Block::torch) {
+        return 4;
+    }
+
     return 0;
 }
