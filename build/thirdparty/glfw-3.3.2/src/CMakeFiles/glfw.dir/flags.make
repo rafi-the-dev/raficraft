@@ -6,7 +6,7 @@ C_DEFINES = -D_GLFW_USE_CONFIG_H
 
 C_INCLUDES = -I"/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/include" -I"/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src" -I"/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/thirdparty/glfw-3.3.2/src"
 
-C_FLAGS = -std=gnu99 -fPIC -Wall
+C_FLAGS = -O3 -DNDEBUG -std=gnu99 -fPIC -Wall
 
 # Custom flags: thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/context.c.o_FLAGS = -Wdeclaration-after-statement
 

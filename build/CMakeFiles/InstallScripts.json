@@ -11,7 +11,9 @@
 		"/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/thirdparty/gl2d/cmake_install.cmake",
 		"/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/thirdparty/glui/cmake_install.cmake",
 		"/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/thirdparty/imgui-docking/cmake_install.cmake",
-		"/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/thirdparty/FastNoiseSIMD/cmake_install.cmake"
+		"/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/thirdparty/FastNoiseSIMD/cmake_install.cmake",
+		"/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/thirdparty/zstd/build/cmake/cmake_install.cmake",
+		"/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/thirdparty/zstd/build/cmake/lib/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

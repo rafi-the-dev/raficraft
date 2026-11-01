@@ -85,6 +85,51 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # The main all target
 all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles" "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build//CMakeFiles/progress.marks"
@@ -220,6 +265,69 @@ FastNoiseSIMD: cmake_check_build_system
 FastNoiseSIMD/fast:
 	$(MAKE) $(MAKESILENT) -f thirdparty/FastNoiseSIMD/CMakeFiles/FastNoiseSIMD.dir/build.make thirdparty/FastNoiseSIMD/CMakeFiles/FastNoiseSIMD.dir/build
 .PHONY : FastNoiseSIMD/fast
+
+#=============================================================================
+# Target rules for targets named clean-all
+
+# Build rule for target.
+clean-all: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean-all
+.PHONY : clean-all
+
+# fast build rule for target.
+clean-all/fast:
+	$(MAKE) $(MAKESILENT) -f thirdparty/zstd/build/cmake/CMakeFiles/clean-all.dir/build.make thirdparty/zstd/build/cmake/CMakeFiles/clean-all.dir/build
+.PHONY : clean-all/fast
+
+#=============================================================================
+# Target rules for targets named libzstd_static
+
+# Build rule for target.
+libzstd_static: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libzstd_static
+.PHONY : libzstd_static
+
+# fast build rule for target.
+libzstd_static/fast:
+	$(MAKE) $(MAKESILENT) -f thirdparty/zstd/build/cmake/lib/CMakeFiles/libzstd_static.dir/build.make thirdparty/zstd/build/cmake/lib/CMakeFiles/libzstd_static.dir/build
+.PHONY : libzstd_static/fast
+
+#=============================================================================
+# Target rules for targets named uninstall
+
+# Build rule for target.
+uninstall: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 uninstall
+.PHONY : uninstall
+
+# fast build rule for target.
+uninstall/fast:
+	$(MAKE) $(MAKESILENT) -f thirdparty/zstd/build/cmake/lib/CMakeFiles/uninstall.dir/build.make thirdparty/zstd/build/cmake/lib/CMakeFiles/uninstall.dir/build
+.PHONY : uninstall/fast
+
+src/Block.o: src/Block.cpp.o
+.PHONY : src/Block.o
+
+# target to build an object file
+src/Block.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mygame.dir/build.make CMakeFiles/mygame.dir/src/Block.cpp.o
+.PHONY : src/Block.cpp.o
+
+src/Block.i: src/Block.cpp.i
+.PHONY : src/Block.i
+
+# target to preprocess a source file
+src/Block.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mygame.dir/build.make CMakeFiles/mygame.dir/src/Block.cpp.i
+.PHONY : src/Block.cpp.i
+
+src/Block.s: src/Block.cpp.s
+.PHONY : src/Block.s
+
+# target to generate assembly for a file
+src/Block.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mygame.dir/build.make CMakeFiles/mygame.dir/src/Block.cpp.s
+.PHONY : src/Block.cpp.s
 
 src/BlockOutline.o: src/BlockOutline.cpp.o
 .PHONY : src/BlockOutline.o
@@ -492,15 +600,25 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... clean-all"
+	@echo "... uninstall"
 	@echo "... FastNoiseSIMD"
 	@echo "... gl2d"
 	@echo "... glad"
 	@echo "... glfw"
 	@echo "... glui"
 	@echo "... imgui"
+	@echo "... libzstd_static"
 	@echo "... mygame"
 	@echo "... stb_truetype"
+	@echo "... src/Block.o"
+	@echo "... src/Block.i"
+	@echo "... src/Block.s"
 	@echo "... src/BlockOutline.o"
 	@echo "... src/BlockOutline.i"
 	@echo "... src/BlockOutline.s"

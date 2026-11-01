@@ -12,14 +12,6 @@ Block Chunk::getBlock(int x, int y, int z) {
 void Chunk::BuildFaces(world& w, int chunkX, int chunkZ) {
     faces.clear();
 
-    const auto neighborBlock = [&](int x, int y, int z) {
-        if(x >= 0 && x < CHUNK_SIZE_X && z >= 0 && z < CHUNK_SIZE_Z) {
-            return getBlock(x, y, z);
-        }
-
-        return w.getBlock(chunkX * CHUNK_SIZE_X + x, y, chunkZ * CHUNK_SIZE_Z + z);
-    };
-
     for(int x = 0; x < CHUNK_SIZE_X; x++) {
         for(int y = 0; y < CHUNK_SIZE_Y; y++) {
             for(int z = 0; z < CHUNK_SIZE_Z; z++) {
@@ -40,66 +32,51 @@ void Chunk::BuildFaces(world& w, int chunkX, int chunkZ) {
 
                 if(z + 1 < CHUNK_SIZE_Z) {
                     if(blocks[x][y][z + 1].type == Block::air) {
-                        faces.push_back({x, y, z, packFace(0, texture)});
+                        faces.push_back({x, y, z, packFace(0, getBlockTexture(block, 0))});
                     }
                 } else {
                     if(w.getBlock(worldX, y, worldZ + 1).type == Block::air) {
-                        faces.push_back({x, y, z, packFace(0, texture)});
+                        faces.push_back({x, y, z, packFace(0, getBlockTexture(block, 0))});
                     }
                 }
 
                 if(z > 0) {
                     if(blocks[x][y][z - 1].type == Block::air) {
-                        faces.push_back({x, y, z, packFace(1, texture)});
+                        faces.push_back({x, y, z, packFace(1, getBlockTexture(block, 1))});
                     }
                 } else {
                     if(w.getBlock(worldX, y, worldZ - 1).type == Block::air) {
-                        faces.push_back({x, y, z, packFace(1, texture)});
+                        faces.push_back({x, y, z, packFace(1, getBlockTexture(block, 1))});
                     }
                 }
 
                 if(x > 0) {
                     if(blocks[x - 1][y][z].type == Block::air) {
-                        faces.push_back({x, y, z, packFace(2, texture)});
+                        faces.push_back({x, y, z, packFace(2, getBlockTexture(block, 2))});
                     }
                 } else {
                     if(w.getBlock(worldX - 1, y, worldZ).type == Block::air) {
-                        faces.push_back({x, y, z, packFace(2, texture)});
+                        faces.push_back({x, y, z, packFace(2, getBlockTexture(block, 2))});
                     }
                 }
 
                 if(x + 1 < CHUNK_SIZE_X) {
                     if(blocks[x + 1][y][z].type == Block::air) {
-                        faces.push_back({x, y, z, packFace(3, texture)});
+                        faces.push_back({x, y, z, packFace(3, getBlockTexture(block, 3))});
                     }
                 } else {
                     if(w.getBlock(worldX + 1, y, worldZ).type == Block::air) {
-                        faces.push_back({x, y, z, packFace(3, texture)});
+                        faces.push_back({x, y, z, packFace(3, getBlockTexture(block, 3))});
                     }
                 }
+                if(y + 1 >= CHUNK_SIZE_Y || blocks[x][y + 1][z].type == Block::air) {
 
-                bool topVisible = y + 1 >= CHUNK_SIZE_Y || blocks[x][y + 1][z].type == Block::air;
-
-                if(topVisible) {
-                    uint32_t topTexture = texture;
-
-                    if(block.type == Block::grass) {
-                        topTexture = 2;
-                    }
-
-                    faces.push_back({x, y, z, packFace(4, topTexture)});
+                    faces.push_back({x, y, z, packFace(4, getBlockTexture(block, 4))});
                 }
 
-                bool bottomVisible = y == 0 || blocks[x][y - 1][z].type == Block::air;
+                if(y == 0 || blocks[x][y - 1][z].type == Block::air) {
 
-                if(bottomVisible) {
-                    uint32_t bottomTexture = texture;
-
-                    if(block.type == Block::grass) {
-                        bottomTexture = static_cast<uint32_t>(Block::dirt) - 1;
-                    }
-
-                    faces.push_back({x, y, z, packFace(5, bottomTexture)});
+                    faces.push_back({x, y, z, packFace(5, getBlockTexture(block, 5))});
                 }
             }
         }

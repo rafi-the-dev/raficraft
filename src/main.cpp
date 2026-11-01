@@ -171,6 +171,9 @@ int main() {
 
     blockoutline.Init();
 
+    // Inside your main/setup function
+    glfwSetScrollCallback(window, scroll_callback);
+
     gl2d::init();
 
     gl2d::Renderer2D uiRenderer;
@@ -289,6 +292,7 @@ int main() {
     GLint uScreenSize = glGetUniformLocation(crosshairShader.id, "screenSize");
 
     while(!glfwWindowShouldClose(window)) {
+
         typedInput.clear();
         glfwPollEvents();
 
@@ -299,92 +303,89 @@ int main() {
         int width, height;
         glfwGetFramebufferSize(window, &width, &height);
 
+        glViewport(0, 0, width, height);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
         if(width == 0 || height == 0) {
             continue;
         }
 
         if(state == states::playing) {
+
             UpdateChunks(w, player.pos, noise);
             player.Update(deltaTime, window, w, cameraFront);
-        }
 
-        int playerChunkX = static_cast<int>(std::floor(player.pos.x / CHUNK_SIZE_X));
-        int playerChunkZ = static_cast<int>(std::floor(player.pos.z / CHUNK_SIZE_Z));
+            int playerChunkX = static_cast<int>(std::floor(player.pos.x / CHUNK_SIZE_X));
+            int playerChunkZ = static_cast<int>(std::floor(player.pos.z / CHUNK_SIZE_Z));
 
-        cameraFront = {cos(glm::radians(player.yaw)) * cos(glm::radians(player.pitch)),
-                       sin(glm::radians(player.pitch)),
-                       sin(glm::radians(player.yaw)) * cos(glm::radians(player.pitch))};
+            cameraFront = {cos(glm::radians(player.yaw)) * cos(glm::radians(player.pitch)),
+                           sin(glm::radians(player.pitch)),
+                           sin(glm::radians(player.yaw)) * cos(glm::radians(player.pitch))};
 
-        // Camera movement
-        float cameraSpeed = 15.0f * deltaTime;
+            // Camera movement
+            float cameraSpeed = 15.0f * deltaTime;
 
-        glm::vec3 cameraRight = glm::normalize(glm::cross(cameraFront, cameraUp));
+            glm::vec3 cameraRight = glm::normalize(glm::cross(cameraFront, cameraUp));
 
-        glm::vec3 eyePos = player.pos + glm::vec3(0.0f, 1.62f, 0.0f);
+            glm::vec3 eyePos = player.pos + glm::vec3(0.0f, 1.62f, 0.0f);
 
-        view = glm::lookAt(eyePos, eyePos + cameraFront, cameraUp);
+            view = glm::lookAt(eyePos, eyePos + cameraFront, cameraUp);
 
-        float farPlane = RENDER_DISTANCE * CHUNK_SIZE_X * 1.5f;
+            float farPlane = RENDER_DISTANCE * CHUNK_SIZE_X * 1.5f;
 
-        proj = glm::perspective(glm::radians(90.0f), static_cast<float>(width) / height, 0.1f,
-                                farPlane);
+            proj = glm::perspective(glm::radians(90.0f), static_cast<float>(width) / height, 0.1f,
+                                    farPlane);
 
-        frustum.Update(proj * view);
+            frustum.Update(proj * view);
 
-        glViewport(0, 0, width, height);
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+            s.bind();
 
-        s.bind();
+            glBindBufferBase(GL_SHADER_STORAGE_BUFFER, 0, handleSSBO);
 
-        glBindBufferBase(GL_SHADER_STORAGE_BUFFER, 0, handleSSBO);
+            glUniformMatrix4fv(uProjection, 1, GL_FALSE, glm::value_ptr(proj));
+            glUniformMatrix4fv(uView, 1, GL_FALSE, glm::value_ptr(view));
+            glUniformMatrix4fv(uModel, 1, GL_FALSE, glm::value_ptr(model));
 
-        glUniformMatrix4fv(uProjection, 1, GL_FALSE, glm::value_ptr(proj));
-        glUniformMatrix4fv(uView, 1, GL_FALSE, glm::value_ptr(view));
-        glUniformMatrix4fv(uModel, 1, GL_FALSE, glm::value_ptr(model));
+            for(int i = 0; i < w.chunks.size(); i++) {
+                glm::vec2 pos = w.chunks[i].pos;
+                if(w.chunks[i].chunk == nullptr) {
+                    continue;
+                }
+                Chunk* chunk = w.chunks[i].chunk;
+                int dx = std::abs(pos.x - playerChunkX);
+                int dz = std::abs(pos.y - playerChunkZ);
 
-        for(int i = 0; i < w.chunks.size(); i++) {
-            glm::vec2 pos = w.chunks[i].pos;
-            if(w.chunks[i].chunk == nullptr) {
-                continue;
+                if(std::max(dx, dz) > RENDER_DISTANCE) {
+                    continue;
+                }
+
+                glm::vec3 chunkMin(pos.x * CHUNK_SIZE_X, 0.0f, pos.y * CHUNK_SIZE_Z);
+
+                glm::vec3 chunkMax = chunkMin + glm::vec3(CHUNK_SIZE_X, CHUNK_SIZE_Y, CHUNK_SIZE_Z);
+
+                if(!frustum.IsVisible(chunkMin, chunkMax)) {
+                    continue;
+                }
+
+                if(chunk->vao == 0) {
+                    continue;
+                }
+
+                glm::mat4 chunkModel = glm::translate(
+                    glm::mat4(1.0f), glm::vec3(pos.x * CHUNK_SIZE_X, 0.0f, pos.y * CHUNK_SIZE_Z));
+
+                glUniformMatrix4fv(uModel, 1, GL_FALSE, glm::value_ptr(chunkModel));
+                glBindVertexArray(chunk->vao);
+
+                glDrawArraysInstanced(GL_TRIANGLES, 0, 6,
+                                      static_cast<GLsizei>(chunk->faces.size()));
             }
-            Chunk* chunk = w.chunks[i].chunk;
-            int dx = std::abs(pos.x - playerChunkX);
-            int dz = std::abs(pos.y - playerChunkZ);
-
-            if(std::max(dx, dz) > RENDER_DISTANCE) {
-                continue;
-            }
-
-            glm::vec3 chunkMin(pos.x * CHUNK_SIZE_X, 0.0f, pos.y * CHUNK_SIZE_Z);
-
-            glm::vec3 chunkMax = chunkMin + glm::vec3(CHUNK_SIZE_X, CHUNK_SIZE_Y, CHUNK_SIZE_Z);
-
-            if(!frustum.IsVisible(chunkMin, chunkMax)) {
-                continue;
-            }
-
-            if(chunk->vao == 0) {
-                continue;
-            }
-
-            glm::mat4 chunkModel = glm::translate(
-                glm::mat4(1.0f), glm::vec3(pos.x * CHUNK_SIZE_X, 0.0f, pos.y * CHUNK_SIZE_Z));
-
-            glUniformMatrix4fv(uModel, 1, GL_FALSE, glm::value_ptr(chunkModel));
-            glBindVertexArray(chunk->vao);
-
-            glDrawArraysInstanced(GL_TRIANGLES, 0, 6, static_cast<GLsizei>(chunk->faces.size()));
-        }
-
-        if(state == states::playing) {
 
             RaycastHit hit = raycast(w, eyePos, cameraFront, 5.0f);
 
             if(hit.hit) {
                 blockoutline.Draw(hit.block, view, proj);
             }
-
-            s.bind();
 
             glDisable(GL_DEPTH_TEST);
 

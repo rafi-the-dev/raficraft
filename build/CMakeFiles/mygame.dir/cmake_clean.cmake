@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/mygame.dir/link.d"
+  "CMakeFiles/mygame.dir/src/Block.cpp.o"
+  "CMakeFiles/mygame.dir/src/Block.cpp.o.d"
   "CMakeFiles/mygame.dir/src/BlockOutline.cpp.o"
   "CMakeFiles/mygame.dir/src/BlockOutline.cpp.o.d"
   "CMakeFiles/mygame.dir/src/Chunk.cpp.o"

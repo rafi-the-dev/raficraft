@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/src/Block.cpp" "CMakeFiles/mygame.dir/src/Block.cpp.o" "gcc" "CMakeFiles/mygame.dir/src/Block.cpp.o.d"
   "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/src/BlockOutline.cpp" "CMakeFiles/mygame.dir/src/BlockOutline.cpp.o" "gcc" "CMakeFiles/mygame.dir/src/BlockOutline.cpp.o.d"
   "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/src/Chunk.cpp" "CMakeFiles/mygame.dir/src/Chunk.cpp.o" "gcc" "CMakeFiles/mygame.dir/src/Chunk.cpp.o.d"
   "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/src/Face.cpp" "CMakeFiles/mygame.dir/src/Face.cpp.o" "gcc" "CMakeFiles/mygame.dir/src/Face.cpp.o.d"

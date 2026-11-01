@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I"/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/imgui-docking/imgui" -I"/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/include" -I"/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glad/include"
 
-CXX_FLAGS = 
+CXX_FLAGS = -O3 -DNDEBUG
 

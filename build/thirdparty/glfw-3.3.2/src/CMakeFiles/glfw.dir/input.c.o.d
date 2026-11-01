@@ -54,8 +54,8 @@ thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/input.c.o: \
  /usr/include/bits/types/FILE.h /usr/include/bits/types/struct_FILE.h \
  /usr/include/bits/types/cookie_io_functions_t.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/floatn.h \
- /usr/include/bits/floatn-common.h /usr/include/X11/extensions/Xrandr.h \
- /usr/include/X11/extensions/randr.h \
+ /usr/include/bits/floatn-common.h /usr/include/bits/stdio.h \
+ /usr/include/X11/extensions/Xrandr.h /usr/include/X11/extensions/randr.h \
  /usr/include/X11/extensions/Xrender.h /usr/include/X11/Xutil.h \
  /usr/include/X11/extensions/render.h /usr/include/X11/Xdefs.h \
  /usr/include/X11/XKBlib.h /usr/include/X11/extensions/XKBstr.h \
@@ -102,5 +102,6 @@ thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/input.c.o: \
  /usr/include/bits/mathcalls-helper-functions.h \
  /usr/include/bits/mathcalls.h /usr/include/stdlib.h \
  /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
- /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
- /usr/include/string.h /usr/include/strings.h
+ /usr/include/alloca.h /usr/include/bits/stdlib-bsearch.h \
+ /usr/include/bits/stdlib-float.h /usr/include/string.h \
+ /usr/include/strings.h

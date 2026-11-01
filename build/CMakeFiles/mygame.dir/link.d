@@ -2,6 +2,7 @@ mygame: \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/Scrt1.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crti.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o \
+  CMakeFiles/mygame.dir/src/Block.cpp.o \
   CMakeFiles/mygame.dir/src/BlockOutline.cpp.o \
   CMakeFiles/mygame.dir/src/Chunk.cpp.o \
   CMakeFiles/mygame.dir/src/Face.cpp.o \
@@ -19,6 +20,7 @@ mygame: \
   thirdparty/imgui-docking/libimgui.a \
   thirdparty/FastNoiseSIMD/libFastNoiseSIMD.a \
   thirdparty/glui/libglui.a \
+  thirdparty/zstd/build/cmake/lib/libzstd.a \
   thirdparty/glfw-3.3.2/src/libglfw3.a \
   /usr/lib/librt.a \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/libdl.a \
@@ -70,6 +72,8 @@ mygame: \
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o:
 
+CMakeFiles/mygame.dir/src/Block.cpp.o:
+
 CMakeFiles/mygame.dir/src/BlockOutline.cpp.o:
 
 CMakeFiles/mygame.dir/src/Chunk.cpp.o:
@@ -103,6 +107,8 @@ thirdparty/imgui-docking/libimgui.a:
 thirdparty/FastNoiseSIMD/libFastNoiseSIMD.a:
 
 thirdparty/glui/libglui.a:
+
+thirdparty/zstd/build/cmake/lib/libzstd.a:
 
 thirdparty/glfw-3.3.2/src/libglfw3.a:
 

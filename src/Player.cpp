@@ -1,6 +1,21 @@
 #include "Player.h"
 #include "raycast.h"
 
+Block selectedBlock = Block{.type = Block::dirt};
+
+void scroll_callback(GLFWwindow* window, double xoffset, double yoffset) {
+    // yoffset > 0: Scrolled up / away from user
+    // yoffset < 0: Scrolled down / toward user
+    if(yoffset > 0) {
+        int nextBlock = (static_cast<int>(selectedBlock.type) + 1) % Block::blockCount;
+        selectedBlock.type = nextBlock;
+    } else if(yoffset < 0) {
+
+        int nextBlock = (static_cast<int>(selectedBlock.type) - 1) % Block::blockCount;
+        selectedBlock.type = nextBlock;
+    }
+}
+
 void Player::applyForces(float deltaTime) {
     velocity.y += GRAVITY * deltaTime;
 }
@@ -119,7 +134,7 @@ void Player::Update(float deltaTime, GLFWwindow* window, world& w, glm::vec3 cam
                             playerMin.z < blockMax.z && playerMax.z > blockMin.z;
 
             if(w.getBlock(placePos.x, placePos.y, placePos.z).type == Block::air && !overlaps) {
-                w.setBlock(placePos.x, placePos.y, placePos.z, Block{.type = Block::dirt});
+                w.setBlock(placePos.x, placePos.y, placePos.z, Block{.type = selectedBlock.type});
             }
         }
     }

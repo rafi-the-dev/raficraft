@@ -31,3 +31,6 @@ struct Player {
     void Update(float deltaTime, GLFWwindow* window, world& w, glm::vec3 cameraFront);
     void updatePlayerPhysics(float dt);
 };
+
+void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
+

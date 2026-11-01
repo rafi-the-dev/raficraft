@@ -1,11 +1,12 @@
 #pragma once
 #include "Block.h"
 #include "Face.h"
+#include "Torch.h"
 #include "glm/glm.hpp"
 #include "vector"
 #include <cstdint>
-#include <iostream>
 #include <glad/glad.h>
+#include <iostream>
 
 constexpr int CHUNK_SIZE_X = 16;
 constexpr int CHUNK_SIZE_Y = 256;
@@ -24,6 +25,7 @@ struct Chunk {
     bool dirty = true;
 
     std::vector<Face> faces;
+    std::vector<TorchEntry> torches;
 
     float distanceSquared = 0.0f;
 

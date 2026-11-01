@@ -24,9 +24,10 @@ thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/osmesa_context.c.o: \
  /usr/include/bits/pthreadtypes-arch.h \
  /usr/include/bits/atomic_wide_counter.h /usr/include/bits/struct_mutex.h \
  /usr/include/bits/struct_rwlock.h /usr/include/alloca.h \
- /usr/include/bits/stdlib-float.h /usr/include/string.h \
- /usr/include/bits/types/locale_t.h /usr/include/bits/types/__locale_t.h \
- /usr/include/strings.h /usr/include/assert.h \
+ /usr/include/bits/stdlib-bsearch.h /usr/include/bits/stdlib-float.h \
+ /usr/include/string.h /usr/include/bits/types/locale_t.h \
+ /usr/include/bits/types/__locale_t.h /usr/include/strings.h \
+ /usr/include/assert.h \
  /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/thirdparty/glfw-3.3.2/src/internal.h \
  /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/build/thirdparty/glfw-3.3.2/src/glfw_config.h \
  /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/thirdparty/glfw-3.3.2/src/../include/GLFW/glfw3.h \
@@ -59,8 +60,8 @@ thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/osmesa_context.c.o: \
  /usr/include/bits/types/__fpos64_t.h /usr/include/bits/types/__FILE.h \
  /usr/include/bits/types/FILE.h /usr/include/bits/types/struct_FILE.h \
  /usr/include/bits/types/cookie_io_functions_t.h \
- /usr/include/bits/stdio_lim.h /usr/include/X11/extensions/Xrandr.h \
- /usr/include/X11/extensions/randr.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/stdio.h \
+ /usr/include/X11/extensions/Xrandr.h /usr/include/X11/extensions/randr.h \
  /usr/include/X11/extensions/Xrender.h /usr/include/X11/Xutil.h \
  /usr/include/X11/extensions/render.h /usr/include/X11/Xdefs.h \
  /usr/include/X11/XKBlib.h /usr/include/X11/extensions/XKBstr.h \

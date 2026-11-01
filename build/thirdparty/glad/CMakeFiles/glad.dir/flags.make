@@ -6,5 +6,5 @@ C_DEFINES =
 
 C_INCLUDES = -I"/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glad/include"
 
-C_FLAGS = 
+C_FLAGS = -O3 -DNDEBUG
 

@@ -26001,3 +26001,1268 @@ events:
         
       exitCode: 0
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CheckSourceCompiles.cmake:81 (try_compile)"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/CheckCCompilerFlag.cmake:105 (cmake_check_compiler_flag)"
+      - "thirdparty/zstd/build/cmake/CMakeModules/AddZstdCompilationFlags.cmake:21 (CHECK_C_COMPILER_FLAG)"
+      - "thirdparty/zstd/build/cmake/CMakeModules/AddZstdCompilationFlags.cmake:70 (EnableCompilerFlag)"
+      - "thirdparty/zstd/build/cmake/CMakeLists.txt:66 (ADD_ZSTD_COMPILATION_FLAGS)"
+    checks:
+      - "Performing Test C_FLAG_WALL"
+    directories:
+      source: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-NzFWQ2"
+      binary: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-NzFWQ2"
+    cmakeVariables:
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/zstd/build/cmake/CMakeModules"
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>"
+    buildResult:
+      variable: "C_FLAG_WALL"
+      cached: true
+      stdout: |
+        Change Dir: '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-NzFWQ2'
+        
+        Run Build Command(s): /home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_330aa/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_330aa.dir/build.make CMakeFiles/cmTC_330aa.dir/build
+        make[1]: Entering directory '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-NzFWQ2'
+        Building C object CMakeFiles/cmTC_330aa.dir/src.c.o
+        /usr/bin/cc -DC_FLAG_WALL  -Wall -o CMakeFiles/cmTC_330aa.dir/src.c.o -c "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-NzFWQ2/src.c"
+        Linking C executable cmTC_330aa
+        /home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_330aa.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_330aa.dir/src.c.o -o cmTC_330aa
+        make[1]: Leaving directory '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-NzFWQ2'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CheckSourceCompiles.cmake:81 (try_compile)"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/CheckCXXCompilerFlag.cmake:103 (cmake_check_compiler_flag)"
+      - "thirdparty/zstd/build/cmake/CMakeModules/AddZstdCompilationFlags.cmake:27 (CHECK_CXX_COMPILER_FLAG)"
+      - "thirdparty/zstd/build/cmake/CMakeModules/AddZstdCompilationFlags.cmake:70 (EnableCompilerFlag)"
+      - "thirdparty/zstd/build/cmake/CMakeLists.txt:66 (ADD_ZSTD_COMPILATION_FLAGS)"
+    checks:
+      - "Performing Test CXX_FLAG_WALL"
+    directories:
+      source: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-C4MJ3Z"
+      binary: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-C4MJ3Z"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/zstd/build/cmake/CMakeModules"
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>"
+    buildResult:
+      variable: "CXX_FLAG_WALL"
+      cached: true
+      stdout: |
+        Change Dir: '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-C4MJ3Z'
+        
+        Run Build Command(s): /home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_03b42/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_03b42.dir/build.make CMakeFiles/cmTC_03b42.dir/build
+        make[1]: Entering directory '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-C4MJ3Z'
+        Building CXX object CMakeFiles/cmTC_03b42.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_FLAG_WALL  -Wall -o CMakeFiles/cmTC_03b42.dir/src.cxx.o -c "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-C4MJ3Z/src.cxx"
+        Linking CXX executable cmTC_03b42
+        /home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_03b42.dir/link.txt --verbose=1
+        /usr/bin/c++ CMakeFiles/cmTC_03b42.dir/src.cxx.o -o cmTC_03b42
+        make[1]: Leaving directory '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-C4MJ3Z'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CheckSourceCompiles.cmake:81 (try_compile)"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/CheckCCompilerFlag.cmake:105 (cmake_check_compiler_flag)"
+      - "thirdparty/zstd/build/cmake/CMakeModules/AddZstdCompilationFlags.cmake:21 (CHECK_C_COMPILER_FLAG)"
+      - "thirdparty/zstd/build/cmake/CMakeModules/AddZstdCompilationFlags.cmake:72 (EnableCompilerFlag)"
+      - "thirdparty/zstd/build/cmake/CMakeLists.txt:66 (ADD_ZSTD_COMPILATION_FLAGS)"
+    checks:
+      - "Performing Test C_FLAG_WEXTRA"
+    directories:
+      source: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-uFC1Th"
+      binary: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-uFC1Th"
+    cmakeVariables:
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_C_FLAGS: " -Wall"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/zstd/build/cmake/CMakeModules"
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>"
+    buildResult:
+      variable: "C_FLAG_WEXTRA"
+      cached: true
+      stdout: |
+        Change Dir: '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-uFC1Th'
+        
+        Run Build Command(s): /home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_f0278/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_f0278.dir/build.make CMakeFiles/cmTC_f0278.dir/build
+        make[1]: Entering directory '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-uFC1Th'
+        Building C object CMakeFiles/cmTC_f0278.dir/src.c.o
+        /usr/bin/cc -DC_FLAG_WEXTRA  -Wall    -Wextra -o CMakeFiles/cmTC_f0278.dir/src.c.o -c "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-uFC1Th/src.c"
+        Linking C executable cmTC_f0278
+        /home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f0278.dir/link.txt --verbose=1
+        /usr/bin/cc  -Wall  CMakeFiles/cmTC_f0278.dir/src.c.o -o cmTC_f0278
+        make[1]: Leaving directory '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-uFC1Th'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CheckSourceCompiles.cmake:81 (try_compile)"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/CheckCXXCompilerFlag.cmake:103 (cmake_check_compiler_flag)"
+      - "thirdparty/zstd/build/cmake/CMakeModules/AddZstdCompilationFlags.cmake:27 (CHECK_CXX_COMPILER_FLAG)"
+      - "thirdparty/zstd/build/cmake/CMakeModules/AddZstdCompilationFlags.cmake:72 (EnableCompilerFlag)"
+      - "thirdparty/zstd/build/cmake/CMakeLists.txt:66 (ADD_ZSTD_COMPILATION_FLAGS)"
+    checks:
+      - "Performing Test CXX_FLAG_WEXTRA"
+    directories:
+      source: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-Gpt4cR"
+      binary: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-Gpt4cR"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -Wall"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/zstd/build/cmake/CMakeModules"
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>"
+    buildResult:
+      variable: "CXX_FLAG_WEXTRA"
+      cached: true
+      stdout: |
+        Change Dir: '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-Gpt4cR'
+        
+        Run Build Command(s): /home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_a2c54/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_a2c54.dir/build.make CMakeFiles/cmTC_a2c54.dir/build
+        make[1]: Entering directory '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-Gpt4cR'
+        Building CXX object CMakeFiles/cmTC_a2c54.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_FLAG_WEXTRA  -Wall    -Wextra -o CMakeFiles/cmTC_a2c54.dir/src.cxx.o -c "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-Gpt4cR/src.cxx"
+        Linking CXX executable cmTC_a2c54
+        /home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a2c54.dir/link.txt --verbose=1
+        /usr/bin/c++  -Wall  CMakeFiles/cmTC_a2c54.dir/src.cxx.o -o cmTC_a2c54
+        make[1]: Leaving directory '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-Gpt4cR'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CheckSourceCompiles.cmake:81 (try_compile)"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/CheckCCompilerFlag.cmake:105 (cmake_check_compiler_flag)"
+      - "thirdparty/zstd/build/cmake/CMakeModules/AddZstdCompilationFlags.cmake:21 (CHECK_C_COMPILER_FLAG)"
+      - "thirdparty/zstd/build/cmake/CMakeModules/AddZstdCompilationFlags.cmake:73 (EnableCompilerFlag)"
+      - "thirdparty/zstd/build/cmake/CMakeLists.txt:66 (ADD_ZSTD_COMPILATION_FLAGS)"
+    checks:
+      - "Performing Test C_FLAG_WUNDEF"
+    directories:
+      source: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-gbJwIJ"
+      binary: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-gbJwIJ"
+    cmakeVariables:
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_C_FLAGS: " -Wall -Wextra"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/zstd/build/cmake/CMakeModules"
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>"
+    buildResult:
+      variable: "C_FLAG_WUNDEF"
+      cached: true
+      stdout: |
+        Change Dir: '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-gbJwIJ'
+        
+        Run Build Command(s): /home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_f25f3/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_f25f3.dir/build.make CMakeFiles/cmTC_f25f3.dir/build
+        make[1]: Entering directory '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-gbJwIJ'
+        Building C object CMakeFiles/cmTC_f25f3.dir/src.c.o
+        /usr/bin/cc -DC_FLAG_WUNDEF  -Wall -Wextra    -Wundef -o CMakeFiles/cmTC_f25f3.dir/src.c.o -c "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-gbJwIJ/src.c"
+        Linking C executable cmTC_f25f3
+        /home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f25f3.dir/link.txt --verbose=1
+        /usr/bin/cc  -Wall -Wextra  CMakeFiles/cmTC_f25f3.dir/src.c.o -o cmTC_f25f3
+        make[1]: Leaving directory '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-gbJwIJ'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CheckSourceCompiles.cmake:81 (try_compile)"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/CheckCXXCompilerFlag.cmake:103 (cmake_check_compiler_flag)"
+      - "thirdparty/zstd/build/cmake/CMakeModules/AddZstdCompilationFlags.cmake:27 (CHECK_CXX_COMPILER_FLAG)"
+      - "thirdparty/zstd/build/cmake/CMakeModules/AddZstdCompilationFlags.cmake:73 (EnableCompilerFlag)"
+      - "thirdparty/zstd/build/cmake/CMakeLists.txt:66 (ADD_ZSTD_COMPILATION_FLAGS)"
+    checks:
+      - "Performing Test CXX_FLAG_WUNDEF"
+    directories:
+      source: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-Bw3vZt"
+      binary: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-Bw3vZt"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -Wall -Wextra"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/zstd/build/cmake/CMakeModules"
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>"
+    buildResult:
+      variable: "CXX_FLAG_WUNDEF"
+      cached: true
+      stdout: |
+        Change Dir: '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-Bw3vZt'
+        
+        Run Build Command(s): /home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_3fc18/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_3fc18.dir/build.make CMakeFiles/cmTC_3fc18.dir/build
+        make[1]: Entering directory '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-Bw3vZt'
+        Building CXX object CMakeFiles/cmTC_3fc18.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_FLAG_WUNDEF  -Wall -Wextra    -Wundef -o CMakeFiles/cmTC_3fc18.dir/src.cxx.o -c "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-Bw3vZt/src.cxx"
+        Linking CXX executable cmTC_3fc18
+        /home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3fc18.dir/link.txt --verbose=1
+        /usr/bin/c++  -Wall -Wextra  CMakeFiles/cmTC_3fc18.dir/src.cxx.o -o cmTC_3fc18
+        make[1]: Leaving directory '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-Bw3vZt'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CheckSourceCompiles.cmake:81 (try_compile)"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/CheckCCompilerFlag.cmake:105 (cmake_check_compiler_flag)"
+      - "thirdparty/zstd/build/cmake/CMakeModules/AddZstdCompilationFlags.cmake:21 (CHECK_C_COMPILER_FLAG)"
+      - "thirdparty/zstd/build/cmake/CMakeModules/AddZstdCompilationFlags.cmake:74 (EnableCompilerFlag)"
+      - "thirdparty/zstd/build/cmake/CMakeLists.txt:66 (ADD_ZSTD_COMPILATION_FLAGS)"
+    checks:
+      - "Performing Test C_FLAG_WSHADOW"
+    directories:
+      source: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-h7mv5M"
+      binary: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-h7mv5M"
+    cmakeVariables:
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_C_FLAGS: " -Wall -Wextra -Wundef"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/zstd/build/cmake/CMakeModules"
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>"
+    buildResult:
+      variable: "C_FLAG_WSHADOW"
+      cached: true
+      stdout: |
+        Change Dir: '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-h7mv5M'
+        
+        Run Build Command(s): /home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_8889d/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_8889d.dir/build.make CMakeFiles/cmTC_8889d.dir/build
+        make[1]: Entering directory '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-h7mv5M'
+        Building C object CMakeFiles/cmTC_8889d.dir/src.c.o
+        /usr/bin/cc -DC_FLAG_WSHADOW  -Wall -Wextra -Wundef    -Wshadow -o CMakeFiles/cmTC_8889d.dir/src.c.o -c "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-h7mv5M/src.c"
+        Linking C executable cmTC_8889d
+        /home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8889d.dir/link.txt --verbose=1
+        /usr/bin/cc  -Wall -Wextra -Wundef  CMakeFiles/cmTC_8889d.dir/src.c.o -o cmTC_8889d
+        make[1]: Leaving directory '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-h7mv5M'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CheckSourceCompiles.cmake:81 (try_compile)"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/CheckCXXCompilerFlag.cmake:103 (cmake_check_compiler_flag)"
+      - "thirdparty/zstd/build/cmake/CMakeModules/AddZstdCompilationFlags.cmake:27 (CHECK_CXX_COMPILER_FLAG)"
+      - "thirdparty/zstd/build/cmake/CMakeModules/AddZstdCompilationFlags.cmake:74 (EnableCompilerFlag)"
+      - "thirdparty/zstd/build/cmake/CMakeLists.txt:66 (ADD_ZSTD_COMPILATION_FLAGS)"
+    checks:
+      - "Performing Test CXX_FLAG_WSHADOW"
+    directories:
+      source: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-A06NSC"
+      binary: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-A06NSC"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -Wall -Wextra -Wundef"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/zstd/build/cmake/CMakeModules"
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>"
+    buildResult:
+      variable: "CXX_FLAG_WSHADOW"
+      cached: true
+      stdout: |
+        Change Dir: '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-A06NSC'
+        
+        Run Build Command(s): /home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_34165/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_34165.dir/build.make CMakeFiles/cmTC_34165.dir/build
+        make[1]: Entering directory '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-A06NSC'
+        Building CXX object CMakeFiles/cmTC_34165.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_FLAG_WSHADOW  -Wall -Wextra -Wundef    -Wshadow -o CMakeFiles/cmTC_34165.dir/src.cxx.o -c "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-A06NSC/src.cxx"
+        Linking CXX executable cmTC_34165
+        /home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_34165.dir/link.txt --verbose=1
+        /usr/bin/c++  -Wall -Wextra -Wundef  CMakeFiles/cmTC_34165.dir/src.cxx.o -o cmTC_34165
+        make[1]: Leaving directory '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-A06NSC'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CheckSourceCompiles.cmake:81 (try_compile)"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/CheckCCompilerFlag.cmake:105 (cmake_check_compiler_flag)"
+      - "thirdparty/zstd/build/cmake/CMakeModules/AddZstdCompilationFlags.cmake:21 (CHECK_C_COMPILER_FLAG)"
+      - "thirdparty/zstd/build/cmake/CMakeModules/AddZstdCompilationFlags.cmake:75 (EnableCompilerFlag)"
+      - "thirdparty/zstd/build/cmake/CMakeLists.txt:66 (ADD_ZSTD_COMPILATION_FLAGS)"
+    checks:
+      - "Performing Test C_FLAG_WCAST_ALIGN"
+    directories:
+      source: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-KffLY6"
+      binary: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-KffLY6"
+    cmakeVariables:
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_C_FLAGS: " -Wall -Wextra -Wundef -Wshadow"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/zstd/build/cmake/CMakeModules"
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>"
+    buildResult:
+      variable: "C_FLAG_WCAST_ALIGN"
+      cached: true
+      stdout: |
+        Change Dir: '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-KffLY6'
+        
+        Run Build Command(s): /home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_6d111/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_6d111.dir/build.make CMakeFiles/cmTC_6d111.dir/build
+        make[1]: Entering directory '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-KffLY6'
+        Building C object CMakeFiles/cmTC_6d111.dir/src.c.o
+        /usr/bin/cc -DC_FLAG_WCAST_ALIGN  -Wall -Wextra -Wundef -Wshadow    -Wcast-align -o CMakeFiles/cmTC_6d111.dir/src.c.o -c "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-KffLY6/src.c"
+        Linking C executable cmTC_6d111
+        /home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6d111.dir/link.txt --verbose=1
+        /usr/bin/cc  -Wall -Wextra -Wundef -Wshadow  CMakeFiles/cmTC_6d111.dir/src.c.o -o cmTC_6d111
+        make[1]: Leaving directory '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-KffLY6'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CheckSourceCompiles.cmake:81 (try_compile)"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/CheckCXXCompilerFlag.cmake:103 (cmake_check_compiler_flag)"
+      - "thirdparty/zstd/build/cmake/CMakeModules/AddZstdCompilationFlags.cmake:27 (CHECK_CXX_COMPILER_FLAG)"
+      - "thirdparty/zstd/build/cmake/CMakeModules/AddZstdCompilationFlags.cmake:75 (EnableCompilerFlag)"
+      - "thirdparty/zstd/build/cmake/CMakeLists.txt:66 (ADD_ZSTD_COMPILATION_FLAGS)"
+    checks:
+      - "Performing Test CXX_FLAG_WCAST_ALIGN"
+    directories:
+      source: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-wcGLqj"
+      binary: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-wcGLqj"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -Wall -Wextra -Wundef -Wshadow"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/zstd/build/cmake/CMakeModules"
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>"
+    buildResult:
+      variable: "CXX_FLAG_WCAST_ALIGN"
+      cached: true
+      stdout: |
+        Change Dir: '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-wcGLqj'
+        
+        Run Build Command(s): /home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_5f688/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_5f688.dir/build.make CMakeFiles/cmTC_5f688.dir/build
+        make[1]: Entering directory '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-wcGLqj'
+        Building CXX object CMakeFiles/cmTC_5f688.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_FLAG_WCAST_ALIGN  -Wall -Wextra -Wundef -Wshadow    -Wcast-align -o CMakeFiles/cmTC_5f688.dir/src.cxx.o -c "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-wcGLqj/src.cxx"
+        Linking CXX executable cmTC_5f688
+        /home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5f688.dir/link.txt --verbose=1
+        /usr/bin/c++  -Wall -Wextra -Wundef -Wshadow  CMakeFiles/cmTC_5f688.dir/src.cxx.o -o cmTC_5f688
+        make[1]: Leaving directory '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-wcGLqj'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CheckSourceCompiles.cmake:81 (try_compile)"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/CheckCCompilerFlag.cmake:105 (cmake_check_compiler_flag)"
+      - "thirdparty/zstd/build/cmake/CMakeModules/AddZstdCompilationFlags.cmake:21 (CHECK_C_COMPILER_FLAG)"
+      - "thirdparty/zstd/build/cmake/CMakeModules/AddZstdCompilationFlags.cmake:76 (EnableCompilerFlag)"
+      - "thirdparty/zstd/build/cmake/CMakeLists.txt:66 (ADD_ZSTD_COMPILATION_FLAGS)"
+    checks:
+      - "Performing Test C_FLAG_WCAST_QUAL"
+    directories:
+      source: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-5a9eJy"
+      binary: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-5a9eJy"
+    cmakeVariables:
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_C_FLAGS: " -Wall -Wextra -Wundef -Wshadow -Wcast-align"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/zstd/build/cmake/CMakeModules"
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>"
+    buildResult:
+      variable: "C_FLAG_WCAST_QUAL"
+      cached: true
+      stdout: |
+        Change Dir: '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-5a9eJy'
+        
+        Run Build Command(s): /home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_abe36/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_abe36.dir/build.make CMakeFiles/cmTC_abe36.dir/build
+        make[1]: Entering directory '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-5a9eJy'
+        Building C object CMakeFiles/cmTC_abe36.dir/src.c.o
+        /usr/bin/cc -DC_FLAG_WCAST_QUAL  -Wall -Wextra -Wundef -Wshadow -Wcast-align    -Wcast-qual -o CMakeFiles/cmTC_abe36.dir/src.c.o -c "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-5a9eJy/src.c"
+        Linking C executable cmTC_abe36
+        /home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_abe36.dir/link.txt --verbose=1
+        /usr/bin/cc  -Wall -Wextra -Wundef -Wshadow -Wcast-align  CMakeFiles/cmTC_abe36.dir/src.c.o -o cmTC_abe36
+        make[1]: Leaving directory '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-5a9eJy'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CheckSourceCompiles.cmake:81 (try_compile)"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/CheckCXXCompilerFlag.cmake:103 (cmake_check_compiler_flag)"
+      - "thirdparty/zstd/build/cmake/CMakeModules/AddZstdCompilationFlags.cmake:27 (CHECK_CXX_COMPILER_FLAG)"
+      - "thirdparty/zstd/build/cmake/CMakeModules/AddZstdCompilationFlags.cmake:76 (EnableCompilerFlag)"
+      - "thirdparty/zstd/build/cmake/CMakeLists.txt:66 (ADD_ZSTD_COMPILATION_FLAGS)"
+    checks:
+      - "Performing Test CXX_FLAG_WCAST_QUAL"
+    directories:
+      source: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-cEesPD"
+      binary: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-cEesPD"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -Wall -Wextra -Wundef -Wshadow -Wcast-align"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/zstd/build/cmake/CMakeModules"
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>"
+    buildResult:
+      variable: "CXX_FLAG_WCAST_QUAL"
+      cached: true
+      stdout: |
+        Change Dir: '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-cEesPD'
+        
+        Run Build Command(s): /home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_9b477/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_9b477.dir/build.make CMakeFiles/cmTC_9b477.dir/build
+        make[1]: Entering directory '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-cEesPD'
+        Building CXX object CMakeFiles/cmTC_9b477.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_FLAG_WCAST_QUAL  -Wall -Wextra -Wundef -Wshadow -Wcast-align    -Wcast-qual -o CMakeFiles/cmTC_9b477.dir/src.cxx.o -c "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-cEesPD/src.cxx"
+        Linking CXX executable cmTC_9b477
+        /home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9b477.dir/link.txt --verbose=1
+        /usr/bin/c++  -Wall -Wextra -Wundef -Wshadow -Wcast-align  CMakeFiles/cmTC_9b477.dir/src.cxx.o -o cmTC_9b477
+        make[1]: Leaving directory '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-cEesPD'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CheckSourceCompiles.cmake:81 (try_compile)"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/CheckCCompilerFlag.cmake:105 (cmake_check_compiler_flag)"
+      - "thirdparty/zstd/build/cmake/CMakeModules/AddZstdCompilationFlags.cmake:21 (CHECK_C_COMPILER_FLAG)"
+      - "thirdparty/zstd/build/cmake/CMakeModules/AddZstdCompilationFlags.cmake:77 (EnableCompilerFlag)"
+      - "thirdparty/zstd/build/cmake/CMakeLists.txt:66 (ADD_ZSTD_COMPILATION_FLAGS)"
+    checks:
+      - "Performing Test C_FLAG_WSTRICT_PROTOTYPES"
+    directories:
+      source: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-dGHI5p"
+      binary: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-dGHI5p"
+    cmakeVariables:
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_C_FLAGS: " -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/zstd/build/cmake/CMakeModules"
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>"
+    buildResult:
+      variable: "C_FLAG_WSTRICT_PROTOTYPES"
+      cached: true
+      stdout: |
+        Change Dir: '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-dGHI5p'
+        
+        Run Build Command(s): /home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_c5f98/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_c5f98.dir/build.make CMakeFiles/cmTC_c5f98.dir/build
+        make[1]: Entering directory '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-dGHI5p'
+        Building C object CMakeFiles/cmTC_c5f98.dir/src.c.o
+        /usr/bin/cc -DC_FLAG_WSTRICT_PROTOTYPES  -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual    -Wstrict-prototypes -o CMakeFiles/cmTC_c5f98.dir/src.c.o -c "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-dGHI5p/src.c"
+        Linking C executable cmTC_c5f98
+        /home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c5f98.dir/link.txt --verbose=1
+        /usr/bin/cc  -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual  CMakeFiles/cmTC_c5f98.dir/src.c.o -o cmTC_c5f98
+        make[1]: Leaving directory '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-dGHI5p'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CheckSourceCompiles.cmake:81 (try_compile)"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CheckLinkerFlag.cmake:34 (cmake_check_source_compiles)"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/CheckLinkerFlag.cmake:153 (cmake_check_linker_flag)"
+      - "thirdparty/zstd/build/cmake/CMakeModules/AddZstdCompilationFlags.cmake:43 (CHECK_LINKER_FLAG)"
+      - "thirdparty/zstd/build/cmake/CMakeModules/AddZstdCompilationFlags.cmake:84 (EnableCompilerFlag)"
+      - "thirdparty/zstd/build/cmake/CMakeLists.txt:66 (ADD_ZSTD_COMPILATION_FLAGS)"
+    checks:
+      - "Performing Test LD_FLAG_WL_Z_NOEXECSTACK"
+    directories:
+      source: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-suft17"
+      binary: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-suft17"
+    cmakeVariables:
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_C_FLAGS: " -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/zstd/build/cmake/CMakeModules"
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>"
+    buildResult:
+      variable: "LD_FLAG_WL_Z_NOEXECSTACK"
+      cached: true
+      stdout: |
+        Change Dir: '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-suft17'
+        
+        Run Build Command(s): /home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_37be5/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_37be5.dir/build.make CMakeFiles/cmTC_37be5.dir/build
+        make[1]: Entering directory '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-suft17'
+        Building C object CMakeFiles/cmTC_37be5.dir/src.c.o
+        /usr/bin/cc -DLD_FLAG_WL_Z_NOEXECSTACK  -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes  -o CMakeFiles/cmTC_37be5.dir/src.c.o -c "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-suft17/src.c"
+        Linking C executable cmTC_37be5
+        /home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_37be5.dir/link.txt --verbose=1
+        /usr/bin/cc  -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes  -Wl,-z,noexecstack CMakeFiles/cmTC_37be5.dir/src.c.o -o cmTC_37be5
+        make[1]: Leaving directory '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-suft17'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CheckSourceCompiles.cmake:81 (try_compile)"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/CheckCCompilerFlag.cmake:105 (cmake_check_compiler_flag)"
+      - "thirdparty/zstd/build/cmake/CMakeModules/AddZstdCompilationFlags.cmake:21 (CHECK_C_COMPILER_FLAG)"
+      - "thirdparty/zstd/build/cmake/CMakeModules/AddZstdCompilationFlags.cmake:86 (EnableCompilerFlag)"
+      - "thirdparty/zstd/build/cmake/CMakeLists.txt:66 (ADD_ZSTD_COMPILATION_FLAGS)"
+    checks:
+      - "Performing Test C_FLAG_QUNUSED_ARGUMENTS"
+    directories:
+      source: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-GP17jY"
+      binary: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-GP17jY"
+    cmakeVariables:
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_C_FLAGS: " -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: " -Wl,-z,noexecstack"
+      CMAKE_MODULE_PATH: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/zstd/build/cmake/CMakeModules"
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>"
+    buildResult:
+      variable: "C_FLAG_QUNUSED_ARGUMENTS"
+      cached: true
+      stdout: |
+        Change Dir: '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-GP17jY'
+        
+        Run Build Command(s): /home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_2a78f/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_2a78f.dir/build.make CMakeFiles/cmTC_2a78f.dir/build
+        make[1]: Entering directory '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-GP17jY'
+        Building C object CMakeFiles/cmTC_2a78f.dir/src.c.o
+        /usr/bin/cc -DC_FLAG_QUNUSED_ARGUMENTS  -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes    -Qunused-arguments -o CMakeFiles/cmTC_2a78f.dir/src.c.o -c "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-GP17jY/src.c"
+        cc: error: unrecognized command-line option '-Qunused-arguments'
+        make[1]: *** [CMakeFiles/cmTC_2a78f.dir/build.make:81: CMakeFiles/cmTC_2a78f.dir/src.c.o] Error 1
+        make[1]: Leaving directory '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-GP17jY'
+        make: *** [Makefile:134: cmTC_2a78f/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CheckSourceCompiles.cmake:81 (try_compile)"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/CheckCXXCompilerFlag.cmake:103 (cmake_check_compiler_flag)"
+      - "thirdparty/zstd/build/cmake/CMakeModules/AddZstdCompilationFlags.cmake:27 (CHECK_CXX_COMPILER_FLAG)"
+      - "thirdparty/zstd/build/cmake/CMakeModules/AddZstdCompilationFlags.cmake:86 (EnableCompilerFlag)"
+      - "thirdparty/zstd/build/cmake/CMakeLists.txt:66 (ADD_ZSTD_COMPILATION_FLAGS)"
+    checks:
+      - "Performing Test CXX_FLAG_QUNUSED_ARGUMENTS"
+    directories:
+      source: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-hko3L8"
+      binary: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-hko3L8"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: " -Wl,-z,noexecstack"
+      CMAKE_MODULE_PATH: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/zstd/build/cmake/CMakeModules"
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>"
+    buildResult:
+      variable: "CXX_FLAG_QUNUSED_ARGUMENTS"
+      cached: true
+      stdout: |
+        Change Dir: '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-hko3L8'
+        
+        Run Build Command(s): /home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_5aa09/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_5aa09.dir/build.make CMakeFiles/cmTC_5aa09.dir/build
+        make[1]: Entering directory '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-hko3L8'
+        Building CXX object CMakeFiles/cmTC_5aa09.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_FLAG_QUNUSED_ARGUMENTS  -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual    -Qunused-arguments -o CMakeFiles/cmTC_5aa09.dir/src.cxx.o -c "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-hko3L8/src.cxx"
+        c++: error: unrecognized command-line option '-Qunused-arguments'
+        make[1]: *** [CMakeFiles/cmTC_5aa09.dir/build.make:81: CMakeFiles/cmTC_5aa09.dir/src.cxx.o] Error 1
+        make[1]: Leaving directory '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-hko3L8'
+        make: *** [Makefile:134: cmTC_5aa09/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CheckSourceCompiles.cmake:81 (try_compile)"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/CheckCCompilerFlag.cmake:105 (cmake_check_compiler_flag)"
+      - "thirdparty/zstd/build/cmake/CMakeModules/AddZstdCompilationFlags.cmake:21 (CHECK_C_COMPILER_FLAG)"
+      - "thirdparty/zstd/build/cmake/CMakeModules/AddZstdCompilationFlags.cmake:87 (EnableCompilerFlag)"
+      - "thirdparty/zstd/build/cmake/CMakeLists.txt:66 (ADD_ZSTD_COMPILATION_FLAGS)"
+    checks:
+      - "Performing Test C_FLAG_WA_NOEXECSTACK"
+    directories:
+      source: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-ZHDvo3"
+      binary: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-ZHDvo3"
+    cmakeVariables:
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_C_FLAGS: " -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: " -Wl,-z,noexecstack"
+      CMAKE_MODULE_PATH: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/zstd/build/cmake/CMakeModules"
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>"
+    buildResult:
+      variable: "C_FLAG_WA_NOEXECSTACK"
+      cached: true
+      stdout: |
+        Change Dir: '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-ZHDvo3'
+        
+        Run Build Command(s): /home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_dc314/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_dc314.dir/build.make CMakeFiles/cmTC_dc314.dir/build
+        make[1]: Entering directory '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-ZHDvo3'
+        Building C object CMakeFiles/cmTC_dc314.dir/src.c.o
+        /usr/bin/cc -DC_FLAG_WA_NOEXECSTACK  -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes    -Wa,--noexecstack -o CMakeFiles/cmTC_dc314.dir/src.c.o -c "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-ZHDvo3/src.c"
+        Linking C executable cmTC_dc314
+        /home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dc314.dir/link.txt --verbose=1
+        /usr/bin/cc  -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes   -Wl,-z,noexecstack  CMakeFiles/cmTC_dc314.dir/src.c.o -o cmTC_dc314
+        make[1]: Leaving directory '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-ZHDvo3'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CheckSourceCompiles.cmake:81 (try_compile)"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/CheckCXXCompilerFlag.cmake:103 (cmake_check_compiler_flag)"
+      - "thirdparty/zstd/build/cmake/CMakeModules/AddZstdCompilationFlags.cmake:27 (CHECK_CXX_COMPILER_FLAG)"
+      - "thirdparty/zstd/build/cmake/CMakeModules/AddZstdCompilationFlags.cmake:87 (EnableCompilerFlag)"
+      - "thirdparty/zstd/build/cmake/CMakeLists.txt:66 (ADD_ZSTD_COMPILATION_FLAGS)"
+    checks:
+      - "Performing Test CXX_FLAG_WA_NOEXECSTACK"
+    directories:
+      source: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-Zt7Wlo"
+      binary: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-Zt7Wlo"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: " -Wl,-z,noexecstack"
+      CMAKE_MODULE_PATH: "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/zstd/build/cmake/CMakeModules"
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>"
+    buildResult:
+      variable: "CXX_FLAG_WA_NOEXECSTACK"
+      cached: true
+      stdout: |
+        Change Dir: '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-Zt7Wlo'
+        
+        Run Build Command(s): /home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_109e5/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_109e5.dir/build.make CMakeFiles/cmTC_109e5.dir/build
+        make[1]: Entering directory '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-Zt7Wlo'
+        Building CXX object CMakeFiles/cmTC_109e5.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_FLAG_WA_NOEXECSTACK  -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual    -Wa,--noexecstack -o CMakeFiles/cmTC_109e5.dir/src.cxx.o -c "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-Zt7Wlo/src.cxx"
+        Linking CXX executable cmTC_109e5
+        /home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_109e5.dir/link.txt --verbose=1
+        /usr/bin/c++  -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual   -Wl,-z,noexecstack  CMakeFiles/cmTC_109e5.dir/src.cxx.o -o cmTC_109e5
+        make[1]: Leaving directory '/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/build/CMakeFiles/CMakeScratch/TryCompile-Zt7Wlo'
+        
+      exitCode: 0
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeDetermineCompiler.cmake:54 (find_program)"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeDetermineASMCompiler.cmake:61 (_cmake_find_compiler)"
+      - "thirdparty/zstd/build/cmake/lib/CMakeLists.txt:43 (enable_language)"
+    mode: "program"
+    variable: "CMAKE_ASM_COMPILER"
+    description: "ASM compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "/usr/bin/cc"
+    candidate_directories:
+      - "/usr/bin/"
+    found: "/usr/bin/cc"
+    search_context:
+      ENV{PATH}:
+        - "/home/rafi/.codex/packages/app-server-daemon/releases/0.166.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/rafi/.codex/tmp/arg0-linux/codex-arg0cUff6O"
+        - "/home/rafi/.codex/packages/app-server-daemon/releases/0.166.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/rafi/.codex/tmp/arg0-linux/codex-arg0hRWhze"
+        - "/home/rafi/.codex/packages/app-server-daemon/releases/0.165.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/rafi/.codex/tmp/arg0-linux/codex-arg0hwL0e3"
+        - "/home/rafi/.codex/packages/standalone/releases/0.165.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/rafi/.pi/agent/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/rafi/.config/carapace/bin"
+        - "/home/rafi/.cargo/bin"
+        - "/home/rafi/.local/bin"
+        - "/home/rafi/.atuin/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin${PATH+"
+        - "$PATH}"
+        - "/usr/share/omarchy/bin"
+        - "/home/rafi/.local/share/mise/shims"
+        - "/home/rafi/.local/share/mise/installs/node/26.7.0/bin"
+        - "/home/rafi/.local/share/../bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/opt/cuda/bin"
+        - "/home/rafi/.local/share/flatpak/exports/bin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/rafi/.lmstudio/bin"
+        - "/home/rafi/llama-b9334"
+        - "/home/rafi/.bun/bin"
+        - "/home/rafi/.kimi-code/bin"
+        - "/home/rafi/flutter/bin"
+        - "/home/rafi/.pixi/bin"
+        - "/usr/local/go/bin"
+        - "/home/rafi/.local/share/pnpm"
+        - "/home/rafi/.opencode/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeDetermineCompilerId.cmake:1328 (message)"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeDetermineASMCompiler.cmake:174 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "thirdparty/zstd/build/cmake/lib/CMakeLists.txt:43 (enable_language)"
+    message: |
+      Checking whether the ASM compiler is GNU using "--version" matched "(GNU assembler)|(GCC)|(Free Software Foundation)":
+      cc (GCC) 16.2.1 20260810
+      Copyright (C) 2026 Free Software Foundation, Inc.
+      This is free software; see the source for copying conditions.  There is NO
+      warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Compiler/GNU-FindBinUtils.cmake:18 (find_program)"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeDetermineASMCompiler.cmake:271 (include)"
+      - "thirdparty/zstd/build/cmake/lib/CMakeLists.txt:43 (enable_language)"
+    mode: "program"
+    variable: "CMAKE_ASM_COMPILER_AR"
+    description: "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gcc-ar-"
+      - "gcc-ar-"
+      - "gcc-ar"
+      - "gcc-ar"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/rafi/.codex/packages/app-server-daemon/releases/0.166.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/linuxbrew/.linuxbrew/bin/"
+      - "/home/rafi/.codex/tmp/arg0-linux/codex-arg0cUff6O/"
+      - "/home/rafi/.codex/tmp/arg0-linux/codex-arg0hRWhze/"
+      - "/home/rafi/.codex/packages/app-server-daemon/releases/0.165.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/rafi/.codex/tmp/arg0-linux/codex-arg0hwL0e3/"
+      - "/home/rafi/.codex/packages/standalone/releases/0.165.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/rafi/.pi/agent/bin/"
+      - "/home/rafi/.config/carapace/bin/"
+      - "/home/rafi/.cargo/bin/"
+      - "/home/rafi/.local/bin/"
+      - "/home/rafi/.atuin/bin/"
+      - "/home/linuxbrew/.linuxbrew/sbin${PATH+/"
+      - "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/$PATH}/"
+      - "/usr/share/omarchy/bin/"
+      - "/home/rafi/.local/share/mise/shims/"
+      - "/home/rafi/.local/share/mise/installs/node/26.7.0/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/opt/cuda/bin/"
+      - "/home/rafi/.local/share/flatpak/exports/bin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/home/rafi/.lmstudio/bin/"
+      - "/home/rafi/llama-b9334/"
+      - "/home/rafi/.bun/bin/"
+      - "/home/rafi/.kimi-code/bin/"
+      - "/home/rafi/flutter/bin/"
+      - "/home/rafi/.pixi/bin/"
+      - "/usr/local/go/bin/"
+      - "/home/rafi/.local/share/pnpm/"
+      - "/home/rafi/.opencode/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/"
+      - "/usr/bin/"
+      - "/usr/sbin/"
+      - "/usr/"
+      - "/bin/"
+      - "/sbin/"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/sbin/"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/"
+      - "/usr/X11R6/bin/"
+      - "/usr/X11R6/sbin/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/bin/"
+      - "/usr/pkg/sbin/"
+      - "/usr/pkg/"
+      - "/opt/bin/"
+      - "/opt/sbin/"
+      - "/opt/"
+    searched_directories:
+      - "/usr/bin/gcc-ar-"
+      - "/home/rafi/.codex/packages/app-server-daemon/releases/0.166.0-x86_64-unknown-linux-musl/codex-path/gcc-ar-"
+      - "/home/linuxbrew/.linuxbrew/bin/gcc-ar-"
+      - "/home/rafi/.codex/tmp/arg0-linux/codex-arg0cUff6O/gcc-ar-"
+      - "/home/rafi/.codex/tmp/arg0-linux/codex-arg0hRWhze/gcc-ar-"
+      - "/home/rafi/.codex/packages/app-server-daemon/releases/0.165.0-x86_64-unknown-linux-musl/codex-path/gcc-ar-"
+      - "/home/rafi/.codex/tmp/arg0-linux/codex-arg0hwL0e3/gcc-ar-"
+      - "/home/rafi/.codex/packages/standalone/releases/0.165.0-x86_64-unknown-linux-musl/codex-path/gcc-ar-"
+      - "/home/rafi/.pi/agent/bin/gcc-ar-"
+      - "/home/rafi/.config/carapace/bin/gcc-ar-"
+      - "/home/rafi/.cargo/bin/gcc-ar-"
+      - "/home/rafi/.local/bin/gcc-ar-"
+      - "/home/rafi/.atuin/bin/gcc-ar-"
+      - "/home/linuxbrew/.linuxbrew/sbin${PATH+/gcc-ar-"
+      - "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/$PATH}/gcc-ar-"
+      - "/usr/share/omarchy/bin/gcc-ar-"
+      - "/home/rafi/.local/share/mise/shims/gcc-ar-"
+      - "/home/rafi/.local/share/mise/installs/node/26.7.0/bin/gcc-ar-"
+      - "/usr/local/sbin/gcc-ar-"
+      - "/usr/local/bin/gcc-ar-"
+      - "/opt/cuda/bin/gcc-ar-"
+      - "/home/rafi/.local/share/flatpak/exports/bin/gcc-ar-"
+      - "/var/lib/flatpak/exports/bin/gcc-ar-"
+      - "/usr/lib/jvm/default/bin/gcc-ar-"
+      - "/usr/bin/site_perl/gcc-ar-"
+      - "/usr/bin/vendor_perl/gcc-ar-"
+      - "/usr/bin/core_perl/gcc-ar-"
+      - "/home/rafi/.lmstudio/bin/gcc-ar-"
+      - "/home/rafi/llama-b9334/gcc-ar-"
+      - "/home/rafi/.bun/bin/gcc-ar-"
+      - "/home/rafi/.kimi-code/bin/gcc-ar-"
+      - "/home/rafi/flutter/bin/gcc-ar-"
+      - "/home/rafi/.pixi/bin/gcc-ar-"
+      - "/usr/local/go/bin/gcc-ar-"
+      - "/home/rafi/.local/share/pnpm/gcc-ar-"
+      - "/home/rafi/.opencode/bin/gcc-ar-"
+      - "/usr/local/bin/gcc-ar-"
+      - "/usr/local/sbin/gcc-ar-"
+      - "/usr/local/gcc-ar-"
+      - "/usr/bin/gcc-ar-"
+      - "/usr/sbin/gcc-ar-"
+      - "/usr/gcc-ar-"
+      - "/bin/gcc-ar-"
+      - "/sbin/gcc-ar-"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/gcc-ar-"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/sbin/gcc-ar-"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/gcc-ar-"
+      - "/usr/X11R6/bin/gcc-ar-"
+      - "/usr/X11R6/sbin/gcc-ar-"
+      - "/usr/X11R6/gcc-ar-"
+      - "/usr/pkg/bin/gcc-ar-"
+      - "/usr/pkg/sbin/gcc-ar-"
+      - "/usr/pkg/gcc-ar-"
+      - "/opt/bin/gcc-ar-"
+      - "/opt/sbin/gcc-ar-"
+      - "/opt/gcc-ar-"
+      - "/usr/bin/gcc-ar-"
+      - "/home/rafi/.codex/packages/app-server-daemon/releases/0.166.0-x86_64-unknown-linux-musl/codex-path/gcc-ar-"
+      - "/home/linuxbrew/.linuxbrew/bin/gcc-ar-"
+      - "/home/rafi/.codex/tmp/arg0-linux/codex-arg0cUff6O/gcc-ar-"
+      - "/home/rafi/.codex/tmp/arg0-linux/codex-arg0hRWhze/gcc-ar-"
+      - "/home/rafi/.codex/packages/app-server-daemon/releases/0.165.0-x86_64-unknown-linux-musl/codex-path/gcc-ar-"
+      - "/home/rafi/.codex/tmp/arg0-linux/codex-arg0hwL0e3/gcc-ar-"
+      - "/home/rafi/.codex/packages/standalone/releases/0.165.0-x86_64-unknown-linux-musl/codex-path/gcc-ar-"
+      - "/home/rafi/.pi/agent/bin/gcc-ar-"
+      - "/home/rafi/.config/carapace/bin/gcc-ar-"
+      - "/home/rafi/.cargo/bin/gcc-ar-"
+      - "/home/rafi/.local/bin/gcc-ar-"
+      - "/home/rafi/.atuin/bin/gcc-ar-"
+      - "/home/linuxbrew/.linuxbrew/sbin${PATH+/gcc-ar-"
+      - "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/$PATH}/gcc-ar-"
+      - "/usr/share/omarchy/bin/gcc-ar-"
+      - "/home/rafi/.local/share/mise/shims/gcc-ar-"
+      - "/home/rafi/.local/share/mise/installs/node/26.7.0/bin/gcc-ar-"
+      - "/usr/local/sbin/gcc-ar-"
+      - "/usr/local/bin/gcc-ar-"
+      - "/opt/cuda/bin/gcc-ar-"
+      - "/home/rafi/.local/share/flatpak/exports/bin/gcc-ar-"
+      - "/var/lib/flatpak/exports/bin/gcc-ar-"
+      - "/usr/lib/jvm/default/bin/gcc-ar-"
+      - "/usr/bin/site_perl/gcc-ar-"
+      - "/usr/bin/vendor_perl/gcc-ar-"
+      - "/usr/bin/core_perl/gcc-ar-"
+      - "/home/rafi/.lmstudio/bin/gcc-ar-"
+      - "/home/rafi/llama-b9334/gcc-ar-"
+      - "/home/rafi/.bun/bin/gcc-ar-"
+      - "/home/rafi/.kimi-code/bin/gcc-ar-"
+      - "/home/rafi/flutter/bin/gcc-ar-"
+      - "/home/rafi/.pixi/bin/gcc-ar-"
+      - "/usr/local/go/bin/gcc-ar-"
+      - "/home/rafi/.local/share/pnpm/gcc-ar-"
+      - "/home/rafi/.opencode/bin/gcc-ar-"
+      - "/usr/local/bin/gcc-ar-"
+      - "/usr/local/sbin/gcc-ar-"
+      - "/usr/local/gcc-ar-"
+      - "/usr/bin/gcc-ar-"
+      - "/usr/sbin/gcc-ar-"
+      - "/usr/gcc-ar-"
+      - "/bin/gcc-ar-"
+      - "/sbin/gcc-ar-"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/gcc-ar-"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/sbin/gcc-ar-"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/gcc-ar-"
+      - "/usr/X11R6/bin/gcc-ar-"
+      - "/usr/X11R6/sbin/gcc-ar-"
+      - "/usr/X11R6/gcc-ar-"
+      - "/usr/pkg/bin/gcc-ar-"
+      - "/usr/pkg/sbin/gcc-ar-"
+      - "/usr/pkg/gcc-ar-"
+      - "/opt/bin/gcc-ar-"
+      - "/opt/sbin/gcc-ar-"
+      - "/opt/gcc-ar-"
+    found: "/usr/bin/gcc-ar"
+    search_context:
+      ENV{PATH}:
+        - "/home/rafi/.codex/packages/app-server-daemon/releases/0.166.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/rafi/.codex/tmp/arg0-linux/codex-arg0cUff6O"
+        - "/home/rafi/.codex/packages/app-server-daemon/releases/0.166.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/rafi/.codex/tmp/arg0-linux/codex-arg0hRWhze"
+        - "/home/rafi/.codex/packages/app-server-daemon/releases/0.165.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/rafi/.codex/tmp/arg0-linux/codex-arg0hwL0e3"
+        - "/home/rafi/.codex/packages/standalone/releases/0.165.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/rafi/.pi/agent/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/rafi/.config/carapace/bin"
+        - "/home/rafi/.cargo/bin"
+        - "/home/rafi/.local/bin"
+        - "/home/rafi/.atuin/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin${PATH+"
+        - "$PATH}"
+        - "/usr/share/omarchy/bin"
+        - "/home/rafi/.local/share/mise/shims"
+        - "/home/rafi/.local/share/mise/installs/node/26.7.0/bin"
+        - "/home/rafi/.local/share/../bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/opt/cuda/bin"
+        - "/home/rafi/.local/share/flatpak/exports/bin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/rafi/.lmstudio/bin"
+        - "/home/rafi/llama-b9334"
+        - "/home/rafi/.bun/bin"
+        - "/home/rafi/.kimi-code/bin"
+        - "/home/rafi/flutter/bin"
+        - "/home/rafi/.pixi/bin"
+        - "/usr/local/go/bin"
+        - "/home/rafi/.local/share/pnpm"
+        - "/home/rafi/.opencode/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/Compiler/GNU-FindBinUtils.cmake:30 (find_program)"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeDetermineASMCompiler.cmake:271 (include)"
+      - "thirdparty/zstd/build/cmake/lib/CMakeLists.txt:43 (enable_language)"
+    mode: "program"
+    variable: "CMAKE_ASM_COMPILER_RANLIB"
+    description: "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gcc-ranlib-"
+      - "gcc-ranlib-"
+      - "gcc-ranlib"
+      - "gcc-ranlib"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/rafi/.codex/packages/app-server-daemon/releases/0.166.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/linuxbrew/.linuxbrew/bin/"
+      - "/home/rafi/.codex/tmp/arg0-linux/codex-arg0cUff6O/"
+      - "/home/rafi/.codex/tmp/arg0-linux/codex-arg0hRWhze/"
+      - "/home/rafi/.codex/packages/app-server-daemon/releases/0.165.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/rafi/.codex/tmp/arg0-linux/codex-arg0hwL0e3/"
+      - "/home/rafi/.codex/packages/standalone/releases/0.165.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/rafi/.pi/agent/bin/"
+      - "/home/rafi/.config/carapace/bin/"
+      - "/home/rafi/.cargo/bin/"
+      - "/home/rafi/.local/bin/"
+      - "/home/rafi/.atuin/bin/"
+      - "/home/linuxbrew/.linuxbrew/sbin${PATH+/"
+      - "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/$PATH}/"
+      - "/usr/share/omarchy/bin/"
+      - "/home/rafi/.local/share/mise/shims/"
+      - "/home/rafi/.local/share/mise/installs/node/26.7.0/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/opt/cuda/bin/"
+      - "/home/rafi/.local/share/flatpak/exports/bin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/home/rafi/.lmstudio/bin/"
+      - "/home/rafi/llama-b9334/"
+      - "/home/rafi/.bun/bin/"
+      - "/home/rafi/.kimi-code/bin/"
+      - "/home/rafi/flutter/bin/"
+      - "/home/rafi/.pixi/bin/"
+      - "/usr/local/go/bin/"
+      - "/home/rafi/.local/share/pnpm/"
+      - "/home/rafi/.opencode/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/"
+      - "/usr/bin/"
+      - "/usr/sbin/"
+      - "/usr/"
+      - "/bin/"
+      - "/sbin/"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/sbin/"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/"
+      - "/usr/X11R6/bin/"
+      - "/usr/X11R6/sbin/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/bin/"
+      - "/usr/pkg/sbin/"
+      - "/usr/pkg/"
+      - "/opt/bin/"
+      - "/opt/sbin/"
+      - "/opt/"
+    searched_directories:
+      - "/usr/bin/gcc-ranlib-"
+      - "/home/rafi/.codex/packages/app-server-daemon/releases/0.166.0-x86_64-unknown-linux-musl/codex-path/gcc-ranlib-"
+      - "/home/linuxbrew/.linuxbrew/bin/gcc-ranlib-"
+      - "/home/rafi/.codex/tmp/arg0-linux/codex-arg0cUff6O/gcc-ranlib-"
+      - "/home/rafi/.codex/tmp/arg0-linux/codex-arg0hRWhze/gcc-ranlib-"
+      - "/home/rafi/.codex/packages/app-server-daemon/releases/0.165.0-x86_64-unknown-linux-musl/codex-path/gcc-ranlib-"
+      - "/home/rafi/.codex/tmp/arg0-linux/codex-arg0hwL0e3/gcc-ranlib-"
+      - "/home/rafi/.codex/packages/standalone/releases/0.165.0-x86_64-unknown-linux-musl/codex-path/gcc-ranlib-"
+      - "/home/rafi/.pi/agent/bin/gcc-ranlib-"
+      - "/home/rafi/.config/carapace/bin/gcc-ranlib-"
+      - "/home/rafi/.cargo/bin/gcc-ranlib-"
+      - "/home/rafi/.local/bin/gcc-ranlib-"
+      - "/home/rafi/.atuin/bin/gcc-ranlib-"
+      - "/home/linuxbrew/.linuxbrew/sbin${PATH+/gcc-ranlib-"
+      - "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/$PATH}/gcc-ranlib-"
+      - "/usr/share/omarchy/bin/gcc-ranlib-"
+      - "/home/rafi/.local/share/mise/shims/gcc-ranlib-"
+      - "/home/rafi/.local/share/mise/installs/node/26.7.0/bin/gcc-ranlib-"
+      - "/usr/local/sbin/gcc-ranlib-"
+      - "/usr/local/bin/gcc-ranlib-"
+      - "/opt/cuda/bin/gcc-ranlib-"
+      - "/home/rafi/.local/share/flatpak/exports/bin/gcc-ranlib-"
+      - "/var/lib/flatpak/exports/bin/gcc-ranlib-"
+      - "/usr/lib/jvm/default/bin/gcc-ranlib-"
+      - "/usr/bin/site_perl/gcc-ranlib-"
+      - "/usr/bin/vendor_perl/gcc-ranlib-"
+      - "/usr/bin/core_perl/gcc-ranlib-"
+      - "/home/rafi/.lmstudio/bin/gcc-ranlib-"
+      - "/home/rafi/llama-b9334/gcc-ranlib-"
+      - "/home/rafi/.bun/bin/gcc-ranlib-"
+      - "/home/rafi/.kimi-code/bin/gcc-ranlib-"
+      - "/home/rafi/flutter/bin/gcc-ranlib-"
+      - "/home/rafi/.pixi/bin/gcc-ranlib-"
+      - "/usr/local/go/bin/gcc-ranlib-"
+      - "/home/rafi/.local/share/pnpm/gcc-ranlib-"
+      - "/home/rafi/.opencode/bin/gcc-ranlib-"
+      - "/usr/local/bin/gcc-ranlib-"
+      - "/usr/local/sbin/gcc-ranlib-"
+      - "/usr/local/gcc-ranlib-"
+      - "/usr/bin/gcc-ranlib-"
+      - "/usr/sbin/gcc-ranlib-"
+      - "/usr/gcc-ranlib-"
+      - "/bin/gcc-ranlib-"
+      - "/sbin/gcc-ranlib-"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/gcc-ranlib-"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/sbin/gcc-ranlib-"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/gcc-ranlib-"
+      - "/usr/X11R6/bin/gcc-ranlib-"
+      - "/usr/X11R6/sbin/gcc-ranlib-"
+      - "/usr/X11R6/gcc-ranlib-"
+      - "/usr/pkg/bin/gcc-ranlib-"
+      - "/usr/pkg/sbin/gcc-ranlib-"
+      - "/usr/pkg/gcc-ranlib-"
+      - "/opt/bin/gcc-ranlib-"
+      - "/opt/sbin/gcc-ranlib-"
+      - "/opt/gcc-ranlib-"
+      - "/usr/bin/gcc-ranlib-"
+      - "/home/rafi/.codex/packages/app-server-daemon/releases/0.166.0-x86_64-unknown-linux-musl/codex-path/gcc-ranlib-"
+      - "/home/linuxbrew/.linuxbrew/bin/gcc-ranlib-"
+      - "/home/rafi/.codex/tmp/arg0-linux/codex-arg0cUff6O/gcc-ranlib-"
+      - "/home/rafi/.codex/tmp/arg0-linux/codex-arg0hRWhze/gcc-ranlib-"
+      - "/home/rafi/.codex/packages/app-server-daemon/releases/0.165.0-x86_64-unknown-linux-musl/codex-path/gcc-ranlib-"
+      - "/home/rafi/.codex/tmp/arg0-linux/codex-arg0hwL0e3/gcc-ranlib-"
+      - "/home/rafi/.codex/packages/standalone/releases/0.165.0-x86_64-unknown-linux-musl/codex-path/gcc-ranlib-"
+      - "/home/rafi/.pi/agent/bin/gcc-ranlib-"
+      - "/home/rafi/.config/carapace/bin/gcc-ranlib-"
+      - "/home/rafi/.cargo/bin/gcc-ranlib-"
+      - "/home/rafi/.local/bin/gcc-ranlib-"
+      - "/home/rafi/.atuin/bin/gcc-ranlib-"
+      - "/home/linuxbrew/.linuxbrew/sbin${PATH+/gcc-ranlib-"
+      - "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/$PATH}/gcc-ranlib-"
+      - "/usr/share/omarchy/bin/gcc-ranlib-"
+      - "/home/rafi/.local/share/mise/shims/gcc-ranlib-"
+      - "/home/rafi/.local/share/mise/installs/node/26.7.0/bin/gcc-ranlib-"
+      - "/usr/local/sbin/gcc-ranlib-"
+      - "/usr/local/bin/gcc-ranlib-"
+      - "/opt/cuda/bin/gcc-ranlib-"
+      - "/home/rafi/.local/share/flatpak/exports/bin/gcc-ranlib-"
+      - "/var/lib/flatpak/exports/bin/gcc-ranlib-"
+      - "/usr/lib/jvm/default/bin/gcc-ranlib-"
+      - "/usr/bin/site_perl/gcc-ranlib-"
+      - "/usr/bin/vendor_perl/gcc-ranlib-"
+      - "/usr/bin/core_perl/gcc-ranlib-"
+      - "/home/rafi/.lmstudio/bin/gcc-ranlib-"
+      - "/home/rafi/llama-b9334/gcc-ranlib-"
+      - "/home/rafi/.bun/bin/gcc-ranlib-"
+      - "/home/rafi/.kimi-code/bin/gcc-ranlib-"
+      - "/home/rafi/flutter/bin/gcc-ranlib-"
+      - "/home/rafi/.pixi/bin/gcc-ranlib-"
+      - "/usr/local/go/bin/gcc-ranlib-"
+      - "/home/rafi/.local/share/pnpm/gcc-ranlib-"
+      - "/home/rafi/.opencode/bin/gcc-ranlib-"
+      - "/usr/local/bin/gcc-ranlib-"
+      - "/usr/local/sbin/gcc-ranlib-"
+      - "/usr/local/gcc-ranlib-"
+      - "/usr/bin/gcc-ranlib-"
+      - "/usr/sbin/gcc-ranlib-"
+      - "/usr/gcc-ranlib-"
+      - "/bin/gcc-ranlib-"
+      - "/sbin/gcc-ranlib-"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/bin/gcc-ranlib-"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/sbin/gcc-ranlib-"
+      - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data/gcc-ranlib-"
+      - "/usr/X11R6/bin/gcc-ranlib-"
+      - "/usr/X11R6/sbin/gcc-ranlib-"
+      - "/usr/X11R6/gcc-ranlib-"
+      - "/usr/pkg/bin/gcc-ranlib-"
+      - "/usr/pkg/sbin/gcc-ranlib-"
+      - "/usr/pkg/gcc-ranlib-"
+      - "/opt/bin/gcc-ranlib-"
+      - "/opt/sbin/gcc-ranlib-"
+      - "/opt/gcc-ranlib-"
+    found: "/usr/bin/gcc-ranlib"
+    search_context:
+      ENV{PATH}:
+        - "/home/rafi/.codex/packages/app-server-daemon/releases/0.166.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/rafi/.codex/tmp/arg0-linux/codex-arg0cUff6O"
+        - "/home/rafi/.codex/packages/app-server-daemon/releases/0.166.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/rafi/.codex/tmp/arg0-linux/codex-arg0hRWhze"
+        - "/home/rafi/.codex/packages/app-server-daemon/releases/0.165.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/rafi/.codex/tmp/arg0-linux/codex-arg0hwL0e3"
+        - "/home/rafi/.codex/packages/standalone/releases/0.165.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/rafi/.pi/agent/bin"
+        - "/home/linuxbrew/.linuxbrew/bin"
+        - "/home/rafi/.config/carapace/bin"
+        - "/home/rafi/.cargo/bin"
+        - "/home/rafi/.local/bin"
+        - "/home/rafi/.atuin/bin"
+        - "/home/linuxbrew/.linuxbrew/sbin${PATH+"
+        - "$PATH}"
+        - "/usr/share/omarchy/bin"
+        - "/home/rafi/.local/share/mise/shims"
+        - "/home/rafi/.local/share/mise/installs/node/26.7.0/bin"
+        - "/home/rafi/.local/share/../bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/opt/cuda/bin"
+        - "/home/rafi/.local/share/flatpak/exports/bin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/rafi/.lmstudio/bin"
+        - "/home/rafi/llama-b9334"
+        - "/home/rafi/.bun/bin"
+        - "/home/rafi/.kimi-code/bin"
+        - "/home/rafi/flutter/bin"
+        - "/home/rafi/.pixi/bin"
+        - "/usr/local/go/bin"
+        - "/home/rafi/.local/share/pnpm"
+        - "/home/rafi/.opencode/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/rafi/.local/share/uv/tools/cmake/lib/python3.12/site-packages/cmake/data"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+...
