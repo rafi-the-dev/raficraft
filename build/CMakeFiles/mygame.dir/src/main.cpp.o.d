@@ -496,7 +496,6 @@ CMakeFiles/mygame.dir/src/main.cpp.o: \
  /usr/include/c++/16/pstl/execution_defs.h /usr/include/c++/16/math.h \
  /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/BlockOutline.h \
  /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/Chunk.h \
- /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/Torch.h \
  /usr/include/c++/16/iostream /usr/include/c++/16/ostream \
  /usr/include/c++/16/bits/ostream.h /usr/include/c++/16/ios \
  /usr/include/c++/16/bits/ios_base.h \

@@ -1,18 +1,394 @@
 {
-  "date": "2026-10-24T13:44:48.146001953+02:00",
+  "date": "2026-11-01T17:42:02.916144735+01:00",
   "data": {
-    "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/docs/CMakeLists.txt": [
+    "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/CMakeLists.txt": [
       {
-        "label": "GLFW_DOXYGEN_SOURCES",
+        "label": "CMAKE_MSVC_RUNTIME_LIBRARY",
         "kind": 12,
         "detail": "Value",
-        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/docs/CMakeLists.txt\n\n(i.e. Pages) list in the generated documentation"
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/CMakeLists.txt"
       },
       {
-        "label": "GLFW_DOXYGEN_INPUT",
+        "label": "RAFICRAFT_PORTABLE",
         "kind": 12,
         "detail": "Value",
-        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/docs/CMakeLists.txt"
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/CMakeLists.txt"
+      },
+      {
+        "label": "check_ipo_supported",
+        "kind": 3,
+        "detail": "Command",
+        "documentation": "defined command from CheckIPOSupported.cmake\n.rst:\nCheckIPOSupported\n-----------------\n\n.. versionadded:: 3.9\n\nThis module provides a command to check whether the compiler supports\ninterprocedural optimization (IPO/LTO).\n\nLoad this module in a CMake project with:\n\n.. code-block:: cmake\n\n  include(CheckIPOSupported)\n\nInterprocedural optimization is a compiler technique that performs\noptimizations across translation units (i.e., across source files), allowing\nthe compiler to analyze and optimize the entire program as a whole rather\nthan file-by-file.  This can improve performance by enabling more aggressive\ninlining and dead code elimination.  When these optimizations are applied at\nlink time, the process is typically referred to as link-time optimization\n(LTO), which is a common form of IPO.\n\nIn CMake, interprocedural optimization can be enabled on a per-target basis\nusing the :prop_tgt:`INTERPROCEDURAL_OPTIMIZATION` target property, or\nfor all targets in the current scope using the\n:variable:`CMAKE_INTERPROCEDURAL_OPTIMIZATION` variable.\n\nUse this module before enabling the interprocedural optimization on targets\nto ensure the compiler supports IPO/LTO.\n\nCommands\n^^^^^^^^\n\nThis module provides the following command:\n\n.. command:: check_ipo_supported\n\n  Checks whether the compiler supports interprocedural optimization (IPO/LTO):\n\n  .. code-block:: cmake\n\n    check_ipo_supported(\n      [RESULT <result-var>]\n      [OUTPUT <output-var>]\n      [LANGUAGES <lang>...]\n    )\n\n  Options are:\n\n  ``RESULT <result-var>``\n    Set ``<result-var>`` variable to ``YES`` if IPO is supported by the\n    compiler and ``NO`` otherwise.  If this option is not given then\n    the command will issue a fatal error if IPO is not supported.\n  ``OUTPUT <output-var>``\n    Set ``<output-var>`` variable with details about any error.\n  ``LANGUAGES <lang>...``\n    Specify languages whose compilers to check.\n\n    The following languages are supported:\n\n    * ``C``\n\n    * ``CXX``\n\n    * ``CUDA``\n\n      .. versionadded:: 3.25\n\n    * ``Fortran``\n\n    If this option is not given, the default languages are picked from\n    the current :prop_gbl:`ENABLED_LANGUAGES` global property.\n\n  .. note::\n\n    To use ``check_ipo_supported()``, policy :policy:`CMP0069` must be set to\n    ``NEW``; otherwise, a fatal error will occur.\n\n  .. versionadded:: 3.13\n    Support for :ref:`Visual Studio Generators`.\n\n  .. versionadded:: 3.24\n    The check uses the caller's :variable:`CMAKE_<LANG>_FLAGS`\n    and :variable:`CMAKE_<LANG>_FLAGS_<CONFIG>` values.\n    See policy :policy:`CMP0138`.\n\nExamples\n^^^^^^^^\n\nChecking whether the compiler supports IPO and emitting a fatal error if it is\nnot supported:\n\n.. code-block:: cmake\n\n  include(CheckIPOSupported)\n  check_ipo_supported() # fatal error if IPO is not supported\n  set_property(TARGET foo PROPERTY INTERPROCEDURAL_OPTIMIZATION TRUE)\n\nThe following example demonstrates how to use this module to enable IPO for\nthe target only when supported by the compiler and to issue a warning if it\nis not.  Additionally, projects may want to provide a configuration option\nto control when IPO is enabled.  For example:\n\n.. code-block:: cmake\n\n  option(FOO_ENABLE_IPO \"Enable IPO/LTO\")\n\n  if(FOO_ENABLE_IPO)\n    include(CheckIPOSupported)\n    check_ipo_supported(RESULT result OUTPUT output)\n    if(result)\n      set_property(TARGET foo PROPERTY INTERPROCEDURAL_OPTIMIZATION TRUE)\n    else()\n      message(WARNING \"IPO is not supported: ${output}\")\n    endif()\n  endif()\n#"
+      },
+      {
+        "label": "check_ipo_supported",
+        "kind": 3,
+        "detail": "Function",
+        "documentation": "defined function\nfrom: /usr/share/cmake/Modules/CheckIPOSupported.cmake"
+      },
+      {
+        "label": "_ipo_not_supported",
+        "kind": 3,
+        "detail": "Function",
+        "documentation": "defined macro\nfrom: /usr/share/cmake/Modules/CheckIPOSupported.cmake\n\nX_OUTPUT - name of the variable with information about error"
+      },
+      {
+        "label": "_ipo_run_language_check",
+        "kind": 3,
+        "detail": "Function",
+        "documentation": "defined macro\nfrom: /usr/share/cmake/Modules/CheckIPOSupported.cmake\n\nRun IPO/LTO test"
+      },
+      {
+        "label": "\"${X_RESULT}\"",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /usr/share/cmake/Modules/CheckIPOSupported.cmake"
+      },
+      {
+        "label": "\"${X_OUTPUT}\"",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /usr/share/cmake/Modules/CheckIPOSupported.cmake"
+      },
+      {
+        "label": "_C_ext",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /usr/share/cmake/Modules/CheckIPOSupported.cmake"
+      },
+      {
+        "label": "_CXX_ext",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /usr/share/cmake/Modules/CheckIPOSupported.cmake"
+      },
+      {
+        "label": "_Fortran_ext",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /usr/share/cmake/Modules/CheckIPOSupported.cmake"
+      },
+      {
+        "label": "ext",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /usr/share/cmake/Modules/CheckIPOSupported.cmake"
+      },
+      {
+        "label": "copy_sources",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /usr/share/cmake/Modules/CheckIPOSupported.cmake"
+      },
+      {
+        "label": "\"${X_RESULT}\"",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /usr/share/cmake/Modules/CheckIPOSupported.cmake"
+      },
+      {
+        "label": "testdir",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /usr/share/cmake/Modules/CheckIPOSupported.cmake"
+      },
+      {
+        "label": "bindir",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /usr/share/cmake/Modules/CheckIPOSupported.cmake"
+      },
+      {
+        "label": "srcdir",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /usr/share/cmake/Modules/CheckIPOSupported.cmake"
+      },
+      {
+        "label": "TRY_COMPILE_PROJECT_NAME",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /usr/share/cmake/Modules/CheckIPOSupported.cmake"
+      },
+      {
+        "label": "try_compile_src",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /usr/share/cmake/Modules/CheckIPOSupported.cmake"
+      },
+      {
+        "label": "CMAKE_TRY_COMPILE_CONFIGURATION",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /usr/share/cmake/Modules/CheckIPOSupported.cmake"
+      },
+      {
+        "label": "_CMAKE_LANG_FLAGS",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /usr/share/cmake/Modules/CheckIPOSupported.cmake"
+      },
+      {
+        "label": "_CMAKE_LANG_FLAGS",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /usr/share/cmake/Modules/CheckIPOSupported.cmake"
+      },
+      {
+        "label": "\"${X_OUTPUT}\"",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /usr/share/cmake/Modules/CheckIPOSupported.cmake"
+      },
+      {
+        "label": "optional",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /usr/share/cmake/Modules/CheckIPOSupported.cmake"
+      },
+      {
+        "label": "one",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /usr/share/cmake/Modules/CheckIPOSupported.cmake"
+      },
+      {
+        "label": "multiple",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /usr/share/cmake/Modules/CheckIPOSupported.cmake"
+      },
+      {
+        "label": "languages",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /usr/share/cmake/Modules/CheckIPOSupported.cmake"
+      },
+      {
+        "label": "languages",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /usr/share/cmake/Modules/CheckIPOSupported.cmake"
+      },
+      {
+        "label": "unsupported_languages",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /usr/share/cmake/Modules/CheckIPOSupported.cmake"
+      },
+      {
+        "label": "\"${X_RESULT}\"",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /usr/share/cmake/Modules/CheckIPOSupported.cmake"
+      },
+      {
+        "label": "CMAKE_INTERPROCEDURAL_OPTIMIZATION_RELEASE",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/CMakeLists.txt"
+      },
+      {
+        "label": "GLFW_BUILD_DOCS",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/CMakeLists.txt"
+      },
+      {
+        "label": "GLFW_BUILD_TESTS",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/CMakeLists.txt"
+      },
+      {
+        "label": "GLFW_BUILD_EXAMPLES",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/CMakeLists.txt"
+      },
+      {
+        "label": "GLFW_INSTALL",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/CMakeLists.txt"
+      },
+      {
+        "label": "ZSTD_BUILD_PROGRAMS",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/CMakeLists.txt"
+      },
+      {
+        "label": "ZSTD_BUILD_TESTS",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/CMakeLists.txt"
+      },
+      {
+        "label": "ZSTD_BUILD_SHARED",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/CMakeLists.txt"
+      },
+      {
+        "label": "ZSTD_BUILD_STATIC",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/CMakeLists.txt"
+      },
+      {
+        "label": "ZSTD_USE_STATIC_RUNTIME",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/CMakeLists.txt"
+      }
+    ],
+    "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/examples/CMakeLists.txt": [
+      {
+        "label": "ICON",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/examples/CMakeLists.txt"
+      },
+      {
+        "label": "ICON",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/examples/CMakeLists.txt"
+      },
+      {
+        "label": "CMAKE_C_STANDARD",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/examples/CMakeLists.txt"
+      },
+      {
+        "label": "GLAD_GL",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/examples/CMakeLists.txt"
+      },
+      {
+        "label": "GETOPT",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/examples/CMakeLists.txt"
+      },
+      {
+        "label": "TINYCTHREAD",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/examples/CMakeLists.txt"
+      },
+      {
+        "label": "GUI_ONLY_BINARIES",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/examples/CMakeLists.txt"
+      },
+      {
+        "label": "CONSOLE_BINARIES",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/examples/CMakeLists.txt"
+      }
+    ],
+    "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt": [
+      {
+        "label": "common_HEADERS",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
+      },
+      {
+        "label": "common_SOURCES",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
+      },
+      {
+        "label": "glfw_HEADERS",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
+      },
+      {
+        "label": "glfw_SOURCES",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
+      },
+      {
+        "label": "glfw_HEADERS",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
+      },
+      {
+        "label": "glfw_SOURCES",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
+      },
+      {
+        "label": "glfw_HEADERS",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
+      },
+      {
+        "label": "glfw_SOURCES",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
+      },
+      {
+        "label": "glfw_HEADERS",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
+      },
+      {
+        "label": "glfw_SOURCES",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
+      },
+      {
+        "label": "glfw_HEADERS",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
+      },
+      {
+        "label": "glfw_SOURCES",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
+      },
+      {
+        "label": "glfw_HEADERS",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
+      },
+      {
+        "label": "glfw_SOURCES",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
+      },
+      {
+        "label": "glfw_HEADERS",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
+      },
+      {
+        "label": "glfw_SOURCES",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
       }
     ],
     "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt": [
@@ -323,192 +699,6 @@
         "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/CMakeLists.txt"
       }
     ],
-    "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt": [
-      {
-        "label": "common_HEADERS",
-        "kind": 12,
-        "detail": "Value",
-        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
-      },
-      {
-        "label": "common_SOURCES",
-        "kind": 12,
-        "detail": "Value",
-        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
-      },
-      {
-        "label": "glfw_HEADERS",
-        "kind": 12,
-        "detail": "Value",
-        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
-      },
-      {
-        "label": "glfw_SOURCES",
-        "kind": 12,
-        "detail": "Value",
-        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
-      },
-      {
-        "label": "glfw_HEADERS",
-        "kind": 12,
-        "detail": "Value",
-        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
-      },
-      {
-        "label": "glfw_SOURCES",
-        "kind": 12,
-        "detail": "Value",
-        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
-      },
-      {
-        "label": "glfw_HEADERS",
-        "kind": 12,
-        "detail": "Value",
-        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
-      },
-      {
-        "label": "glfw_SOURCES",
-        "kind": 12,
-        "detail": "Value",
-        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
-      },
-      {
-        "label": "glfw_HEADERS",
-        "kind": 12,
-        "detail": "Value",
-        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
-      },
-      {
-        "label": "glfw_SOURCES",
-        "kind": 12,
-        "detail": "Value",
-        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
-      },
-      {
-        "label": "glfw_HEADERS",
-        "kind": 12,
-        "detail": "Value",
-        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
-      },
-      {
-        "label": "glfw_SOURCES",
-        "kind": 12,
-        "detail": "Value",
-        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
-      },
-      {
-        "label": "glfw_HEADERS",
-        "kind": 12,
-        "detail": "Value",
-        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
-      },
-      {
-        "label": "glfw_SOURCES",
-        "kind": 12,
-        "detail": "Value",
-        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
-      },
-      {
-        "label": "glfw_HEADERS",
-        "kind": 12,
-        "detail": "Value",
-        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
-      },
-      {
-        "label": "glfw_SOURCES",
-        "kind": 12,
-        "detail": "Value",
-        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/src/CMakeLists.txt"
-      }
-    ],
-    "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/CMakeLists.txt": [
-      {
-        "label": "CMAKE_MSVC_RUNTIME_LIBRARY",
-        "kind": 12,
-        "detail": "Value",
-        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/CMakeLists.txt"
-      },
-      {
-        "label": "CMAKE_MSVC_RUNTIME_LIBRARY",
-        "kind": 12,
-        "detail": "Value",
-        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/CMakeLists.txt\n\nwe want to use the static runtime"
-      },
-      {
-        "label": "GLFW_BUILD_DOCS",
-        "kind": 12,
-        "detail": "Value",
-        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/CMakeLists.txt"
-      },
-      {
-        "label": "GLFW_BUILD_TESTS",
-        "kind": 12,
-        "detail": "Value",
-        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/CMakeLists.txt"
-      },
-      {
-        "label": "GLFW_BUILD_EXAMPLES",
-        "kind": 12,
-        "detail": "Value",
-        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/CMakeLists.txt"
-      },
-      {
-        "label": "GLFW_INSTALL",
-        "kind": 12,
-        "detail": "Value",
-        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/CMakeLists.txt"
-      }
-    ],
-    "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/examples/CMakeLists.txt": [
-      {
-        "label": "ICON",
-        "kind": 12,
-        "detail": "Value",
-        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/examples/CMakeLists.txt"
-      },
-      {
-        "label": "ICON",
-        "kind": 12,
-        "detail": "Value",
-        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/examples/CMakeLists.txt"
-      },
-      {
-        "label": "CMAKE_C_STANDARD",
-        "kind": 12,
-        "detail": "Value",
-        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/examples/CMakeLists.txt"
-      },
-      {
-        "label": "GLAD_GL",
-        "kind": 12,
-        "detail": "Value",
-        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/examples/CMakeLists.txt"
-      },
-      {
-        "label": "GETOPT",
-        "kind": 12,
-        "detail": "Value",
-        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/examples/CMakeLists.txt"
-      },
-      {
-        "label": "TINYCTHREAD",
-        "kind": 12,
-        "detail": "Value",
-        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/examples/CMakeLists.txt"
-      },
-      {
-        "label": "GUI_ONLY_BINARIES",
-        "kind": 12,
-        "detail": "Value",
-        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/examples/CMakeLists.txt"
-      },
-      {
-        "label": "CONSOLE_BINARIES",
-        "kind": 12,
-        "detail": "Value",
-        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/examples/CMakeLists.txt"
-      }
-    ],
     "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/tests/CMakeLists.txt": [
       {
         "label": "GLAD_GL",
@@ -551,6 +741,20 @@
         "kind": 12,
         "detail": "Value",
         "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/tests/CMakeLists.txt"
+      }
+    ],
+    "/home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/docs/CMakeLists.txt": [
+      {
+        "label": "GLFW_DOXYGEN_SOURCES",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/docs/CMakeLists.txt\n\n(i.e. Pages) list in the generated documentation"
+      },
+      {
+        "label": "GLFW_DOXYGEN_INPUT",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/rafi/Desktop/codeing_projects/c++/game dev/minecraft-clone/thirdparty/glfw-3.3.2/docs/CMakeLists.txt"
       }
     ]
   }

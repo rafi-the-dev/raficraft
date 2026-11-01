@@ -1,7 +1,6 @@
 #pragma once
 #include "Block.h"
 #include "Face.h"
-#include "Torch.h"
 #include "glm/glm.hpp"
 #include "vector"
 #include <cstdint>
@@ -25,7 +24,6 @@ struct Chunk {
     bool dirty = true;
 
     std::vector<Face> faces;
-    std::vector<TorchEntry> torches;
 
     float distanceSquared = 0.0f;
 
