@@ -6,7 +6,7 @@ A Minecraft-inspired project made from scratch in C++ and OpenGL. Explore proced
 
 ## Download and play
 
-Download a Linux or Windows x86_64 archive from [Releases](https://github.com/rafi-the-dev/raficraft/releases), then extract the entire archive.
+Download a Linux or Windows x86_64 archive from the [v0.6.0 release](https://github.com/rafi-the-dev/raficraft/releases/tag/v0.6.0), then extract the entire archive. This release adds mouse-wheel block selection, separate grass face textures, and torch geometry.
 
 - Linux: open `Play.desktop` from the extracted folder. Your file manager may ask you to allow launching it. You can also run `./play.sh`.
 - Windows: open `mygame.exe` from the extracted folder. The game starts without a console window. `Play.bat` remains available as a command-line launcher.
@@ -30,11 +30,16 @@ The crosshair, camera controls, player movement, and terrain generation activate
 - Space: jump while on the ground.
 - Left Shift: sprint.
 - Left mouse button: break the targeted block within five blocks (one block per click).
-- Right mouse button: place a dirt block against the targeted face within five blocks (one block per click). Placement requires an empty cell that does not overlap the player.
+- Mouse wheel: change the selected block type. Dirt is selected initially; scrolling up selects stone, grass, then torch.
+- Right mouse button: place the selected block against the targeted face within five blocks (one block per click). Placement requires an empty cell that does not overlap the player.
 - A wireframe outline shows the targeted block.
 - Escape: quit.
 
 ## World and gameplay
+
+Grass blocks use separate textures for their top, sides, and dirt bottom. Torches render as narrow upright models, leave neighboring block faces visible, and allow the player to walk through them. They do not emit light.
+
+Block selection is experimental: air is included in the selection list, and scrolling backward past air can produce an invalid block type. There is no on-screen indicator for the selected block.
 
 Player movement includes gravity and collision with solid blocks. Terrain renders within 32 chunks of the player in each horizontal direction, with chunk data retained within 34 chunks. Chunks outside the camera frustum are skipped during drawing. The projection far plane scales with render distance. Chunk generation and mesh updates are limited to two each per frame, so distant terrain fills in gradually. Distant chunks unload and regenerate from the selected seed when revisited.
 
