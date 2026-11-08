@@ -609,7 +609,6 @@ CMakeFiles/mygame.dir/src/Chunk.cpp.o: /home/rafi/Desktop/codeing_projects/c++/g
   /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/Chunk.h \
   /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/Face.h \
   /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/Player.h \
-  /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/Torch.h \
   /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/World.h \
   /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/input.h \
   /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/thirdparty/glad/include/KHR/khrplatform.h \
@@ -1275,7 +1274,6 @@ CMakeFiles/mygame.dir/src/Player.cpp.o: /home/rafi/Desktop/codeing_projects/c++/
   /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/Chunk.h \
   /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/Face.h \
   /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/Player.h \
-  /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/Torch.h \
   /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/World.h \
   /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/input.h \
   /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/raycast.h \
@@ -1820,7 +1818,6 @@ CMakeFiles/mygame.dir/src/World.cpp.o: /home/rafi/Desktop/codeing_projects/c++/g
   /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/Chunk.h \
   /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/Face.h \
   /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/Player.h \
-  /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/Torch.h \
   /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/World.h \
   /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/input.h \
   /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/thirdparty/glad/include/KHR/khrplatform.h \
@@ -2364,7 +2361,6 @@ CMakeFiles/mygame.dir/src/Worldgen.cpp.o: /home/rafi/Desktop/codeing_projects/c+
   /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/Chunk.h \
   /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/Face.h \
   /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/Player.h \
-  /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/Torch.h \
   /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/World.h \
   /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/Worldgen.h \
   /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/input.h \
@@ -3290,7 +3286,6 @@ CMakeFiles/mygame.dir/src/main.cpp.o: /home/rafi/Desktop/codeing_projects/c++/ga
   /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/Face.h \
   /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/Frustum.h \
   /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/Player.h \
-  /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/Torch.h \
   /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/World.h \
   /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/Worldgen.h \
   /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/demoShaderLoader.h \
@@ -4144,7 +4139,6 @@ CMakeFiles/mygame.dir/src/raycast.cpp.o: /home/rafi/Desktop/codeing_projects/c++
   /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/Chunk.h \
   /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/Face.h \
   /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/Player.h \
-  /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/Torch.h \
   /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/World.h \
   /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/input.h \
   /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/raycast.h \
@@ -4874,8 +4868,6 @@ thirdparty/imgui-docking/libimgui.a:
 /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/thirdparty/glfw-3.3.2/include/GLFW/glfw3.h:
 
 /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/input.h:
-
-/home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/Torch.h:
 
 /home/rafi/Desktop/codeing_projects/c++/game\ dev/minecraft-clone/include/Face.h:
 

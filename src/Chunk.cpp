@@ -1,5 +1,6 @@
 #include "Chunk.h"
 #include "World.h"
+#include "Face.h"
 
 Block Chunk::getBlock(int x, int y, int z) {
     if(x < 0 || x >= CHUNK_SIZE_X || y < 0 || y >= CHUNK_SIZE_Y || z < 0 || z >= CHUNK_SIZE_Z) {
@@ -100,6 +101,10 @@ void Chunk::BuildFaces(world& w, int chunkX, int chunkZ) {
                 if(bottomVisible) {
                     faces.push_back({x, y, z, packFace(5, getBlockTexture(block, 5))});
                 }
+
+                for(int i = 0; i < faces.size(); i++) {
+                    packLight(faces[i].data, 15u, 15u);
+                };
             }
         }
     }
